@@ -36,51 +36,56 @@ const BANNER_CSS     = `/*\n * ${BANNER_TEXT.join('\n * ')}\n */\n`;
 const BANNER_JS      = `/*\n * ${BANNER_TEXT.join('\n * ')}\n */\n`;
 
 
-// Gulp constants
+// Gulp task constants
+
+
+// Pug
+const HTML_DEST      = './';
+const PUG_SRC        = ['index.pug',];
+const PUG_TASK       = 'pug';
+const PUG_WATCH_SRC  = ['index.pug', 'src/**/*.pug',];
+
+// CSS
+const CSS_DEST       = './src/css';
+const CSS_TASK       = 'css';
+const SCSS_SRC       = ['./src/css/main.scss',];
+const SCSS_WATCH_SRC = ['src/css/**/*.scss',];
+
+// JS
+const JS_DEST        = ['./src/js'];
+const JS_SRC         = ['./src/js/*.js', '!./src/js/*.min.js',];
+const JS_TASK        = 'js';
+
+// Vendor
 const BOOTSTRAP_DEST = './vendor/bootstrap';
 const BOOTSTRAP_SRC  = [
     './node_modules/bootstrap/dist/**/*',
     '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
     '!./node_modules/bootstrap/dist/css/bootstrap-reboot*',
 ];
-
-const CSS_DEST       = './src/css';
-const CSS_TASK       = 'css';
-
-const DEFAULT_TASK   = 'default';
-
 const EASING_DEST    = './vendor/jquery-easing';
 const EASING_SRC     = ['./node_modules/jquery.easing/*.js',];
-
+const FA_DEST        = './vendor';
 const FA_SRC         = [
     './node_modules/@fortawesome/**/*',
     '!./node_modules/@fortawesome/**/package.json',  // Contains metadata we don't care about that messes with diffs.
 ];
-const FA_DEST        = './vendor';
-
-const HTML_DEST      = './';
-
 const JQUERY_DEST    = './vendor/jquery';
 const JQUERY_SRC     = [
     './node_modules/jquery/dist/*',
     '!./node_modules/jquery/dist/core.js',
 ];
-
-const JS_DEST        = ['./src/js'];
-const JS_SRC         = ['./src/js/*.js', '!./src/js/*.min.js',];
-const JS_TASK        = 'js';
-
-const PUG_SRC        = ['index.pug',];
-const PUG_TASK       = 'pug';
-const PUG_WATCH_SRC  = ['index.pug', 'src/**/*.pug',];
-
-const SCSS_SRC       = ['./src/css/main.scss',];
-const SCSS_WATCH_SRC = ['src/css/**/*.scss',];
-
 const VENDOR_SRC     = _.concat(BOOTSTRAP_SRC, FA_SRC, JQUERY_SRC, EASING_SRC);
 const VENDOR_TASK    = 'vendor';
 
+// Default
+const DEFAULT_TASK   = 'default';
+
+// Watch
 const WATCH_TASK     = 'watch';
+
+
+// Gulp task definitions
 
 
 // Pug compile to html
