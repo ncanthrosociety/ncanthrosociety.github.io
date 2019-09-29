@@ -52,7 +52,10 @@ const DEFAULT_TASK   = 'default';
 const EASING_DEST    = './vendor/jquery-easing';
 const EASING_SRC     = ['./node_modules/jquery.easing/*.js',];
 
-const FA_SRC         = ['./node_modules/@fortawesome/**/*',];
+const FA_SRC         = [
+    './node_modules/@fortawesome/**/*',
+    '!./node_modules/@fortawesome/**/package.json',  // Contains metadata we don't care about that messes with diffs.
+];
 const FA_DEST        = './vendor';
 
 const HTML_DEST      = './';
