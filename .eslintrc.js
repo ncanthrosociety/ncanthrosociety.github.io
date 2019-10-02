@@ -1,3 +1,8 @@
+/**
+ * @module eslintrc
+ */
+
+// Configure rules.
 module.exports = {
   env: {
     browser: true,
@@ -15,7 +20,5 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2018
   },
-  rules: {
-    // TODO
-  }
-};
+  rules: {}
+}

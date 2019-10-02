@@ -4,14 +4,13 @@
  * @module stylelint.config.js
  */
 
-
 // Configure rules
 module.exports = {
-    extends: [
-        'stylelint-config-standard',
-        'stylelint-config-recommended-scss'
-    ],
-    rules: {
-        // TODO
-    },
-};
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-config-recommended-scss'
+  ],
+  rules: {
+    // TODO
+  }
+}
