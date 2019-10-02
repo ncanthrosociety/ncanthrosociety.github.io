@@ -11,6 +11,5 @@ module.exports = {
     'stylelint-config-recommended-scss'
   ],
   rules: {
-    // TODO
   }
 }
