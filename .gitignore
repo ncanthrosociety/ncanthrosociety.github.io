@@ -5,3 +5,10 @@
 
 # Node files
 node_modules/
+
+# editor temp files
+\#*\#
+*~
+.*
+
+!.gitignore

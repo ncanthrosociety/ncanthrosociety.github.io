@@ -29,7 +29,7 @@ html(lang='en')
 
         //- Navbar
         nav(class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav")
-            a(class="navbar-brand js-scroll-trigger" href="#page-top") NC Anthro Society
+            a(class="navbar-brand js-scroll-trigger" href="#page-top") [Logo] NC Anthro Society
             button(class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation")
                 i(class="fas fa-bars")
             div(class="collapse navbar-collapse" id="navbarResponsive")
@@ -39,15 +39,18 @@ html(lang='en')
 
         //- Main body
         div(class='container-fluid')
-
-            block body
+            block content
 
         //- Footer
-        div(class="footer")
+        div(class='footer')
+            p
+                | social media w | social media x | social media y |
+                | social media z
 
             p Copyright #{ new Date().getFullYear() } North Carolina Anthropomorphic Society, Inc.
 
         //- Bootstrap core JavaScript
+
         script(src='vendor/jquery/jquery.min.js')
         script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')
 
