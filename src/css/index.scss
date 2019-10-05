@@ -21,8 +21,6 @@
     -o-background-size: cover;
     background-size: cover;
     -webkit-filter: blur($bg-blur);
-    -moz-filter: blur($bg-blur);
-    -o-filter: blur($bg-blur);
     -ms-filter: blur($bg-blur);
     filter: blur($bg-blur);
     opacity: $bg-opacity;
@@ -31,7 +29,6 @@
 .content > h1 {
     position:center;
     width:60%;
-    float:center;
     margin: 40px auto 40px auto;
     text-align: center;
     opacity:90%;
