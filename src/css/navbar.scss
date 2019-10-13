@@ -7,4 +7,11 @@ body {
 
 #mainNav {
   margin-bottom: $nav-height;
+
+  .navbar-brand {
+    img {
+      height: $nav-height;
+    }
+
+  }
 }
