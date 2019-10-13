@@ -14,4 +14,10 @@ body {
     }
 
   }
+
+  .nav-link {
+    //.active {
+      border-bottom: 0.25rem solid $ncas-purple;
+    //}
+  }
 }
