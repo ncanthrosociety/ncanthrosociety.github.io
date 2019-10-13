@@ -13,6 +13,7 @@ $ncas-purple: rgba(100, 86, 170, 1);
 $nav-height: 50px !default;
 $footer-height: 80px;
 $content-height-computed: calc(100vh - (#{$nav-height} + #{$footer-height}));
+$main-container-padding: 100px;
 
 // Current temporary color palette, still to be determined by media team
 $primary-font-size: 18px;

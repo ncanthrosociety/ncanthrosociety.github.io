@@ -7,4 +7,11 @@ body {
   color: $primary-font-color;
   background-color: $primary-background-color;
   font-size: $primary-font-size;
+
+  .container-fluid {
+    padding-left: $main-container-padding;
+    padding-right: $main-container-padding;
+    margin: 20px auto 20px auto;
+  }
+
 }
