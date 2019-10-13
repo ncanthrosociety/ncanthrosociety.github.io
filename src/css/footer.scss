@@ -9,4 +9,18 @@
   text-align: center;
   font-size: $footer-font-size;
   padding-top: 5px;
+
+  .icon-box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    .fab {
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        color: $ncas-teal;
+      }
+    }
+  }
 }

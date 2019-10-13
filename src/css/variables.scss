@@ -12,7 +12,7 @@ $ncas-teal: rgba(57, 170, 190, 1);
 
 // Element dimensions/margins/etc.
 $nav-height: 50px !default;
-$footer-height: 80px;
+$footer-height: 100px;
 $content-height-computed: calc(100vh - (#{$nav-height} + #{$footer-height}));
 $main-container-padding: 150px;
 
