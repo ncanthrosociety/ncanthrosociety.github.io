@@ -4,6 +4,9 @@
 @import 'footer.scss';
 
 body {
+
+  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+  font-family: 'Montserrat', sans-serif;
   color: $primary-font-color;
   background-color: $primary-background-color;
   font-size: $primary-font-size;

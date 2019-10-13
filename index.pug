@@ -3,7 +3,7 @@ extends src/html/partials/base
 block content
     div(class='content')
 
-        section(id='about-us')
+        section(id='about-us' class='section-even')
             h1 North Carolina Anthropomorphic Society
             p
                 | Hello and greetings from the North Carolina Anthropomorphic Society, Inc. (NCAS). We are a nonprofit
@@ -20,7 +20,7 @@ block content
                 | If you are interested in becoming a part of NCAS, or partnering with us, see
                 | #[a(href='#contact') our contact section].
 
-        section(id='mission-statement')
+        section(id='mission-statement' class='section-odd')
             h1 Our Mission Statement
             p
                 | The North Carolina Anthropomorphic Society works to foster
@@ -31,7 +31,7 @@ block content
                 | our members, in their passion, in their compassion, and in
                 | the friendships they form.
 
-        section(id='teaser')
+        section(id='teaser' class='section-even')
             h1 Coming Soon
             p
                 | Have you ever wanted to rent out an entire movie theater for a bad horror movie marathon, or spend a
@@ -47,7 +47,7 @@ block content
             p
                 | Stay tuned, and we look forward to seeing you at our future events!
 
-        section(id='contact')
+        section(id='contact' class='section-odd')
             h1 Contact Us
             p
                 | Stay in touch and be informed of our most current news and happenings by liking or following our
@@ -57,7 +57,9 @@ block content
                 li Facebook: (FACEBOOK LINK)
                 li Telegram: (TELEGRAM CHANNEL LINK)
             p
-                | You can also reach us by email at contact@ncanthrosociety.com.
+                | You can also reach us by email at
+                | #[a(href='mailto:contact@ncanthrosociety.com') contact@ncanthrosociety.com].
             p
                 | If you are an organizer or a representative for another anthropomorphic group and wish to get in
-                | touch with us, please contact us by email at community@ncanthrosociety.com.
+                | touch with us, please contact us by email at
+                | #[a(href='mailto:community@ncanthrosociety.com') community@ncanthrosociety.com].

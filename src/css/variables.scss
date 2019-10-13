@@ -7,13 +7,14 @@ $ncas-blue: rgba(34, 100, 169, 1);
 $ncas-90-grey: rgba(230, 230, 230, 1);
 $ncas-60-grey: rgba(153, 153, 153, 1);
 $ncas-40-grey: rgba(103, 103, 103, 1);
-$ncas-purple: rgba(100, 86, 170, 1);
+$ncas-purple: rgba(102, 69, 196, 1);
+$ncas-teal: rgba(57, 170, 190, 1);
 
 // Element dimensions/margins/etc.
 $nav-height: 50px !default;
 $footer-height: 80px;
 $content-height-computed: calc(100vh - (#{$nav-height} + #{$footer-height}));
-$main-container-padding: 100px;
+$main-container-padding: 150px;
 
 // Current temporary color palette, still to be determined by media team
 $primary-font-size: 18px;
@@ -22,9 +23,9 @@ $primary-background-color: white !default;
 $secondary-background-color: $ncas-90-grey !default;
 $primary-font-color: #222 !default;
 $secondary-font-color: #444 !default;
-$accent-color: $ncas-40-grey !default;
+$accent-color: $ncas-teal !default;
 
 // This image is temporary for now.
 $background-image: url('../img/NCAS_Logo_Website-Background.png');
-$bg-opacity: 0.1;
+$bg-opacity: 0.13;
 $bg-blur: 10px;
