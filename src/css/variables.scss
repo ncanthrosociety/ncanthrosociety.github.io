@@ -1,7 +1,5 @@
 // Navbar variables
 
-$nav-height: 50px !default;
-
 // NCAS color palette
 $ncas-black: rgba(0, 0, 0, 1);
 $ncas-white: rgba(1, 1, 1, 1);
@@ -11,11 +9,14 @@ $ncas-60-grey: rgba(153, 153, 153, 1);
 $ncas-40-grey: rgba(103, 103, 103, 1);
 $ncas-purple: rgba(100, 86, 170, 1);
 
-// Current temporary color pallette, still to be determined by media team
+// Element dimensions/margins/etc.
+$nav-height: 50px !default;
+$footer-height: 80px;
+$content-height-computed: calc(100vh - (#{$nav-height} + #{$footer-height}));
 
+// Current temporary color palette, still to be determined by media team
 $primary-font-size: 18px;
 $footer-font-size: 14px;
-$footer-height: 100px;
 $primary-background-color: white !default;
 $secondary-background-color: $ncas-90-grey !default;
 $primary-font-color: #222 !default;

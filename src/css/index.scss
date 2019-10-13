@@ -3,8 +3,6 @@
 
 .content {
 
-  $content-height-computed: calc(100vh - (#{$footer-height} + #{$nav-height}));
-
   color: $primary-font-color;
   min-height: $content-height-computed;
 
