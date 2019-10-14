@@ -51,8 +51,8 @@
   // // Activate scrollspy to add active class to navbar items on scroll
   // $('body').scrollspy({ target: '#navbar', offset: NAV_OFFSET })
   $('section').hover(
-    function() {
-      $(`.nav-link[href$='#${$(this).attr('id')}']`).toggleClass('active');
+    function () {
+      $(`.nav-link[href$='#${$(this).attr('id')}']`).toggleClass('active')
     }
   )
 

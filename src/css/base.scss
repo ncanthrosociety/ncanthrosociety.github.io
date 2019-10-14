@@ -25,6 +25,7 @@ body {
         transition-duration: $animation-transition-duration;
         border-bottom: $border-size solid $transparent;
       }
+
       a.active {
         transition-duration: $animation-transition-duration;
         border-bottom: $border-size solid $ncas-purple;
