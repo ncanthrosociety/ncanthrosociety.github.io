@@ -9,6 +9,7 @@ $content-min-height: calc(100vh - (#{$nav-height} + (2 * #{$main-element-padding
 
 body {
   #navbar {
+    background: $ncas-white;
     height: $nav-height;
 
     .navbar-brand {
@@ -19,10 +20,15 @@ body {
       }
     }
 
-    .nav-link {
-      //.active {
-      border-bottom: $border-size solid $ncas-purple;
-      //}
+    .nav-item {
+      a {
+        transition-duration: $animation-transition-duration;
+        border-bottom: $border-size solid $transparent;
+      }
+      a.active {
+        transition-duration: $animation-transition-duration;
+        border-bottom: $border-size solid $ncas-purple;
+      }
     }
   }
 

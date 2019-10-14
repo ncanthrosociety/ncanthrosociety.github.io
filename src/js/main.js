@@ -47,8 +47,14 @@
     $('.navbar-collapse').collapse('hide')
   })
 
-  // Activate scrollspy to add active class to navbar items on scroll
-  $('body').scrollspy({ target: '#mainNav', offset: 100 })
+  // NOTE: Disabled for now due to short content length.
+  // // Activate scrollspy to add active class to navbar items on scroll
+  // $('body').scrollspy({ target: '#navbar', offset: NAV_OFFSET })
+  $('section').hover(
+    function() {
+      $(`.nav-link[href$='#${$(this).attr('id')}']`).toggleClass('active');
+    }
+  )
 
   // Collapse now if page is not at top
   navbarCollapse()
