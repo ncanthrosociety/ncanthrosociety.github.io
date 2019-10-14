@@ -1,20 +1,12 @@
-// Main website style
+// Global website style. Also import individual components.
+@import 'base.scss';
 @import 'index.scss';
-@import 'navbar.scss';
-@import 'footer.scss';
+@import 'variables.scss';
+@import url($font-url);
 
 body {
-
-  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-family;
+  font-size: $primary-font-size;
   color: $primary-font-color;
   background-color: $primary-background-color;
-  font-size: $primary-font-size;
-
-  .container-fluid {
-    padding-left: $main-container-padding;
-    padding-right: $main-container-padding;
-    margin: 20px auto 20px auto;
-  }
-
 }

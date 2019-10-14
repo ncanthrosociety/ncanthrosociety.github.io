@@ -8,7 +8,7 @@
  */
 (($) => {
   // Navbar constants
-  const NAV_SELECTOR = '#mainNav'
+  const NAV_SELECTOR = '#navbar'
   const NAV_OFFSET = 100
   const SHRINK_CLASS = 'navbar-shrink'
 

@@ -10,22 +10,20 @@ $ncas-40-grey: rgba(103, 103, 103, 1);
 $ncas-purple: rgba(102, 69, 196, 1);
 $ncas-teal: rgba(57, 170, 190, 1);
 
-// Element dimensions/margins/etc.
-$nav-height: 50px !default;
-$footer-height: 100px;
-$content-height-computed: calc(100vh - (#{$nav-height} + #{$footer-height}));
-$main-container-padding: 150px;
+// Define primary and secondary website colors (may reference color palette)
+$primary-background-color: white;
+$secondary-background-color: $ncas-90-grey;
+$primary-font-color: #222;
+$secondary-font-color: #444;
+$accent-color: $ncas-teal;
+$transparent: rgba(0, 0, 0, 0);
 
-// Current temporary color palette, still to be determined by media team
+// Fonts
 $primary-font-size: 18px;
 $footer-font-size: 14px;
-$primary-background-color: white !default;
-$secondary-background-color: $ncas-90-grey !default;
-$primary-font-color: #222 !default;
-$secondary-font-color: #444 !default;
-$accent-color: $ncas-teal !default;
+$font-url: 'https://fonts.googleapis.com/css?family=Montserrat&display=swap';
+$font-family: 'Montserrat', sans-serif;
 
-// This image is temporary for now.
-$background-image: url('../img/NCAS_Logo_Website-Background.png');
-$bg-opacity: 0.13;
-$bg-blur: 10px;
+// Standard values
+$border-size: 0.25rem;
+$animation-transition-duration: 0.5s;
