@@ -50,7 +50,7 @@ to master. Changes are usually deployed automatically by GitHub within 10 minute
 
 ## ARIA and Accessability
 
-As an organization we want to remain as accessable as possible. As such please incorporate as much of the [Accessible Rich Internet Applications (WAI-ARIA or ARIA) 1.2 specification](https://www.w3.org/TR/wai-aria-1.2/) as possible.
+As an organization we want to remain as accessable as possible. As such please incorporate as much of the [Accessible Rich Internet Applications (WAI-ARIA or ARIA) 1.2 specification](https://www.w3.org/TR/wai-aria-1.2/) as is reasonable and feasable. No need to go overboard, but helpful metadata can go a long way.
 
 A helpful guide on how to do this [can be found here.](https://w3c.github.io/using-aria/)
 
