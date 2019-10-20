@@ -47,3 +47,9 @@ to be installed manually, but are listed for informational purposes.
 
 To deploy a new version of the website, run `npx gulp` to rebuild-and vendor dependencies. Commit and push the changes 
 to master. Changes are usually deployed automatically by GitHub within 10 minutes.
+
+## ARIA and Accessability
+
+As an organization we want to remain as accessable as possible. As such please incorporate as much of the [Accessible Rich Internet Applications (WAI-ARIA) 1.2 specification](https://www.w3.org/TR/wai-aria-1.2/) as possible.
+
+A helpful guide on how to do this [can be found here.](https://w3c.github.io/using-aria/)
