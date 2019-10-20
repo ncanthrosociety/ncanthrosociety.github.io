@@ -50,6 +50,13 @@ to master. Changes are usually deployed automatically by GitHub within 10 minute
 
 ## ARIA and Accessability
 
-As an organization we want to remain as accessable as possible. As such please incorporate as much of the [Accessible Rich Internet Applications (WAI-ARIA) 1.2 specification](https://www.w3.org/TR/wai-aria-1.2/) as possible.
+As an organization we want to remain as accessable as possible. As such please incorporate as much of the [Accessible Rich Internet Applications (WAI-ARIA or ARIA) 1.2 specification](https://www.w3.org/TR/wai-aria-1.2/) as possible.
 
 A helpful guide on how to do this [can be found here.](https://w3c.github.io/using-aria/)
+
+In general,
+
+- Keep text simple. Remain concise whenever possible.
+- Provide either a `title=""` or `alt=""` attribute to any visual media, this includes images and icons.
+- Use Semantic HTML, for example use a `<footer>` element instead of a `<div>`.
+- Utilize ARIA Roles as much as possible (simply add the `role=""` attribute to `<section>`s, `<div>`s, etc. See section `2.14.1` of the guide linked above.)
