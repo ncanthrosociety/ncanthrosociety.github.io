@@ -63,7 +63,7 @@ body {
     }
   }
 
-  #footer {
+  footer {
     $footer-internal-margin: 10px;
     $footer-internal-padding: 5px;
 
@@ -79,8 +79,18 @@ body {
       margin-top: $footer-internal-margin;
       margin-bottom: $footer-internal-margin;
 
-      .fab {
+      .icon-link {
         margin-right: $footer-internal-margin;
+
+        &,
+        &:link,
+        &:visited,
+        &:hover,
+        &:focus,
+        &:active {
+          color: inherit;
+          text-decoration: none;
+        }
 
         &:last-child {
           margin-right: 0;
