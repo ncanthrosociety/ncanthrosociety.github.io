@@ -49,9 +49,12 @@ html(lang='en')
         footer(id='footer')
 
             div(class='icon-box')
-                i(class='fab fa-3x fa-twitter' title="NCAS Twitter link")
-                i(class='fab fa-3x fa-facebook' title="NCAS Facebook link")
-                i(class='fab fa-3x fa-telegram' title="NCAS Telegram link")
+                a(class='icon-link', href='https://twitter.com/NCAnthroSociety')
+                    i(class='fab fa-3x fa-twitter' title="NCAS Twitter link")
+                a(class='icon-link' href='https://www.facebook.com/North-Carolina-Anthropomorphic-Society-112975086789463/')
+                    i(class='fab fa-3x fa-facebook' title="NCAS Facebook link")
+                a(class='icon-link' href='https://t.me/NCAnthroS')
+                    i(class='fab fa-3x fa-telegram' title="NCAS Telegram link")
 
             p Copyright #{ new Date().getFullYear() } North Carolina Anthropomorphic Society, Inc.
 

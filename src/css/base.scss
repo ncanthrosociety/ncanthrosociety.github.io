@@ -1,10 +1,15 @@
+// Bootstrap mixins
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+
 // Style for elements in base.pug.
 @import 'variables.scss';
 
 // Main element dimensions/margins/etc.
 $main-element-padding: 30px;
-$nav-height: 50px;
-$footer-height: 100px;
+$nav-height: 70px;
+$footer-height: 120px;
 $content-min-height: calc(100vh - (#{$nav-height} + (2 * #{$main-element-padding}) + #{$footer-height}));
 
 body {
@@ -14,21 +19,27 @@ body {
 
     .navbar-brand {
       img {
-        $nav-image-height: 0.9 * $nav-height;
+        $nav-image-height: 0.7 * $nav-height;
 
         height: $nav-image-height;
       }
     }
 
-    .nav-item {
-      a {
-        transition-duration: $animation-transition-duration;
-        border-bottom: $border-size solid $transparent;
+    .navbar-collapse {
+      @include media-breakpoint-down(md) {
+        background-color: $ncas-white;
       }
 
-      a.active {
-        transition-duration: $animation-transition-duration;
-        border-bottom: $border-size solid $ncas-purple;
+      .nav-item {
+        a {
+          transition-duration: $animation-transition-duration;
+          border-bottom: $border-size solid $transparent;
+        }
+
+        a.active {
+          transition-duration: $animation-transition-duration;
+          border-bottom: $border-size solid $ncas-purple;
+        }
       }
     }
   }
@@ -42,6 +53,16 @@ body {
     padding-right: $content-padding;
     min-height: $content-min-height;
 
+    @include media-breakpoint-down(md) {
+      padding-left: 0.5 * $content-padding;
+      padding-right: 0.5 * $content-padding;
+    }
+
+    @include media-breakpoint-down(xs) {
+      padding-left: 0.25 * $content-padding;
+      padding-right: 0.25 * $content-padding;
+    }
+
     &::before {
       $background-image: url('../img/NCAS_Logo_Website-Background.png');
       $background-opacity: 0.13;
@@ -52,7 +73,7 @@ body {
       content: '';
       z-index: -1;
       width: 100%;
-      height: $content-min-height;
+      height: 100%;
       position: absolute;
       left: 0;
       background-size: $background-size;
@@ -63,7 +84,7 @@ body {
     }
   }
 
-  #footer {
+  footer {
     $footer-internal-margin: 10px;
     $footer-internal-padding: 5px;
 
@@ -79,8 +100,18 @@ body {
       margin-top: $footer-internal-margin;
       margin-bottom: $footer-internal-margin;
 
-      .fab {
+      .icon-link {
         margin-right: $footer-internal-margin;
+
+        &,
+        &:link,
+        &:visited,
+        &:hover,
+        &:focus,
+        &:active {
+          color: inherit;
+          text-decoration: none;
+        }
 
         &:last-child {
           margin-right: 0;
