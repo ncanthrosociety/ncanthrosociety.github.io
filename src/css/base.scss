@@ -32,12 +32,10 @@ body {
 
       .nav-item {
         a {
-          transition-duration: $animation-transition-duration;
           border-bottom: $border-size solid $transparent;
         }
 
         a.active {
-          transition-duration: $animation-transition-duration;
           border-bottom: $border-size solid $ncas-purple;
         }
       }
@@ -66,7 +64,6 @@ body {
     &::before {
       $background-image: url('../img/NCAS_Logo_Website-Background.png');
       $background-opacity: 0.13;
-      $background-blur: 10px;
       $background-size: 90%;
 
       background: $primary-background-color $background-image no-repeat center fixed;
@@ -77,9 +74,6 @@ body {
       position: absolute;
       left: 0;
       background-size: $background-size;
-      -webkit-filter: blur($background-blur);
-      -ms-filter: blur($background-blur);
-      filter: blur($background-blur);
       opacity: $background-opacity;
     }
   }

@@ -7,7 +7,6 @@ body {
       $section-padding-left: 10px;
       $section-margin-bottom: 50px;
 
-      transition-duration: $animation-transition-duration;
       border-left: $border-size solid $transparent;
       padding-left: $section-padding-left;
       margin-bottom: $section-margin-bottom;
@@ -23,7 +22,6 @@ body {
       }
 
       &:hover {
-        transition-duration: $animation-transition-duration;
         border-left: $border-size solid $ncas-teal;
 
         h1 {
