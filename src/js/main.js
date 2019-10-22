@@ -52,7 +52,10 @@
   // $('body').scrollspy({ target: '#navbar', offset: NAV_OFFSET })
   $('section').hover(
     function () {
-      $(`.nav-link[href$='#${$(this).attr('id')}']`).toggleClass('active')
+      $(`.nav-link[href$='#${$(this).attr('id')}']`).addClass('active')
+    },
+    function () {
+      $(`.nav-link[href$='#${$(this).attr('id')}']`).removeClass('active')
     }
   )
 
