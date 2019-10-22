@@ -1,59 +1,64 @@
 /**
+ * @module main
+ */
+/* global jQuery */
+
+/**
  * Self-invoking function to configure smooth scrolling.
  */
 (($) => {
+  // Navbar constants
+  const NAV_SELECTOR = '#navbar'
+  const NAV_OFFSET = 100
+  const SHRINK_CLASS = 'navbar-shrink'
 
-    // Navbar constants
-    const NAV_SELECTOR = '#mainNav';
-    const NAV_OFFSET   = 100;
-    const SHRINK_CLASS = 'navbar-shrink';
-
-    /**
-     * Collapse navbar if greater than some offset from the top.
-     */
-    function navbarCollapse() {
-        let nav = $(NAV_SELECTOR);
-        if (nav.offset().top > NAV_OFFSET) {
-            nav.addClass(SHRINK_CLASS);
-        } else {
-            nav.removeClass(SHRINK_CLASS);
-        }
+  /**
+   * Collapse navbar if greater than some offset from the top.
+   */
+  function navbarCollapse () {
+    const nav = $(NAV_SELECTOR)
+    if (nav.offset().top > NAV_OFFSET) {
+      nav.addClass(SHRINK_CLASS)
+    } else {
+      nav.removeClass(SHRINK_CLASS)
     }
+  }
 
-    // Configure smooth scrolling
-    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+  // Configure smooth scrolling
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
+    const locationPathname = location.pathname.replace(/^\//, '')
+    const thisPathname = this.pathname.replace(/^\//, '')
 
-        let location_pathname = location.pathname.replace(/^\//, '');
-        let this_pathname = this.pathname.replace(/^\//, '');
+    if (locationPathname === thisPathname && location.hostname === this.hostname) {
+      let target = $(this.hash)
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']')
 
-        if (location_pathname === this_pathname  && location.hostname === this.hostname) {
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: (target.offset().top - 70)
+        }, 1000, 'easeInOutExpo')
+        return false
+      }
+    }
+  })
 
-            let target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+  // Closes responsive menu when a scroll trigger link is clicked
+  $('.js-scroll-trigger').click(function () {
+    $('.navbar-collapse').collapse('hide')
+  })
 
-            if (target.length) {
-                $('html, body').animate({
-                    scrollTop: (target.offset().top - 70)
-                }, 1000, "easeInOutExpo");
-                return false;
-            }
+  // NOTE: Disabled for now due to short content length.
+  // // Activate scrollspy to add active class to navbar items on scroll
+  // $('body').scrollspy({ target: '#navbar', offset: NAV_OFFSET })
+  $('section').hover(
+    function () {
+      $(`.nav-link[href$='#${$(this).attr('id')}']`).toggleClass('active')
+    }
+  )
 
-        }
+  // Collapse now if page is not at top
+  navbarCollapse()
 
-    });
-
-    // Closes responsive menu when a scroll trigger link is clicked
-    $('.js-scroll-trigger').click(function() {
-        $('.navbar-collapse').collapse('hide');
-    });
-
-    // Activate scrollspy to add active class to navbar items on scroll
-    $('body').scrollspy({ target: '#mainNav', offset: 100 });
-
-    // Collapse now if page is not at top
-    navbarCollapse();
-
-    // Collapse the navbar when page is scrolled
-    $(window).scroll(navbarCollapse);
-
-})(jQuery);
+  // Collapse the navbar when page is scrolled
+  $(window).scroll(navbarCollapse)
+})(jQuery)

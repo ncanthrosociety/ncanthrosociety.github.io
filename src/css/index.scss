@@ -1,1 +1,39 @@
 // Index page style
+@import 'variables.scss';
+
+body {
+  #content {
+    section {
+      $section-padding-left: 10px;
+      $section-margin-bottom: 50px;
+
+      transition-duration: $animation-transition-duration;
+      border-left: $border-size solid $transparent;
+      padding-left: $section-padding-left;
+      margin-bottom: $section-margin-bottom;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      h1 {
+        font-size: 26px;
+        font-weight: bold;
+        color: $ncas-60-grey;
+      }
+
+      &:hover {
+        transition-duration: $animation-transition-duration;
+        border-left: $border-size solid $ncas-teal;
+
+        h1 {
+          color: $ncas-teal;
+        }
+      }
+
+      p {
+        color: $secondary-font-color;
+      }
+    }
+  }
+}

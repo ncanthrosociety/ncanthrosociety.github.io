@@ -1,3 +1,29 @@
 // Navbar variables
 
-$nav-height: 50px !default;
+// NCAS color palette
+$ncas-black: rgba(0, 0, 0, 1);
+$ncas-white: rgba(255, 255, 255, 1);
+$ncas-blue: rgba(34, 100, 169, 1);
+$ncas-90-grey: rgba(230, 230, 230, 1);
+$ncas-60-grey: rgba(153, 153, 153, 1);
+$ncas-40-grey: rgba(103, 103, 103, 1);
+$ncas-purple: rgba(102, 69, 196, 1);
+$ncas-teal: rgba(57, 170, 190, 1);
+
+// Define primary and secondary website colors (may reference color palette)
+$primary-background-color: white;
+$secondary-background-color: $ncas-90-grey;
+$primary-font-color: #222;
+$secondary-font-color: #444;
+$accent-color: $ncas-teal;
+$transparent: rgba(0, 0, 0, 0);
+
+// Fonts
+$primary-font-size: 18px;
+$footer-font-size: 14px;
+$font-url: 'https://fonts.googleapis.com/css?family=Montserrat&display=swap';
+$font-family: 'Montserrat', sans-serif;
+
+// Standard values
+$border-size: 0.25rem;
+$animation-transition-duration: 0.5s;

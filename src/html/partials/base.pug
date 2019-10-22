@@ -25,29 +25,50 @@ html(lang='en')
         //- Custom styles for this template
         link(href='src/css/main.min.css' rel='stylesheet')
 
-    body
+    body(id='page-top')
 
         //- Navbar
-        nav(class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav")
-            a(class="navbar-brand js-scroll-trigger" href="#page-top") NC Anthro Society
+        nav(id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top" role="navigation")
+
+            a(class="navbar-brand js-scroll-trigger" href="#page-top")
+                img(src='src/img/NCAS_Logo_Final.png',alt="NCAS North Carolina Anthro Society Logo")
+
+            // Navbar links (Commented b/c no links yet.)
             button(class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation")
                 i(class="fas fa-bars")
             div(class="collapse navbar-collapse" id="navbarResponsive")
                 ul(class="navbar-nav ml-auto")
-                    li(class="nav-item")
-                        a(class="nav-link js-scroll-trigger" href="#link") Link
+                    block navbar-page-links
+
 
         //- Main body
-        div(class='container-fluid')
+        div(id='content' class='container-fluid' role="main")
+            block content
 
-            block body
+        //- Footer
+        footer(id='footer')
+
+            div(class='icon-box')
+                a(class='icon-link', href='https://twitter.com/NCAnthroSociety')
+                    i(class='fab fa-3x fa-twitter' title="NCAS Twitter link")
+                a(class='icon-link' href='https://www.facebook.com/North-Carolina-Anthropomorphic-Society-112975086789463/')
+                    i(class='fab fa-3x fa-facebook' title="NCAS Facebook link")
+                a(class='icon-link' href='https://t.me/NCAnthroS')
+                    i(class='fab fa-3x fa-telegram' title="NCAS Telegram link")
+
+            p Copyright #{ new Date().getFullYear() } North Carolina Anthropomorphic Society, Inc.
 
         //- Bootstrap core JavaScript
+
         script(src='vendor/jquery/jquery.min.js')
         script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')
 
         //- Plugin JavaScript
         script(src='vendor/jquery-easing/jquery.easing.min.js')
 
+        //- Google Analytics
+        script(src="https://www.googletagmanager.com/gtag/js?id=UA-148960561-1")
+
         //- Custom scripts
         script(src='src/js/main.min.js')
+        script(src='src/js/google-analytics.min.js')

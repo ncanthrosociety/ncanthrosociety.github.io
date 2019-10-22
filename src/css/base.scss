@@ -1,0 +1,130 @@
+// Bootstrap mixins
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+
+// Style for elements in base.pug.
+@import 'variables.scss';
+
+// Main element dimensions/margins/etc.
+$main-element-padding: 30px;
+$nav-height: 70px;
+$footer-height: 120px;
+$content-min-height: calc(100vh - (#{$nav-height} + (2 * #{$main-element-padding}) + #{$footer-height}));
+
+body {
+  #navbar {
+    background: $ncas-white;
+    height: $nav-height;
+
+    .navbar-brand {
+      img {
+        $nav-image-height: 0.7 * $nav-height;
+
+        height: $nav-image-height;
+      }
+    }
+
+    .navbar-collapse {
+      @include media-breakpoint-down(md) {
+        background-color: $ncas-white;
+      }
+
+      .nav-item {
+        a {
+          transition-duration: $animation-transition-duration;
+          border-bottom: $border-size solid $transparent;
+        }
+
+        a.active {
+          transition-duration: $animation-transition-duration;
+          border-bottom: $border-size solid $ncas-purple;
+        }
+      }
+    }
+  }
+
+  #content {
+    $content-padding: 100px;
+
+    margin-top: $nav-height + $main-element-padding;
+    margin-bottom: $main-element-padding;
+    padding-left: $content-padding;
+    padding-right: $content-padding;
+    min-height: $content-min-height;
+
+    @include media-breakpoint-down(md) {
+      padding-left: 0.5 * $content-padding;
+      padding-right: 0.5 * $content-padding;
+    }
+
+    @include media-breakpoint-down(xs) {
+      padding-left: 0.25 * $content-padding;
+      padding-right: 0.25 * $content-padding;
+    }
+
+    &::before {
+      $background-image: url('../img/NCAS_Logo_Website-Background.png');
+      $background-opacity: 0.13;
+      $background-blur: 10px;
+      $background-size: 90%;
+
+      background: $primary-background-color $background-image no-repeat center fixed;
+      content: '';
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      background-size: $background-size;
+      -webkit-filter: blur($background-blur);
+      -ms-filter: blur($background-blur);
+      filter: blur($background-blur);
+      opacity: $background-opacity;
+    }
+  }
+
+  footer {
+    $footer-internal-margin: 10px;
+    $footer-internal-padding: 5px;
+
+    height: $footer-height;
+    color: $ncas-40-grey;
+    background-color: $secondary-background-color;
+    border-top: $border-size solid $accent-color;
+    text-align: center;
+    font-size: $footer-font-size;
+    padding-top: $footer-internal-padding;
+
+    .icon-box {
+      margin-top: $footer-internal-margin;
+      margin-bottom: $footer-internal-margin;
+
+      .icon-link {
+        margin-right: $footer-internal-margin;
+
+        &,
+        &:link,
+        &:visited,
+        &:hover,
+        &:focus,
+        &:active {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:hover {
+          color: $ncas-teal;
+        }
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}

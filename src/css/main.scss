@@ -1,3 +1,13 @@
-// Main website style
+// Global website style. Also import individual components.
+@import 'base.scss';
 @import 'index.scss';
-@import 'navbar.scss';
+@import 'variables.scss';
+@import url($font-url);
+
+body {
+  font-family: $font-family;
+  font-size: $primary-font-size;
+  color: $primary-font-color;
+  background-color: $primary-background-color;
+  position: relative;
+}
