@@ -38,9 +38,9 @@ const BANNER_JS = `/*\n * ${BANNER_TEXT.join('\n * ')}\n */\n`
 // Pug
 const HTML_DEST = './'
 
-const PUG_SRC = ['index.pug']
+const PUG_SRC = ['*.pug']
 const PUG_TASK = 'pug'
-const PUG_WATCH_SRC = ['index.pug', 'src/**/*.pug']
+const PUG_WATCH_SRC = ['*.pug', 'src/**/*.pug']
 
 // CSS
 const CSS_DEST = './src/css'

@@ -31,14 +31,17 @@ html(lang='en')
         nav(id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top" role="navigation")
 
             a(class="navbar-brand js-scroll-trigger" href="#page-top")
-                img(src='src/img/NCAS_Logo_Final.png',alt="NCAS North Carolina Anthro Society Logo")
+                img(src='src/img/NCAS_Logo_Final.png', alt="NCAS North Carolina Anthro Society Logo")
 
             // Navbar links (Commented b/c no links yet.)
             button(class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation")
                 i(class="fas fa-bars")
             div(class="collapse navbar-collapse" id="navbarResponsive")
-                ul(class="navbar-nav ml-auto")
+                ul(id="navbar-block-links" class="navbar-nav ml-auto")
                     block navbar-page-links
+                ul(id='common-links' class='navbar-nav')
+                    li(class="nav-item")
+                        a(class="nav-link" href="/events.html") Events
 
 
         //- Main body
