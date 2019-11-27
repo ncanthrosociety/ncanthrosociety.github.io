@@ -1,0 +1,28 @@
+extends src/html/partials/base
+
+block navbar-page-links
+
+
+    li(class="nav-page")
+        a(class="nav-link js-scroll-trigger" href="/index.html") Home
+
+    li(class="nav-page")
+        a(class="nav-link js-scroll-trigger active" href="/events.html") Events
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#event01") Something Wild
+
+block content
+
+      section(id='event01' title="Something Wild")
+          h1 NCAS Presents: The Conservators Center
+          p
+              | NCAS is scheduled to host a holiday party
+              | at the Conservators Center on December 21, 2019.
+              | This will involve a 1 hour tour followed by 2 hours
+              | of programming.
+          p
+              | The Triad Furs are having their annual
+              | holiday party on the same day from 16:00-22:00
+              | (4:00-10:00PM), and we will be cross-promoting
+              | their event due to the close timing and location.

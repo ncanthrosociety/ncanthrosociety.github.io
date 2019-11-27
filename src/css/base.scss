@@ -29,7 +29,17 @@ body {
       @include media-breakpoint-down(md) {
         background-color: $ncas-white;
       }
-
+      
+      .nav-page {
+          a {
+              border-right: $border-size solid $ncas-purple;
+              border-bottom: $border-size solid $transparent;
+          }
+          a.active {
+              border-bottom: $border-size solid $ncas-purple;
+          }
+      }
+      
       .nav-item {
         a {
           border-bottom: $border-size solid $transparent;
