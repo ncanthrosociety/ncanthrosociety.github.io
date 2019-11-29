@@ -32,6 +32,7 @@ body {
 
       #navbar-block-links {
         border-right: 0.5px solid $ncas-60-grey;
+
         @include media-breakpoint-down(md) {
           border-right: none;
           border-bottom: 0.5px solid $ncas-60-grey;
@@ -39,9 +40,9 @@ body {
       }
 
       .navbar-nav {
-
         padding-left: 10px;
         padding-right: 10px;
+
         @include media-breakpoint-down(md) {
           padding-left: 0;
           padding-right: 0;
@@ -50,14 +51,13 @@ body {
         &:first-of-type {
           padding-left: 0;
         }
+
         &:last-of-type {
           padding-right: 0;
         }
-
       }
-      
-      .nav-item {
 
+      .nav-item {
         a {
           border-bottom: $border-size solid $transparent;
         }
