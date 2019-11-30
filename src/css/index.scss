@@ -15,10 +15,26 @@ body {
         margin-bottom: 0;
       }
 
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $ncas-60-grey;
+        font-weight: bold;
+      }
+
       h1 {
         font-size: 26px;
-        font-weight: bold;
-        color: $ncas-60-grey;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      h3 {
+        font-size: 20px;
       }
 
       &:hover {

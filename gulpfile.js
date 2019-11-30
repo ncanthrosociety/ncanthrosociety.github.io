@@ -38,9 +38,9 @@ const BANNER_JS = `/*\n * ${BANNER_TEXT.join('\n * ')}\n */\n`
 // Pug
 const HTML_DEST = './'
 
-const PUG_SRC = ['index.pug']
+const PUG_SRC = ['*.pug']
 const PUG_TASK = 'pug'
-const PUG_WATCH_SRC = ['index.pug', 'src/**/*.pug']
+const PUG_WATCH_SRC = ['*.pug', 'src/**/*.pug']
 
 // CSS
 const CSS_DEST = './src/css'
@@ -163,6 +163,9 @@ gulp.task(DEFAULT_TASK, gulp.parallel(LINT_TASK, PUG_TASK, CSS_TASK, JS_TASK, VE
 
 // Gulp watch
 gulp.task(WATCH_TASK, gulp.series(DEFAULT_TASK, () => {
+  gulp.watch(SCSS_LINT_SRC, gulp.series(LINT_SCSS_TASK))
+  gulp.watch(JS_LINT_SRC, gulp.series(LINT_JS_TASK))
+  gulp.watch(PUG_LINT_SRC, gulp.series(LINT_PUG_TASK))
   gulp.watch(PUG_WATCH_SRC, gulp.series(PUG_TASK))
   gulp.watch(SCSS_WATCH_SRC, gulp.series(CSS_TASK))
   gulp.watch(JS_SRC, gulp.series(JS_TASK))
