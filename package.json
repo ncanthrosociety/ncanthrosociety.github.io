@@ -23,13 +23,13 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "jquery.easing": "^1.4.1",
     "popper.js": "^1.15.0"
   },
   "devDependencies": {
-    "eslint": "^6.5.1",
+    "eslint": "^6.7.2",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^10.0.0",
@@ -48,9 +48,9 @@
     "lodash": "^4.17.15",
     "pug-lint": "^2.6.0",
     "stylelint": "^11.0.0",
-    "stylelint-config-recommended-scss": "^4.0.0",
+    "stylelint-config-recommended-scss": "^4.1.0",
     "stylelint-config-standard": "^19.0.0",
-    "stylelint-scss": "^3.11.1",
+    "stylelint-scss": "^3.13.0",
     "uglify-es": "^3.3.9"
   }
 }
