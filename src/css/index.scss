@@ -2,6 +2,7 @@
 @import 'variables.scss';
 
 body {
+  // TODO This should really be in main.scss because it applies globally
   #content {
     section {
       $section-padding-left: 10px;
@@ -40,7 +41,7 @@ body {
       &:hover {
         border-left: $border-size solid $ncas-teal;
 
-        h1 {
+        & > h1 {
           color: $ncas-teal;
         }
       }
