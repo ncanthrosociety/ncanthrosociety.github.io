@@ -2,7 +2,7 @@
 @import 'variables.scss';
 
 body {
-  // TODO This should really be in main.scss because it applies globally
+  // TODO This should really be in base.scss because it applies globally
   #content {
     section {
       $section-padding-left: 10px;
@@ -24,6 +24,7 @@ body {
       h6 {
         color: $ncas-60-grey;
         font-weight: bold;
+        margin-bottom: 15px;
       }
 
       h1 {

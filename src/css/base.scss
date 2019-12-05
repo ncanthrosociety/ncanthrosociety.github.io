@@ -58,6 +58,12 @@ body {
       }
 
       .nav-item {
+        margin-right: 5px;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+
         a {
           border-bottom: $border-size solid $transparent;
         }
