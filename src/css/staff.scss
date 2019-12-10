@@ -1,10 +1,21 @@
 // Staff style
 
-#ncas-staff {
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+@import 'variables.scss';
+
+#president-and-directors {
   .icon {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    margin-right: 50px;
+    margin-right: 15px;
+    border: 1px solid $ncas-60-grey;
+
+    @include media-breakpoint-down(sm) {
+      width: 100px;
+      height: 100px;
+    }
   }
 }
