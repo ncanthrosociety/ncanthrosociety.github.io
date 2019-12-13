@@ -2,6 +2,8 @@
 @import 'base.scss';
 @import 'index.scss';
 @import 'variables.scss';
+@import 'about.scss';
+@import 'staff.scss';
 @import url($font-url);
 
 body {
@@ -10,4 +12,8 @@ body {
   color: $primary-font-color;
   background-color: $primary-background-color;
   position: relative;
+
+  .card {
+    background-color: transparent;
+  }
 }
