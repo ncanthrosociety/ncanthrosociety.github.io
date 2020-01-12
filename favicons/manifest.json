@@ -1,0 +1,15 @@
+{
+  "short_name": "NCAS",
+  "name": "North Carolina Anthropomorphic Society, Inc.",
+  "icons": [
+    {
+      "src": "/favicons/NCAS_WebAppManifest_192x19x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#6456AA",
+  "display": "browser",
+  "theme_color": "#2264A9"
+}
