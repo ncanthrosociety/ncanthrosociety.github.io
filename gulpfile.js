@@ -44,10 +44,10 @@ const PUG_TASK = 'pug'
 const PUG_WATCH_SRC = ['*.pug', 'src/**/*.pug']
 
 // CSS
-const CSS_DEST = './src/css'
+const CSS_DEST = 'css'
 const CSS_TASK = 'css'
-const SCSS_SRC = ['./src/css/main.scss']
-const SCSS_WATCH_SRC = ['src/css/**/*.scss']
+const SCSS_SRC = ['css/main.scss']
+const SCSS_WATCH_SRC = ['css/**/*.scss']
 
 // JS
 const JS_DEST = ['./src/js']
