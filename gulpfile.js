@@ -9,6 +9,7 @@ const _ = require('lodash')
 const cleanCSS = require('gulp-clean-css')
 const composer = require('gulp-uglify/composer')
 const eslint = require('gulp-eslint')
+const express = require('express')
 const gulp = require('gulp')
 const gulpStylelint = require('gulp-stylelint')
 const header = require('gulp-header')
@@ -88,6 +89,11 @@ const JS_LINT_SRC = ['*.js', 'src/**/*.js', '!src/**/*.min.js']
 const PUG_LINT_SRC = ['index.pug', 'src/**/*.pug']
 const SCSS_LINT_SRC = ['src/**/*.scss']
 
+// Serve task
+const SERVE_TASK = 'serve'
+const SERVE_ROOT = __dirname
+const SERVE_PORT = 3000
+
 // Default
 const DEFAULT_TASK = 'default'
 
@@ -158,16 +164,30 @@ gulp.task(VENDOR_EASING_TASK, () => gulp.src(EASING_SRC).pipe(gulp.dest(EASING_D
 
 gulp.task(VENDOR_TASK, gulp.parallel(VENDOR_BOOTSTRAP_TASK, VENDOR_FA_TASK, VENDOR_JQUERY_TASK, VENDOR_EASING_TASK))
 
+// Serve files over a local http server
+gulp.task(SERVE_TASK, () => {
+  const app = express()
+  app.use(express.static(SERVE_ROOT))
+  app.listen(SERVE_PORT)
+  console.log(`Serving website on http://localhost:${SERVE_PORT}`)
+})
+
 // Default task
 gulp.task(DEFAULT_TASK, gulp.parallel(LINT_TASK, PUG_TASK, CSS_TASK, JS_TASK, VENDOR_TASK))
 
 // Gulp watch
-gulp.task(WATCH_TASK, gulp.series(DEFAULT_TASK, () => {
-  gulp.watch(SCSS_LINT_SRC, gulp.series(LINT_SCSS_TASK))
-  gulp.watch(JS_LINT_SRC, gulp.series(LINT_JS_TASK))
-  gulp.watch(PUG_LINT_SRC, gulp.series(LINT_PUG_TASK))
-  gulp.watch(PUG_WATCH_SRC, gulp.series(PUG_TASK))
-  gulp.watch(SCSS_WATCH_SRC, gulp.series(CSS_TASK))
-  gulp.watch(JS_SRC, gulp.series(JS_TASK))
-  gulp.watch(VENDOR_SRC, gulp.series(VENDOR_TASK))
-}))
+gulp.task(WATCH_TASK, gulp.series(
+  DEFAULT_TASK,
+  gulp.parallel(
+    () => {
+      gulp.watch(SCSS_LINT_SRC, gulp.series(LINT_SCSS_TASK))
+      gulp.watch(JS_LINT_SRC, gulp.series(LINT_JS_TASK))
+      gulp.watch(PUG_LINT_SRC, gulp.series(LINT_PUG_TASK))
+      gulp.watch(PUG_WATCH_SRC, gulp.series(PUG_TASK))
+      gulp.watch(SCSS_WATCH_SRC, gulp.series(CSS_TASK))
+      gulp.watch(JS_SRC, gulp.series(JS_TASK))
+      gulp.watch(VENDOR_SRC, gulp.series(VENDOR_TASK))
+    },
+    SERVE_TASK
+  )
+))

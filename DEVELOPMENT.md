@@ -41,7 +41,15 @@ to be installed manually, but are listed for informational purposes.
    ```
    npx gulp
    ```
-5. Open `index.html`!
+5. Run
+   ```
+   npx gulp serve
+   ```
+5. Open `http://localhost:3000`!
+
+Alternately, you can run `npx gulp watch` or `npm gulp-watch`. This will run
+the default build, set gulp to watch and rebuild files when the are edited,
+then serve the website, all in one step!
 
 ## Deploying
 
