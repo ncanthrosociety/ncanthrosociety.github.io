@@ -50,8 +50,8 @@ const SCSS_SRC = ['css/main.scss']
 const SCSS_WATCH_SRC = ['css/**/*.scss']
 
 // JS
-const JS_DEST = ['./src/js']
-const JS_SRC = ['./src/js/*.js', '!./src/js/*.min.js']
+const JS_DEST = ['js']
+const JS_SRC = ['js/*.js', '!js/*.min.js']
 const JS_TASK = 'js'
 
 // Vendor
