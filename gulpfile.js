@@ -37,21 +37,17 @@ const BANNER_JS = `/*\n * ${BANNER_TEXT.join('\n * ')}\n */\n`
 // Gulp task constants
 
 // Pug
-const HTML_DEST = './'
-
-const PUG_SRC = ['*.pug']
+const PUG_SRC = ['**/*.pug', '!node_modules/**/*.js']
 const PUG_TASK = 'pug'
-const PUG_WATCH_SRC = ['*.pug', 'src/**/*.pug']
+const PUG_WATCH_SRC = ['**/*.pug', '!node_modules/**/*.pug']
 
 // CSS
-const CSS_DEST = 'css'
 const CSS_TASK = 'css'
 const SCSS_SRC = ['css/main.scss']
 const SCSS_WATCH_SRC = ['css/**/*.scss']
 
 // JS
-const JS_DEST = ['js']
-const JS_SRC = ['js/*.js', '!js/*.min.js']
+const JS_SRC = ['js/**/*.js', '!js/**/*.min.js']
 const JS_TASK = 'js'
 
 // Vendor
@@ -85,9 +81,9 @@ const LINT_JS_TASK = 'lint-js'
 const LINT_PUG_TASK = 'lint-pug'
 const LINT_SCSS_TASK = 'lint-scss'
 const LINT_TASK = 'lint'
-const JS_LINT_SRC = ['*.js', 'src/**/*.js', '!src/**/*.min.js']
-const PUG_LINT_SRC = ['index.pug', 'src/**/*.pug']
-const SCSS_LINT_SRC = ['src/**/*.scss']
+const JS_LINT_SRC = _.concat('*.js', JS_SRC)
+const PUG_LINT_SRC = PUG_SRC
+const SCSS_LINT_SRC = SCSS_SRC
 
 // Serve task
 const SERVE_TASK = 'serve'
@@ -99,6 +95,20 @@ const DEFAULT_TASK = 'default'
 
 // Watch
 const WATCH_TASK = 'watch'
+
+// Helper functions
+
+/**
+ * Return the base of a Gulp Vinyl object.
+ *
+ * This is useful as a parameter to .dest() if you want the output file to be in the same directory as the input file
+ * for an arbitrary set of files.
+ *
+ * @param   file     Gulp file object
+ * @returns {string} File base path.
+ * @private
+ */
+const _base = file => file.base
 
 // Gulp task definitions
 
@@ -126,9 +136,11 @@ gulp.task(LINT_TASK, gulp.parallel(LINT_SCSS_TASK, LINT_JS_TASK, LINT_PUG_TASK))
 gulp.task(PUG_TASK, () => {
   return gulp
     .src(PUG_SRC)
-    .pipe(pug())
+    .pipe(pug({
+      basedir: __dirname
+    }))
     .pipe(header(BANNER_HTML, { pkg }))
-    .pipe(gulp.dest(HTML_DEST))
+    .pipe(gulp.dest(_base))
 })
 
 // Compile SCSS
@@ -140,7 +152,7 @@ gulp.task(CSS_TASK, () => {
     .pipe(cleanCSS())
     .pipe(header(BANNER_CSS, { pkg }))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(CSS_DEST))
+    .pipe(gulp.dest(_base))
 })
 
 // Javascript
@@ -150,7 +162,7 @@ gulp.task(JS_TASK, () => {
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
     .pipe(header(BANNER_JS, { pkg }))
-    .pipe(gulp.dest(JS_DEST))
+    .pipe(gulp.dest(_base))
 })
 
 // Copy third party libraries from /node_modules into /vendor
