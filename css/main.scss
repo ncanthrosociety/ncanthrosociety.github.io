@@ -13,7 +13,8 @@ body {
   background-color: $primary-background-color;
   position: relative;
 
-  .card {
+  .card,
+  .list-group-item {
     background-color: transparent;
   }
 }
