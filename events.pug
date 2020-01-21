@@ -3,25 +3,111 @@ extends base
 block navbar-page-links
 
     li(class="nav-item")
-        a(class="nav-link js-scroll-trigger" href="#teaser") Coming Soon
+            a(class="nav-link js-scroll-trigger" href="#upcoming-events") Upcoming Events
+
+    li(class="nav-item")
+        a(class="nav-link" href="https://calendar.google.com/calendar/embed?src=mvf6oq58d0v265k89sdc815r2s%40group.calendar.google.com&ctz=America%2FNew_York") Calendar
+
+    // li(class="nav-item")
+    //    a(class="nav-link js-scroll-trigger" href="#teaser") Coming Soon
         
 block content
 
-    section(id='teaser' title="Coming soon")
-        h1 More Events Coming Soon
-        p
-            | Have you ever wanted to rent out an entire movie
-            | theater for a bad horror movie marathon, or spend a
-            | night around a campfire telling stories with your fellow
-            | furries? How about strutting your stuff to show your pride
-            | in fursuit, or volunteering to bring a smile to someone's
-            | day? Well, you're in the right place!
-        p
-            | We're currently hard at work at organizing a variety
-            | of exciting events and activities in the North Carolina
-            | area. Whether you're looking for something indoors or
-            | outdoors, a thrilling outing or a relaxing weekend,
-            | we'll have you covered!
-        p
-            | Stay tuned, we look forward to seeing you at
-            | our future events!
+    section(id='upcoming-events' title='Upcoming Events')
+
+        h1 Upcoming Events
+
+        div(class='row row-cols-1 row-cols-xl-2')
+
+            div(class='col mb-4')
+                div(class='card h-100')
+                    div(class='card-header') Something for Dogbomb - Raleigh ALS Walk Kickoff!
+                    ul(class='list-group list-group-flush')
+                        li(class='list-group-item') 06:30 PM - 08:30 PM Thursday, February 27, 2020.
+                        li(class='list-group-item')
+                            a(href='https://goo.gl/maps/8GbHNtoYBs7apVHB7') Stalls Medical Cary 7980 Chapel Hill Rd, Cary NC 27513
+                    div(class='card-body')
+                        div(class='container')
+                            div(class='row row-cols-1 row-cols-md-2')
+                                div(class='col text-center mb-4')
+                                    a(class='btn btn-lg btn-outline-primary' href='/events/als-walk.html') More Information.
+                                div(class='col text-center mb-4')
+                                    a(class='btn btn-lg btn-outline-primary' href='https://docs.google.com/spreadsheets/d/1WQ7S1_dMeJDydqsdP9hRaluL_nfg0wDGqiZnmqvecbg/edit?usp=sharing') Register Now.
+                        p(class='card-text')
+                            | The ALS Walk kickoff is a warm up gathering hosted by the ALS Association focused on
+                            | sponsors, long time contributors, volunteers, care givers, and more. Come join the
+                            | #[a(href='http://webnc.alsa.org/goto/friendsoftony') Friends of Tony], meet your fellow
+                            | teammates, interact with other teams, and learn about new research and treatment
+                            | development in the fight to kick ALS in the butt.
+                        p(class='card-text')
+                            | Food and beverages will be provided. Registration is required so that the ALS Association
+                            | can plan accordingly. Registration is free!
+
+            div(class='col mb-4')
+                div(class='card h-100')
+                    div(class='card-header') Something for Dogbomb - Raleigh ALS Walk
+                    ul(class='list-group list-group-flush')
+                        li(class='list-group-item') 08:30 AM Saturday, April 18, 2020.
+                        li(class='list-group-item')
+                            a(href='https://goo.gl/maps/cgiZwsQiUvLWYrAw8') Halifax Mall, 300 N Salisbury St, Raleigh, NC 27601
+                    div(class='card-body')
+                        div(class='container')
+                            div(class='row row-cols-1 row-cols-md-2')
+                                div(class='col text-center mb-4')
+                                    a(class='btn btn-lg btn-outline-primary' href='/events/als-walk.html') More Information.
+                                div(class='col text-center mb-4')
+                                    a(class='btn btn-lg btn-outline-primary' href='https://docs.google.com/spreadsheets/d/17WMiz7VWlb6GrhvojIe7AANUFnSTR0H0uD2A-G6sEBU/edit?usp=sharing') Register Now.
+                        p(class='card-text')
+                            | #[a(href='http://webnc.alsa.org/goto/friendsoftony') Friends of Tony] is a team formed in
+                            | support and honor of Tony “Dogbomb” Barrett, a member of the anthropomorphic community
+                            | who was diagnosed with Amyotrophic Lateral Sclerosis (ALS).
+                        p(class='card-text')
+                            | ALS is a progressive neurodegenerative disease that affects nerves in the brain and spinal
+                            | cord. It slowly robs the body of its ability to walk, speak, swallow, and breathe. The
+                            | life expectancy of a person with ALS averages 2 to 5 years from the time of diagnosis. The
+                            | Friends of Tony  are dedicated to aiding the ALS association in their goal of bringing
+                            | hope, raising awareness, and providing resources and services to families affected by ALS
+                            | free of charge.
+                        p(class='card-text')
+                            | Join the Friends of Tony as they walk in memory of Dobgomb on April 18, 2020 at the
+                            | Raleigh ALS Walk hosted by the ALS Association. Check-in is at 08:30 AM, and the walk
+                            | starts at 10:00 AM. The walk length is 2 miles. Fursuits are very much welcome!
+
+            //div(class='col mb-4')
+            //    div(class='card h-100')
+            //        div(class='card-header') Codename - Title
+            //        // If doing an image, it should be at least 3:1 aspect ratio
+            //        img(class='card-img-top' src='/img/event-images/...' alt="Event Picture")
+            //        ul(class='list-group list-group-flush')
+            //            li(class='list-group-item') Registration: $xx.xx/person.
+            //            li(class='list-group-item') xx:xx AM/PM - xx:xx AM/PM Month Day, Year.
+            //            li(class='list-group-item')
+            //                a(href='') Address
+            //        div(class='card-body')
+            //            div(class='container')
+            //                div(class='row row-cols-1 row-cols-md-2')
+            //                    div(class='col text-center mb-4')
+            //                        a(class='btn btn-lg btn-outline-primary' href='/events/') More Information.
+            //                    div(class='col text-center mb-4')
+            //                        a(class='btn btn-lg btn-outline-primary' href='') Register Now.
+            //            p(class='card-text')
+            //                | "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+    //section(id='teaser' title="Coming soon")
+    //    h1 More Events Coming Soon
+    //    p
+    //        | Have you ever wanted to rent out an entire movie
+    //        | theater for a bad horror movie marathon, or spend a
+    //        | night around a campfire telling stories with your fellow
+    //        | furries? How about strutting your stuff to show your pride
+    //        | in fursuit, or volunteering to bring a smile to someone's
+    //        | day? Well, you're in the right place!
+    //    p
+    //        | We're currently hard at work at organizing a variety
+    //        | of exciting events and activities in the North Carolina
+    //        | area. Whether you're looking for something indoors or
+    //        | outdoors, a thrilling outing or a relaxing weekend,
+    //        | we'll have you covered!
+    //    p
+    //        | Stay tuned, we look forward to seeing you at
+    //        | our future events!
