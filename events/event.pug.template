@@ -1,0 +1,84 @@
+extends /base
+
+block navbar-page-links
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#description") Description
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#details") Details
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#schedule") Schedule
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#registration") Registration
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#faq") FAQ
+
+block content
+
+    section(id='description' title='Event Description')
+
+        h1 Title
+
+        p
+            | General description of the event here.
+
+    section(id='details' title='Details')
+
+        h2 Details
+
+        ul
+            li Date: Month Day, Year.
+            li Time: x:xx - x:xx AM/PM TIMEZONE.
+            li
+                | Location: Address link.
+
+            li
+                | Website: link.
+            li Registration: value.
+
+    section(id='schedule' title='Schedule')
+
+        h2 Schedule
+
+        ul
+            li
+                | xx:xx-xx:xx AM/PM EST - event.
+            li
+                | xx:xx-xx:xx AM/PM EST - event.
+                ul
+                    li xx:xx-xx:xx AM/PM EST - event.
+                    li xx:xx-xx:xx AM/PM EST - event.
+
+    section(id='registration' title='Registration')
+
+        h2 Registration
+
+        P
+            | Some blurb about reg if needed.
+
+        h3 General Registration
+        ul
+            li
+                | Registration is available on
+                |
+                a(href="", title="Registration Page") RegFox.
+            li
+                | Deadline to register: xx:xx AM/PM on Month Day.
+            li Refund policy...
+
+        h3 Voting Member Registration
+        p
+            | If you are a voting member, please check the voting member
+            | Telegram chat for additional details.
+
+    section(id='faq' title='FAQ')
+
+        h2 FAQ
+
+        h3 Question?
+        p
+            | Answer!
