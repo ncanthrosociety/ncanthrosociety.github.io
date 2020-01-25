@@ -53,8 +53,8 @@ html(lang='en')
                     li(class="nav-item")
                         a(class="nav-link" href="/events.html") Events
                     li(class='nav-item dropdown')
-                        a(class='nav-link dropdown-toggle' href='#' id='navabarStaffDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Staff
-                        div(class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarStaffDropdown')
+                        a(id='navbar-staff-dropdown-toggle' class='nav-link dropdown-toggle' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Staff
+                        div(id='navbar-staff-dropdown-menu' class='dropdown-menu dropdown-menu-right' aria-labelledby='navbar-staff-dropdown-toggle')
                             a(class='dropdown-item' href='/staff/directors.html') President and Directors
                             a(class='dropdown-item' href='/staff/application.html') Staff and Volunteer Information
 
@@ -84,6 +84,7 @@ html(lang='en')
 
         //- Plugin JavaScript
         script(src='/vendor/jquery-easing/jquery.easing.min.js')
+        script(src='/vendor/lodash/lodash.min.js')
 
         //- Google Analytics
         script(src="https://www.googletagmanager.com/gtag/js?id=UA-148960561-1")

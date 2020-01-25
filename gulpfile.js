@@ -69,11 +69,16 @@ const JQUERY_SRC = [
   './node_modules/jquery/dist/*',
   '!./node_modules/jquery/dist/core.js'
 ]
+const LODASH_DEST = './vendor/lodash'
+const LODASH_SRC = [
+  './node_modules/lodash/lodash.min.js'
+]
 const VENDOR_SRC = _.concat(BOOTSTRAP_SRC, FA_SRC, JQUERY_SRC, EASING_SRC)
 const VENDOR_BOOTSTRAP_TASK = 'vendor-bootstrap'
+const VENDOR_EASING_TASK = 'vendor-easing'
 const VENDOR_FA_TASK = 'vendor-fa'
 const VENDOR_JQUERY_TASK = 'vendor-jquery'
-const VENDOR_EASING_TASK = 'vendor-easing'
+const VENDOR_LODASH_TASK = 'vendor-lodash'
 const VENDOR_TASK = 'vendor'
 
 // Lint
@@ -168,13 +173,18 @@ gulp.task(JS_TASK, () => {
 // Copy third party libraries from /node_modules into /vendor
 gulp.task(VENDOR_BOOTSTRAP_TASK, () => gulp.src(BOOTSTRAP_SRC).pipe(gulp.dest(BOOTSTRAP_DEST)))
 
+gulp.task(VENDOR_LODASH_TASK, () => gulp.src(LODASH_SRC).pipe(gulp.dest(LODASH_DEST)))
+
 gulp.task(VENDOR_FA_TASK, () => gulp.src(FA_SRC).pipe(gulp.dest(FA_DEST)))
 
 gulp.task(VENDOR_JQUERY_TASK, () => gulp.src(JQUERY_SRC).pipe(gulp.dest(JQUERY_DEST)))
 
 gulp.task(VENDOR_EASING_TASK, () => gulp.src(EASING_SRC).pipe(gulp.dest(EASING_DEST)))
 
-gulp.task(VENDOR_TASK, gulp.parallel(VENDOR_BOOTSTRAP_TASK, VENDOR_FA_TASK, VENDOR_JQUERY_TASK, VENDOR_EASING_TASK))
+gulp.task(
+  VENDOR_TASK,
+  gulp.parallel(VENDOR_BOOTSTRAP_TASK, VENDOR_LODASH_TASK, VENDOR_FA_TASK, VENDOR_JQUERY_TASK, VENDOR_EASING_TASK)
+)
 
 // Serve files over a local http server
 gulp.task(SERVE_TASK, () => {

@@ -64,4 +64,10 @@
 
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse)
+
+  // Set viewport height.
+  $(window).on('resize', _.debounce(
+    () => document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`),
+    200
+  ))
 })(jQuery)
