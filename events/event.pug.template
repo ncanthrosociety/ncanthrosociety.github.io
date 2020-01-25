@@ -35,7 +35,6 @@ block content
             li Time: x:xx - x:xx AM/PM TIMEZONE.
             li
                 | Location: Address link.
-
             li
                 | Website: link.
             li Registration: value.

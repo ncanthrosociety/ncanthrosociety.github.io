@@ -1,9 +1,9 @@
 // Global website style. Also import individual components.
-@import 'base';
-@import 'index';
-@import 'variables';
 @import 'about';
+@import 'base';
+@import 'events';
 @import 'staff';
+@import 'variables';
 @import url($font-url);
 
 body {
