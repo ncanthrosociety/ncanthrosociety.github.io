@@ -13,6 +13,22 @@ $footer-height: 120px;
 $content-min-height: calc(100vh - (#{$nav-height} + (2 * #{$main-element-padding}) + #{$footer-height}));
 
 body {
+  .icon-link {
+    &,
+    &:link,
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active {
+      color: $ncas-40-grey;
+      text-decoration: none;
+    }
+
+    &:hover {
+      color: $ncas-teal;
+    }
+  }
+
   #navbar {
     background: $ncas-white;
     height: $nav-height;
@@ -75,8 +91,6 @@ body {
       }
 
       .nav-item {
-        margin-right: 5px;
-
         &:last-of-type {
           margin-right: 0;
         }
@@ -203,22 +217,8 @@ body {
       .icon-link {
         margin-right: $footer-internal-margin;
 
-        &,
-        &:link,
-        &:visited,
-        &:hover,
-        &:focus,
-        &:active {
-          color: inherit;
-          text-decoration: none;
-        }
-
         &:last-child {
           margin-right: 0;
-        }
-
-        &:hover {
-          color: $ncas-teal;
         }
       }
     }
