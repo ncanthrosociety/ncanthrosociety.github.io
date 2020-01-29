@@ -11,6 +11,12 @@
     "Faelan Galanti",
     "Southbridge"
   ],
+  "keywords": [
+    "NCAS",
+    "NC Anthro Society",
+    "North Carolina Anthro Society",
+    "North Carolina Anthropomorphic Society"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ncanthrosociety/ncanthrosociety.github.io.git"
