@@ -34,7 +34,7 @@ block content
     section(id='video' title="")
 
         P
-            div(class="embed-responsive embed-responsive-16by9" style="max-width:900px;")
+            div(class="embed-responsive embed-responsive-16by9 event-info-media")
                 iframe(type='text/html' class="embed-responsive-item" src="https://www.youtube.com/embed/rhIc4RCG_M0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 
     section(id='details' title='Details')
@@ -129,7 +129,12 @@ block content
             | or other fursuit items that will drag on the floor, because they pose a safety risk to skaters.
 
         h3 Where is the Wheels Fun Park located? How do I get there?
-        p #[a(href='https://goo.gl/maps/16wFFN8XHktbqgys5') 715 N. Hoover Road, Durham, NC 27703].
+        p
+            | #[a(href='https://goo.gl/maps/16wFFN8XHktbqgys5') 715 N. Hoover Road, Durham, NC 27703]. Wheels has more
+            | than one parking lot. See the map below for where you should park!
+
+        div(class='event-info-media mb-4')
+            img(class='img-fluid' src='/img/events/wheels-fun-park.png' alt='Wheels Fun Park parking.')
 
         h3 What do I need to do to prepare or bring to the event?
         p
