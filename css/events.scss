@@ -1,3 +1,6 @@
+// Imports
+@import 'node_modules/bootstrap/scss/mixins';
+
 // Event page(es) style
 
 .event-btn-row {
@@ -10,4 +13,25 @@
 
 .event-info-media {
   max-width: 900px;
+}
+
+#als-walk-2020-shirt {
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  #als-walk-2020-shirt-art,
+  #als-walk-2020-shirt-model{
+    width: 100%;
+    max-width: 350px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+    #als-walk-2020-shirt-art,
+    #als-walk-2020-shirt-model{
+      max-width: none;
+    }
+  }
 }
