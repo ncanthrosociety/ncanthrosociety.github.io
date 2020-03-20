@@ -91,9 +91,12 @@ const PUG_LINT_SRC = PUG_SRC
 const SCSS_LINT_SRC = SCSS_SRC
 
 // Serve task
+const ENV_SERVE_HOST = 'NCAS_SERVE_HOST'
+const ENV_SERVE_PORT = 'NCAS_SERVE_PORT'
 const SERVE_TASK = 'serve'
 const SERVE_ROOT = __dirname
 const SERVE_PORT = 3000
+const SERVE_HOST = 'localhost'
 
 // Default
 const DEFAULT_TASK = 'default'
@@ -188,10 +191,13 @@ gulp.task(
 
 // Serve files over a local http server
 gulp.task(SERVE_TASK, () => {
+  const host = process.env[ENV_SERVE_HOST] || SERVE_HOST
+  const port = process.env[ENV_SERVE_PORT] || SERVE_PORT
   const app = express()
-  app.use(express.static(SERVE_ROOT))
-  app.listen(SERVE_PORT)
-  console.log(`Serving website on http://localhost:${SERVE_PORT}`)
+  app.use(express.static(SERVE_ROOT, { extensions: ['html'] }))
+  app.use((req, res, next) => res.status(404).sendFile('404.html', { root: SERVE_ROOT }))
+  app.listen(port, host)
+  console.log(`Serving website on http://${host}:${port}`)
 })
 
 // Default task
