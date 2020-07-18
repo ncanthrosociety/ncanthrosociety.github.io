@@ -53,7 +53,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-stylelint": "^9.0.0",
     "gulp-uglify": "^3.0.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "pug-lint": "^2.6.0",
     "stylelint": "^13.4.0",
     "stylelint-config-recommended-scss": "^4.2.0",
