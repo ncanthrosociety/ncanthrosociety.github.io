@@ -29,8 +29,8 @@
     "gulp-watch": "npx gulp watch"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
-    "bootstrap": "^4.5.0",
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "bootstrap": "^4.5.2",
     "jquery": "^3.5.1",
     "jquery.easing": "^1.4.1",
     "popper.js": "^1.16.1"
@@ -38,7 +38,7 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
@@ -48,17 +48,17 @@
     "gulp-eslint": "^6.0.0",
     "gulp-header": "^2.0.9",
     "gulp-pug": "^4.0.1",
-    "gulp-pug-linter": "^1.3.0",
+    "gulp-pug-linter": "^1.4.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.1.0",
     "gulp-stylelint": "^9.0.0",
     "gulp-uglify": "^3.0.2",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.20",
     "pug-lint": "^2.6.0",
-    "stylelint": "^13.4.0",
+    "stylelint": "^13.7.1",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-config-standard": "^19.0.0",
-    "stylelint-scss": "^3.17.2",
+    "stylelint-scss": "^3.18.0",
     "uglify-es": "^3.3.9"
   }
 }
