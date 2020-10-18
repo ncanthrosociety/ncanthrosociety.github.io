@@ -9,7 +9,7 @@
 // Main element dimensions/margins/etc.
 $main-element-padding: 30px;
 $nav-height: 70px;
-$footer-height: 120px;
+$footer-height: 170px;
 $content-min-height: calc(100vh - (#{$nav-height} + (2 * #{$main-element-padding}) + #{$footer-height}));
 
 body {
@@ -209,10 +209,26 @@ body {
     text-align: center;
     font-size: $footer-font-size;
     padding-top: $footer-internal-padding;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     .icon-box {
       margin-top: $footer-internal-margin;
       margin-bottom: $footer-internal-margin;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .icon-set {
+        margin-right: $footer-internal-margin;
+        margin-bottom: $footer-internal-margin;
+
+        &:last-of-type {
+          margin-right: 0;
+          margin-bottom: 0;
+        }
+      }
 
       .icon-link {
         margin-right: $footer-internal-margin;
@@ -226,5 +242,6 @@ body {
     p {
       margin: 0;
     }
+
   }
 }
