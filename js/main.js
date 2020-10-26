@@ -59,10 +59,8 @@
     }
   )
 
-  // Collapse now if page is not at top
-  navbarCollapse()
-
   // Collapse the navbar when page is scrolled
+  $(window).on('load', navbarCollapse)
   $(window).scroll(navbarCollapse)
 
   // Set viewport height.
@@ -70,4 +68,43 @@
     () => document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`),
     200
   ))
+
+  function navbarOverflow () {
+    const nav = $('#navbar')
+    const links = $('#navbar-block-links')
+    const overflow = $('#navbar-block-links-overflow')
+    const toggle = $('#navbar-block-links-overflow-toggle')
+    const dropdown = $('#navbar-block-links-overflow-dropdown')
+
+    if (nav.prop('scrollWidth') > nav.outerWidth()) {
+      toggle.removeClass('d-none')
+      const children = links.children('li:not(:last-of-type)').toArray()
+      while (children.length > 0 && nav.prop('scrollWidth') > nav.outerWidth()) {
+        const child = $(children.pop())
+        child.prependTo(dropdown)
+      }
+    } else {
+      const children = dropdown.children('li').toArray().reverse()
+      while (children.length > 0) {
+        const child = $(children.pop())
+        overflow.before(child)
+        if (children.length === 0) {
+          toggle.addClass('d-none')
+        }
+        if (nav.prop('scrollWidth') > nav.outerWidth()) {
+          child.prependTo(dropdown)
+          toggle.removeClass('d-none')
+          break
+        }
+      }
+    }
+  }
+
+  const links = $('#navbarResponsive')
+  links.css('visibility', 'hidden')
+  $(window).on('load', () => {
+    navbarOverflow()
+    links.css('visibility', 'visible')
+  })
+  $(window).on('resize', _.debounce(navbarOverflow, 50))
 })(jQuery)

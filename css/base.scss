@@ -33,6 +33,7 @@ body {
     background: $ncas-white;
     height: $nav-height;
     box-shadow: 0 3px 3px $ncas-90-grey;
+    white-space: nowrap;
 
     .navbar-brand {
       img {
