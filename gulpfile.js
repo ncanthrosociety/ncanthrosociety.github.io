@@ -37,7 +37,7 @@ const BANNER_JS = `/*\n * ${BANNER_TEXT.join('\n * ')}\n */\n`
 // Gulp task constants
 
 // Pug
-const PUG_SRC = ['**/*.pug', '!node_modules/**/*.js']
+const PUG_SRC = ['**/*.pug', '!node_modules/**/*.pug']
 const PUG_TASK = 'pug'
 const PUG_WATCH_SRC = ['**/*.pug', '!node_modules/**/*.pug']
 
