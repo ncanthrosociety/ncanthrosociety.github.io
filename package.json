@@ -53,6 +53,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-stylelint": "^9.0.0",
     "gulp-uglify": "^3.0.2",
+    "jstransformer-markdown-it": "^2.1.0",
     "lodash": "^4.17.20",
     "pug-lint": "^2.6.0",
     "stylelint": "^13.7.2",
