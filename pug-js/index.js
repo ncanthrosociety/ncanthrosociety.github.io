@@ -39,6 +39,10 @@
  */
 
 
+// Imports.
+const MarkdownIt = require('markdown-it')
+
+
 // Current datetime.
 const now = exports.now = new Date()
 
@@ -124,4 +128,4 @@ const compareEventTimes = exports.compareEventTimes = function(e1, e2) {
 
 
 // Markdown renderer.
-exports.markdown = require('jstransformer-markdown-it')
+exports.markdown = new MarkdownIt()
