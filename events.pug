@@ -1,5 +1,7 @@
 extends base
 
+include mixins/event-card
+
 block navbar-page-links
 
     li(class="nav-item")
@@ -14,10 +16,9 @@ block navbar-page-links
     li(class="nav-item")
         a(class="nav-link" href="https://calendar.google.com/calendar/embed?src=mvf6oq58d0v265k89sdc815r2s%40group.calendar.google.com&ctz=America%2FNew_York") Calendar
 
-    // li(class="nav-item")
-    //    a(class="nav-link js-scroll-trigger" href="#teaser") Coming Soon
-        
 block content
+
+    include mixins/events-list
 
     section(id='events-recurring')
 
@@ -25,108 +26,34 @@ block content
 
         div(class='row row-cols-1 row-cols-xl-2')
 
-            div(class='col mb-4')
-                div(class='card h-100')
-                    div(class='card-header') NCAS Stream
-                    ul(class='list-group list-group-flush')
-                        li(class='list-group-item')
-                            | The third Wednesday of every month at 7:00 PM. See our public #[a(href='https://calendar.google.com/calendar/embed?src=mvf6oq58d0v265k89sdc815r2s%40group.calendar.google.com&ctz=America%2FNew_York') calendar]
-                            | for exact dates and additional details!
-                    div(class='card-body')
-                        div(class='container-fluid')
-                            div(class='row event-btn-row row-cols-1 row-cols-md-2')
-                                div(class='col text-center mb-4')
-                                    a(class='btn btn-lg btn-outline-primary' href='https://www.twitch.tv/ncanthrosociety') Twitch
-                                div(class='col text-center mb-4')
-                                    a(class='btn btn-lg btn-outline-primary' href='https://www.youtube.com/channel/UCpjFQ6oZSFAwIqq7uK6Di0A/live') YouTube
-                                div(class='col text-center mb-4')
-                                    a(class='btn btn-lg btn-outline-primary' href='https://www.pscp.tv/ncanthrosociety') Periscope
-                        p(class='card-text')
-                            | Join us on the third Wednesday of every month at 7:00 PM on Twitch, YouTube, or Periscope
-                            | for an evening stream containing games, info, and more! Content varies from stream to
-                            | stream, but is always a blast.
+            for e in recurringEvents
+                +event-card(e)
 
     section(id='upcoming-events')
 
-        h1 Upcoming Events
+        if upcomingEvents.length
 
-        div(class='row row-cols-1 row-cols-xl-2')
+            h1 Upcoming Events
 
-            div(class='col mb-4')
-                div(class='card h-100')
-                    div(class='card-header') Improv Night
-                    ul(class='list-group list-group-flush')
-                        li(class='list-group-item') 7:00 PM - 9:00 PM February 9 2021
-                        li(class='list-group-item')
-                            a(href='https://discord.com/invite/bCRXhFR' target='_blank') NCAS Discord
-                    div(class='card-body')
-                        p(class='card-text')
-                            | Miss having your funny bone tickled? Or maybe you're the jokester riling up your friend?
-                            | Come join the NCAS Improv Night on Feb 9th at 7pm on the
-                            | #[a(href='https://discord.com/invite/bCRXhFR' target='_blank') NCAS Discord]. 
-                            | There will be some fun comedy games to play or you can sit back and laugh!
+            div(class='row row-cols-1 row-cols-xl-2')
 
-            div(class='col mb-4')
-                div(class='card h-100')
-                    div(class='card-header') Discord Dinner Meet
-                    ul(class='list-group list-group-flush')
-                        li(class='list-group-item') 7:00 PM - 9:00 PM February 24 2021
-                        li(class='list-group-item')
-                            a(href='https://discord.com/invite/bCRXhFR') NCAS Discord
-                    div(class='card-body')
-                        p(class='card-text').
-                            Let's face it, eating alone isn't always fun. We humans are social animals, and we crave
-                            interaction! But thanks to the Coronavirus, we've become castaways in our own homes.
-                        p(class='card-text').
-                            So let's take a break for a night, use our technology to help us stay sane, and enjoy a
-                            nice meal together over Discord! We can share gossip, swap recipes, and maybe even play some
-                            party games!
+                for e in upcomingEvents
+                    +event-card(e)
+        else
 
-            div(class='col mb-4')
-                div(class='card h-100')
-                    div(class='card-header') Bewhiskered 2021: Prepare for Blast Off!
-                    img(class='card-img-top' src='/img/events/bewhiskered-2020/bewhiskered-logo.png' alt="Event Picture")
-                    div(class='card-body')
-                        div(class='container-fluid')
-                            div(class='row event-btn-row row-cols-1')
-                                div(class='col text-center mb-4')
-                                    a(class='btn btn-lg btn-outline-primary' href='https://bewhiskeredcon.org') More Info
-                        p(class='card-text')
-                            | The NC Anthro Society is proud to bring you Bewhiskered 2021, a convention hosted by the
-                            | furs of North Carolina for furs of all parts of the world. Located in the lovely Marriott
-                            | at Research Triangle Park, Bewhiskered is in the heart of The Triangle and is just a few
-                            | minutes drive away from the state’s capital and RDU airport.
-                        p(class='card-text')
-                            | Our inaugural theme is “Blast Off” both for the convention’s official debut, and in honor
-                            | of the 50th anniversary of Apollo 13. Come be whisked away by our mascots, Commander
-                            | Whisky and Flight Engineer Cassie, as they prepare to take you on the launch of a lifetime
-                            | in the only way they know how: a three day weekend full of friends, entertainment, and
-                            | much much more.
+            h1 More Events Coming Soon
 
-            div(class='col mb-4')
-                div(class='card h-100')
-                    div(class='card-header') Blue Ridge Furfare (BRFF): The Great Outdoors
-                    img(class='card-img-top' src='/img/events/brff-2021/brff-logo.png' alt="Event Picture")
-                    ul(class='list-group list-group-flush')
-                        li(class='list-group-item') March 11-14, 2021.
-                        li(class='list-group-item') Asheville, North Carolina.
-                    div(class='card-body')
-                        div(class='container-fluid')
-                            div(class='row event-btn-row row-cols-1')
-                                div(class='col text-center mb-4')
-                                    a(class='btn btn-lg btn-outline-primary' href='https://www.blueridgefurfare.com/') More Info
-                        p(class='card-text')
-                            | Ready for a convention in Asheville, North Carolina? Pounce into a weekend of dance
-                            | competitions, fursuit photography, and chill Asheville vibes.
-                        p(class='card-text')
-                            | BRFF is proud to present their guest of honor Remy Wolf.
-                            ul
-                                li
-                                    a(href='http://www.remywolf.com/') #[i(class='fas fa-link icon-link')] www.remywolf.com
-                                li
-                                    a(href='https://twitter.com/Remy__Wolf') #[i(class='fab fa-twitter icon-link')] Twitter @Remy__Wolf
-                                li
-                                    a(href='https://www.furaffinity.net/user/thedoggygal') #[i(class='fas fa-link icon-link')] Fur Affinity           
+            p.
+                Have you ever wanted to rent out an entire movie theater for a bad horror movie marathon, or spend a
+                night around a campfire telling stories with your fellow furries? How about strutting your stuff to
+                show your pride in fursuit, or volunteering to bring a smile to someone's day? Well, you're in the
+                right place!
+            p.
+                We're currently hard at work at organizing a variety of exciting events and activities in the
+                North Carolina area. Whether you're looking for something indoors or outdoors, a thrilling outing
+                or a relaxing weekend, we'll have you covered!
+            p.
+                Stay tuned, we look forward to seeing you at our future events!
 
     section(id='past-events')
 
@@ -134,155 +61,5 @@ block content
 
         div(class='row row-cols-1 row-cols-xl-2')
 
-            div(class='col mb-4')
-                div(class='card h-100')
-                    div(class='card-header') Virtual New Years Eve Party
-                    ul(class='list-group list-group-flush')
-                        li(class='list-group-item') 9:00 PM December 31, 2020 - 12:30 AM January 1, 2021.
-                        li(class='list-group-item')
-                            a(href='https://discord.com/invite/bCRXhFR' target='_blank') NCAS Discord
-                    div(class='card-body')
-                        p(class='card-text')
-                            | Ready to put 2020 behind you and welcome 2021? Stay home with NCAS and celebrate the
-                            | holiday! Join us on the
-                            | #[a(href='https://discord.com/invite/bCRXhFR' target='_blank') NCAS Discord] to host an
-                            | array of activities and different streams. Come celebrate the countdown with cute
-                            | critters.
-
-            div(class='col mb-4')
-                div(class='card h-100')
-                    div(class='card-header') Something for Dogbomb - Raleigh ALS Walk
-                    ul(class='list-group list-group-flush')
-                        //li(class='list-group-item') 08:30 AM Saturday, April 18, 2020.
-                        li(class='list-group-item') Date TBD.
-                        li(class='list-group-item')
-                            a(href='https://goo.gl/maps/cgiZwsQiUvLWYrAw8') Halifax Mall, 300 N Salisbury St, Raleigh, NC 27601
-                    div(class='card-body')
-                        div(class='container-fluid')
-                            div(class='row event-btn-row row-cols-1 row-cols-md-2')
-                                div(class='col text-center mb-4')
-                                    a(class='btn btn-lg btn-outline-primary' href='/events/past/2020/als-walk.html') More Info
-                                div(class='col text-center mb-4')
-                                    a(class='btn btn-lg btn-outline-primary' href='https://mizfit-toyz-box.myshopify.com/products/bombdog-ncas-asl-shirt') Team T-shirts
-                                div(class='col text-center mb-4')
-                                    a(class='btn btn-lg btn-outline-primary' href='https://forms.gle/AUTXSzFQPvQZzSAd6') Walk
-                                div(class='col text-center mb-4')
-                                    a(class='btn btn-lg btn-outline-primary' href='http://webnc.alsa.org/goto/friendsoftony') Fundraiser
-                        p(class='card-text')
-                            | #[a(href='http://webnc.alsa.org/goto/friendsoftony') Friends of Tony] is a team formed in
-                            | support and honor of Tony “Dogbomb” Barrett, a member of the anthropomorphic community
-                            | who was diagnosed with Amyotrophic Lateral Sclerosis (ALS).
-                        p(class='card-text')
-                            | ALS is a progressive neurodegenerative disease that affects nerves in the brain and spinal
-                            | cord. It slowly robs the body of its ability to walk, speak, swallow, and breathe. The
-                            | life expectancy of a person with ALS averages 2 to 5 years from the time of diagnosis. The
-                            | Friends of Tony  are dedicated to aiding the ALS association in their goal of bringing
-                            | hope, raising awareness, and providing resources and services to families affected by ALS
-                            | free of charge.
-                        p(class='card-text')
-                            b
-                                em
-                                    | **The Raleigh ALS Walk has been postponed by the ALS Association due to concerns over
-                                    | COVID-19. New dates are not available yet, but we will announce them as soon as they are
-                                    | available. We're also working on something special in the meantime. Stay tuned!**
-                        //p(class='card-text')
-                        //    | Join the Friends of Tony as they walk in memory of Dobgomb on April 18, 2020 at the
-                        //    | Raleigh ALS Walk hosted by the ALS Association. Check-in is at 08:30 AM, and the walk
-                        //    | starts at 10:00 AM. The walk length is 2 miles. Fursuits are very much welcome!
-
-            div(class='col mb-4')
-                div(class='card h-100')
-                    div(class='card-header') NC Furs Discord Game Night
-                    ul(class='list-group list-group-flush')
-                        li(class='list-group-item') 6:00 PM - 9:00 PM December 16th, 2020.
-                        li(class='list-group-item')
-                            a(href='https://discord.gg/cDcr4AM2kv' target='_blank') NC Furs Discord
-                    div(class='card-body')
-                        p(class='card-text')
-                            | Join us for an evening of fun gaming with NCAS Staff members hosted on the
-                            | #[a(href='https://discord.gg/cDcr4AM2kv' target='_blank') NC Furs Discord] We will be
-                            | playing a variety of games and hanging out virtually - either join us for a game we are
-                            | hosting or find some friends to play something of your choosing!
-
-            div(class='col mb-4')
-                div(class='card h-100')
-                    div(class='card-header') Virtual Art Meet
-                    // If doing an image, it should be at least 3:1 aspect ratio
-                    //img(class='card-img-top' src='/img/event-images/...' alt="Event Picture")
-                    ul(class='list-group list-group-flush')
-                        li(class='list-group-item') 06:00 PM - 09:00 PM November 18th, 2020.
-                        li(class='list-group-item') Location : Aggie.io + Discord
-                        li(class='list-group-item') Website : 
-                            a(href='https://aggie.io') https://aggie.io
-                    div(class='card-body')
-                        div(class='container-fluid')
-                            div(class='row event-btn-row row-cols-1 row-cols-md-1')
-                                div(class='col text-center mb-4')
-                                    a(class='btn btn-lg btn-outline-primary' href='/events/past/2020/virtual-art-meet') More Info
-                                //- div(class='col text-center mb-4')
-                                //-     a(class='btn btn-lg btn-outline-primary' href='') Register Now
-                        p(class='card-text')
-                            | Missing your local artists or itching to draw? Come join NCAS’s art night for some virtual fun!
-
-            div(class='col mb-4')
-                    div(class='card h-100')
-                        div(class='card-header') Fuzzy Logic Escape Room
-                        ul(class='list-group list-group-flush')
-                            li(class='list-group-item') Registration: $18.00/person.
-                            li(class='list-group-item') 8:00 PM - 9:00 PM EST October 28, 2020.
-                            li(class='list-group-item') 8:00 PM - 9:00 PM EST October 30, 2020.
-                            li(class='list-group-item') Hosted virtually via Zoom.
-                        div(class='card-body')
-                            div(class='container-fluid')
-                                div(class='row event-btn-row row-cols-1')
-                                    div(class='col text-center mb-4')
-                                        a(class='btn btn-lg btn-outline-primary' href='/events/past/2020/fuzzy-logic') More Info
-                                    //div(class='col text-center mb-4')
-                                    //    a(class='btn btn-lg btn-outline-primary' href='') Register Now
-                            p(class='card-text')
-                                | COVID isolation got you feeling blue? Wish you could do a group activity with your
-                                | friends from the comfort of your own home? Like Escape Rooms? Well, do we have good news
-                                | for you! The infamous Fuzzy Logic Escape Room that has been the staple of Furry
-                                | Conventions across the US makes its way to your living room! Join up to 8 friends as you
-                                | all work together to solve fun, mind-bending puzzles in the allotted time! If you think
-                                | you got what it takes, then join us as NCAS presents: Fuzzy Logic Escape Room...
-                                | Quarantine Edition!
-
-            //div(class='col mb-4')
-            //    div(class='card h-100')
-            //        div(class='card-header') Codename - Title
-            //        // If doing an image, it should be at least 3:1 aspect ratio
-            //        img(class='card-img-top' src='/img/event-images/...' alt="Event Picture")
-            //        ul(class='list-group list-group-flush')
-            //            li(class='list-group-item') Registration: $xx.xx/person.
-            //            li(class='list-group-item') xx:xx AM/PM - xx:xx AM/PM Month Day, Year.
-            //            li(class='list-group-item')
-            //                a(href='') Address
-            //        div(class='card-body')
-            //            div(class='container-fluid')
-            //                div(class='row event-btn-row row-cols-1 row-cols-md-2')
-            //                    div(class='col text-center mb-4')
-            //                        a(class='btn btn-lg btn-outline-primary' href='/events/') More Info
-            //                    div(class='col text-center mb-4')
-            //                        a(class='btn btn-lg btn-outline-primary' href='') Register Now
-            //            p(class='card-text')
-            //                | "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-    //section(id='teaser')
-    //    h1 More Events Coming Soon
-    //    p
-    //        | Have you ever wanted to rent out an entire movie
-    //        | theater for a bad horror movie marathon, or spend a
-    //        | night around a campfire telling stories with your fellow
-    //        | furries? How about strutting your stuff to show your pride
-    //        | in fursuit, or volunteering to bring a smile to someone's
-    //        | day? Well, you're in the right place!
-    //    p
-    //        | We're currently hard at work at organizing a variety
-    //        | of exciting events and activities in the North Carolina
-    //        | area. Whether you're looking for something indoors or
-    //        | outdoors, a thrilling outing or a relaxing weekend,
-    //        | we'll have you covered!
-    //    p
-    //        | Stay tuned, we look forward to seeing you at
-    //        | our future events!
+            for e in pastEvents
+                +event-card(e)

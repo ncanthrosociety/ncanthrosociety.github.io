@@ -14,6 +14,7 @@ const gulp = require('gulp')
 const gulpStylelint = require('gulp-stylelint')
 const header = require('gulp-header')
 const pug = require('gulp-pug')
+const pugjs = require('./pug-js')
 const pugLinter = require('gulp-pug-linter')
 const rename = require('gulp-rename')
 const sass = require('gulp-sass')
@@ -37,7 +38,7 @@ const BANNER_JS = `/*\n * ${BANNER_TEXT.join('\n * ')}\n */\n`
 // Gulp task constants
 
 // Pug
-const PUG_SRC = ['**/*.pug', '!node_modules/**/*.pug']
+const PUG_SRC = ['**/*.pug', '!mixins/**/*.pug', '!node_modules/**/*.pug']
 const PUG_TASK = 'pug'
 const PUG_WATCH_SRC = ['**/*.pug', '!node_modules/**/*.pug']
 
@@ -145,7 +146,8 @@ gulp.task(PUG_TASK, () => {
   return gulp
     .src(PUG_SRC)
     .pipe(pug({
-      basedir: __dirname
+      basedir: __dirname,
+      locals: pugjs
     }))
     .pipe(header(BANNER_HTML, { pkg }))
     .pipe(gulp.dest(_base))

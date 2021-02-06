@@ -1,0 +1,56 @@
+//-
+    An event card mixin. Use this to add a new event.
+
+    @param {Event} e Event definition.
+mixin event-card(e)
+    div(class='col mb-4')
+        div(class='card h-100')
+            div(class='card-header')=e.title
+            //- If doing an image, it should be at least 3:1 aspect ratio
+            if e.img
+                img(class='card-img-top' src=e.img.src, alt=e.img.alt)
+            ul(class='list-group list-group-flush')
+                if e.reg && e.reg.options
+                    for option in e.reg.options
+                        li(class='list-group-item').
+                            #{option.type ? option.type : 'Registration'}: $#{option.price}/person.
+                if e.times && !e.timeTBD
+                    for time in e.times
+                        if time.allDay
+                            if isSameDay(time.start, time.end)
+                                li(class='list-group-item').
+                                    #{Intl.DateTimeFormat('en-us', {dateStyle: 'medium'}).format(time.end)}
+                            else
+                                li(class='list-group-item').
+                                    #{Intl.DateTimeFormat('en-us', {dateStyle: 'medium'}).format(time.start)}
+                                    -
+                                    #{Intl.DateTimeFormat('en-us', {dateStyle: 'medium'}).format(time.end)}
+                        else
+                            if isSameDay(time.start, time.end)
+                                li(class='list-group-item').
+                                    #{Intl.DateTimeFormat('en-us', {dateStyle: 'medium', timeStyle: 'short'}).format(time.start)}
+                                    -
+                                    #{Intl.DateTimeFormat('en-us', {timeStyle: 'short'}).format(time.end)}
+                            else
+                                li(class='list-group-item').
+                                    #{Intl.DateTimeFormat('en-us', {dateStyle: 'medium', timeStyle: 'short'}).format(time.start)}
+                                    -
+                                    #{Intl.DateTimeFormat('en-us', {dateStyle: 'medium', timeStyle: 'short'}).format(time.end)}
+                if e.address
+                    li(class='list-group-item')
+                        a(href=e.address.link)=e.address.text
+                if e.highlights
+                    for highlight in e.highlights
+                        li(class='list-group-item')=highlight
+            div(class='card-body')
+                div(class='container-fluid')
+                    -
+                        const buttons = e.buttons || []
+                        if (e.reg && !isPastEvent(e)) buttons.splice(0, 0, { link: e.reg, text: 'Register Now' })
+                        if (e.info) buttons.splice(0, 0, { link: e.info, text: 'More Info' })
+                    div(class=`row event-btn-row row-cols-1 ${buttons.length > 1 ? 'row-cols-md-2' : 'row-cols-md-1'}`)
+                        for button in buttons
+                            div(class='col text-center mb-4')
+                                a(class='btn btn-lg btn-outline-primary' href=button.link)=button.text
+                if e.description
+                    div(class='card-text') !{markdown.render(e.description.trim())}
