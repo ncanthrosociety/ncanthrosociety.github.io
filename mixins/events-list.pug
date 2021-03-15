@@ -1,30 +1,6 @@
 -
     const events = [
 
-        // Recurring events.
-        {
-            recurring: true,
-            title: 'NCAS Stream',
-            highlights: [
-                'The third Wednesday of every month at 7:00 PM. See our public calendar for exact dates and additional ' +
-                'details!',
-            ],
-            buttons: [{
-                link: 'https://www.twitch.tv/ncanthrosociety',
-                text: 'Twitch'
-            }, {
-                link: 'https://www.youtube.com/channel/UCpjFQ6oZSFAwIqq7uK6Di0A/live',
-                text: 'YouTube'
-            },{
-                link: 'https://www.pscp.tv/ncanthrosociety',
-                text: 'Periscope'
-            }],
-            description: `
-    Join us on the third Wednesday of every month at 7:00 PM on Twitch, YouTube, or Periscope for an evening stream
-    containing games, info, and more! Content varies from stream to stream, but is always a blast.
-            `
-        },
-
         // Regular events.
         // Events are automatically rendered sorted, but please add to the
         // list in descending order by end date for organization.
@@ -54,6 +30,67 @@
     they prepare to take you on the launch of a lifetime in the only way they know how: a three day weekend full of
     friends, entertainment, and much much more.
             `
+        },
+        {
+          title: 'Minecraft Game Night',
+          times: [{
+            start: new Date('2021-04-16 7:00 PM EDT'),
+            end: new Date('2021-04-16 10:00 PM EDT'),
+          }],
+          buttons: [{
+              link: 'https://discord.ncanthrosociety.com',
+              text: 'NCAS Discord'
+          }],
+          description: `
+    Join us on April 16th at 7pm for an evening of gaming on the [NCAS Discord](https://discord.ncanthrosociety.com).
+    We will be hosting our own Minecraft server, but you can also break out and play your own games, or just hang out
+    and chat.
+          `
+        },
+        {
+          title: 'NCAS LIVE - Questionable Choices',
+          img: {
+            src: '/img/events/streams/ncas-stream.jpg',
+            alt: 'Cassie Streaming',
+          },
+          times: [{
+            start: new Date('2021-03-24 7:00 PM EDT'),
+            end: new Date('2021-03-24 9:30 PM EDT'),
+          }],
+          buttons: [{
+            link: 'https://www.twitch.tv/ncanthrosociety',
+            text: 'Twitch',
+          }, {
+            link: 'https://www.youtube.com/channel/UCpjFQ6oZSFAwIqq7uK6Di0A/live',
+            text: 'YouTube',
+          }, {
+            link: 'https://www.pscp.tv/NCAnthroSociety/1PlJQPnAAenGE',
+            text: 'Periscope'
+          }],
+          description: `
+    We’re rebooting our regular stream event with some crazy QUESTIONABLE CHOICES! Come enjoy the fun as we try out some
+    new ideas and revisit the most questionable activities.
+
+    We’ll be throwing some presenters under the bus with Keynote Karaoke, we’ll give YOU control of your own remote
+    control fursuiter, and to finish it off, we’ve found three crazy artists willing to take on the Commissioner from
+    Hell!
+          `
+        },
+        {
+          title: 'Irish Pub Karaoke',
+          times: [{
+            start: new Date('2021-03-17 7:00 PM EDT'),
+            end: new Date('2021-03-17 10:00 PM EDT'),
+          }],
+          buttons: [{
+            link: 'https://discord.ncanthrosociety.com',
+            text: 'NCAS Discord'
+          }],
+          description: `
+    Join us on St. Patrick’s day for a night of singing and good times! Come participate in our karaoke night on the
+    [NCAS Discord server](https://discord.ncanthrosociety.com) on March 17th at 7 pm! Whether you want to perform or
+    just watch it will be a great time!
+          `
         },
         {
             title: 'Blue Ridge Furfare (BRFF): The Great Outdoors',
