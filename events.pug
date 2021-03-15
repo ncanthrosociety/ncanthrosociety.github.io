@@ -4,8 +4,13 @@ include mixins/event-card
 
 block navbar-page-links
 
-    li(class="nav-item")
-            a(class="nav-link js-scroll-trigger" href="#events-recurring") Recurring Events
+    //- Will be defined in later blocks.
+    include mixins/events-list
+
+    if recurringEvents.length
+
+        li(class="nav-item")
+                a(class="nav-link js-scroll-trigger" href="#events-recurring") Recurring Events
 
     li(class="nav-item")
             a(class="nav-link js-scroll-trigger" href="#upcoming-events") Upcoming Events
@@ -13,21 +18,23 @@ block navbar-page-links
     li(class="nav-item")
         a(class="nav-link js-scroll-trigger" href="#past-events") Past Events
 
-    li(class="nav-item")
-        a(class="nav-link" href="https://calendar.google.com/calendar/embed?src=mvf6oq58d0v265k89sdc815r2s%40group.calendar.google.com&ctz=America%2FNew_York") Calendar
+    if pastEvents.length
+
+        li(class="nav-item")
+            a(class="nav-link" href="https://calendar.google.com/calendar/embed?src=mvf6oq58d0v265k89sdc815r2s%40group.calendar.google.com&ctz=America%2FNew_York") Calendar
 
 block content
 
-    include mixins/events-list
+    if recurringEvents.length
 
-    section(id='events-recurring')
+        section(id='events-recurring')
 
-        h1 Recurring Events
+            h1 Recurring Events
 
-        div(class='row row-cols-1 row-cols-xl-2')
+            div(class='row row-cols-1 row-cols-xl-2')
 
-            for e in recurringEvents
-                +event-card(e)
+                for e in recurringEvents
+                    +event-card(e)
 
     section(id='upcoming-events')
 
@@ -55,11 +62,13 @@ block content
             p.
                 Stay tuned, we look forward to seeing you at our future events!
 
-    section(id='past-events')
+    if pastEvents.length
 
-        h1 Past Events
+        section(id='past-events')
 
-        div(class='row row-cols-1 row-cols-xl-2')
+            h1 Past Events
 
-            for e in pastEvents
-                +event-card(e)
+            div(class='row row-cols-1 row-cols-xl-2')
+
+                for e in pastEvents
+                    +event-card(e)
