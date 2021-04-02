@@ -9,33 +9,36 @@
 /**
  * @typedef {Object} Event
  *
- * @property {boolean}  recurring         Whether or not the event happens on some schedule.
- * @property {String}   title             Event title.
- * @property {Object}   [img]             Event image.
- * @property {String}   img.src           Event image src attribute (image file path).
- * @property {String}   img.alt           Event image alt text.
- * @property {Object}   [reg]             Registration options.
- * @property {String}   reg.link          Registration link.
- * @property {Object[]} [reg.options]     Registration options.
- * @property {String}   reg.options.type  Registration type.
- * @property {String}   reg.options.price Registration price per person.
- * @property {Object[]} times             List of event times.
- * @property {Date}     times[].start     Event start datetime. Should include a timezone.
- * @property {Date}     times[].end       Event end datetime. Should include a timezone.
- * @property {boolean}  times[].allDay    If true, the time will be ignored and only the date considered. Events will be
- *                                        sorted as if they begin and end at midnight.
- * @property {boolean}  timeTBD           If true, the event dates will be considered "to be determined." They will be used
- *                                        for sorting and placing the event on the page, but will not be in the rendered
- *                                        output.
- * @property {Object}   address           Address information.
- * @property {String}   address.link      Address link (Either to Google Maps or a web address.).
- * @property {String}   address.text      Address text.
- * @property {String[]} [highlights]      Additional list items to highlight in the header list.
- * @property {String}   info              Event file for the more info link.
- * @property {Object[]} [buttons]         Extra event link buttons.
- * @property {string}   buttons[].link    Button link.
- * @property {string}   buttons[].text    Button text.
- * @property {String}   description       Event description. Will be rendered as markdown.
+ * @property {boolean}  recurring            Whether or not the event happens on some schedule.
+ * @property {String}   title                Event title.
+ * @property {Object}   [img]                Event image.
+ * @property {String}   img.src              Event image src attribute (image file path).
+ * @property {String}   img.alt              Event image alt text.
+ * @property {Object[]} [img.sources]        Alternate image sources.
+ * @property {String}   img.sources[].srcset Image source.
+ * @property {String}   img.sources[].type   Image media type.
+ * @property {Object}   [reg]                Registration options.
+ * @property {String}   reg.link             Registration link.
+ * @property {Object[]} [reg.options]        Registration options.
+ * @property {String}   reg.options.type     Registration type.
+ * @property {String}   reg.options.price    Registration price per person.
+ * @property {Object[]} times                List of event times.
+ * @property {Date}     times[].start        Event start datetime. Should include a timezone.
+ * @property {Date}     times[].end          Event end datetime. Should include a timezone.
+ * @property {boolean}  times[].allDay       If true, the time will be ignored and only the date considered. Events will be
+ *                                           sorted as if they begin and end at midnight.
+ * @property {boolean}  timeTBD              If true, the event dates will be considered "to be determined." They will be used
+ *                                           for sorting and placing the event on the page, but will not be in the rendered
+ *                                           output.
+ * @property {Object}   address              Address information.
+ * @property {String}   address.link         Address link (Either to Google Maps or a web address.).
+ * @property {String}   address.text         Address text.
+ * @property {String[]} [highlights]         Additional list items to highlight in the header list.
+ * @property {String}   info                 Event file for the more info link.
+ * @property {Object[]} [buttons]            Extra event link buttons.
+ * @property {string}   buttons[].link       Button link.
+ * @property {string}   buttons[].text       Button text.
+ * @property {String}   description          Event description. Will be rendered as markdown.
  */
 
 
