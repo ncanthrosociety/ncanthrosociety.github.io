@@ -32,13 +32,19 @@ body {
   ol.reference-list {
     padding: 0;
     counter-reset: list;
+
     li {
       list-style: none;
     }
+
     li:before {
       content: "[" counter(list) "] ";
       counter-increment: list;
     }
+  }
+  blockquote {
+    padding-left: 30px;
+    border-left: 5px solid $ncas-60-grey;
   }
 
   #navbar {
