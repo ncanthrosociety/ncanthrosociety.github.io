@@ -50,7 +50,7 @@ mixin event-card(e)
                 div(class='container-fluid')
                     -
                         const buttons = e.buttons || []
-                        if (e.reg && !isPastEvent(e)) buttons.splice(0, 0, { link: e.reg, text: 'Register Now' })
+                        if (e.reg && !isPastEvent(e)) buttons.splice(0, 0, { link: e.reg.link, text: 'Register Now' })
                         if (e.info) buttons.splice(0, 0, { link: e.info, text: 'More Info' })
                     div(class=`row event-btn-row row-cols-1 ${buttons.length > 1 ? 'row-cols-md-2' : 'row-cols-md-1'}`)
                         for button in buttons
