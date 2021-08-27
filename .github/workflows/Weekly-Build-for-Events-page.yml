@@ -1,12 +1,10 @@
 name: NodeJS with Gulp
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
   schedule:
-  # weekly
+  # At 00:00 on Sunday.
   - cron: "0 0 * * 0"
 
 jobs:
@@ -25,9 +23,24 @@ jobs:
 
     - name: Build
       run: gulp
+
+    # If a difference exists on a pull request, the PR needs to be updated.
+    - name: Check if anything changed
+      if: ${{ github.event_name == pull_request }}
+      # suppresses all output and uses exit status 1 to indicate differences exist, 0 for no changes.
+      run: git diff --quiet
         
-    # this should only have an effect if something changes
-    - name: Commit
+    # If a difference exists on a scheduled run, a new commit needs to be made.
+    # continue-on-error says even if this fails, prevent job from failing.  The `outcome` property can be used for original success/fail status of step.
+    - name: Check if anything changed
+      id: diff
+      if: ${{ github.event_name == schedule }}
+      continue-on-error: true
+      # suppresses all output and uses exit status 1 to indicate differences exist, 0 for no changes.
+      run: git diff --quiet
+      
+    - name: Commit changes
+      if: ${{ github.event_name == schedule && steps.diff.outcome == failure }}
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
