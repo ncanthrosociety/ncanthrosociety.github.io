@@ -1,0 +1,36 @@
+name: NodeJS with Gulp
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+  # weekly
+  - cron: "0 0 * * 0"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js 15
+      uses: actions/setup-node@v2
+      with:
+        node-version: '15'
+        cache: 'npm'
+      run: npm install --include=dev
+
+    - name: Build
+      run: gulp
+        
+    # this should only have an effect if something changes
+    - name: Commit
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "generated"
+        git push
