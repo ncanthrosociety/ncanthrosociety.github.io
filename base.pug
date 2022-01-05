@@ -69,8 +69,11 @@ html(lang='en')
                             a(class='dropdown-item' href='/staff/application.html') Staff and Volunteer Information
                     li(class='nav-item')
                         a(class='nav-link' href='/groups.html') Groups
-                    li(class='nav-item')
-                        a(class='nav-link' href='https://bewhiskeredcon.org' target='_blank') BWS #[i(class='fas fa-angle-double-right')]
+                    li(class='nav-item dropdown')
+                        a(id='navbar-cons-dropdown-toggle' class='nav-link dropdown-toggle' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Cons
+                        div(id='navbar-cons-dropdown-menu' class='dropdown-menu dropdown-menu-right' aria-labelledby='navbar-cons-dropdown-toggle')
+                            a(class='dropdown-item' href='https://bewhiskeredcon.org') BWS
+                            a(class='dropdown-item' href='https://www.blueridgefurfare.com/') BRFF
 
         //- Main body
         div(id='content' class='container-fluid' role="main")
