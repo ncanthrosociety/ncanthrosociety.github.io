@@ -54,7 +54,7 @@
     "gulp-stylelint": "^9.0.0",
     "gulp-uglify": "^3.0.2",
     "lodash": "^4.17.20",
-    "markdown-it": "^12.0.4",
+    "markdown-it": "^12.3.2",
     "pug-lint": "^2.6.0",
     "stylelint": "^13.7.2",
     "stylelint-config-recommended-scss": "^4.2.0",
