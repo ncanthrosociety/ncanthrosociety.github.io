@@ -9,7 +9,7 @@
 // Main element dimensions/margins/etc.
 $main-element-padding: 30px;
 $nav-height: 70px;
-$footer-height: 120px;
+$footer-height: 170px;
 $content-min-height: calc(100vh - (#{$nav-height} + (2 * #{$main-element-padding}) + #{$footer-height}));
 
 body {
@@ -29,10 +29,29 @@ body {
     }
   }
 
+  ol.reference-list {
+    padding: 0;
+    counter-reset: list;
+
+    li {
+      list-style: none;
+    }
+
+    li:before {
+      content: "[" counter(list) "] ";
+      counter-increment: list;
+    }
+  }
+  blockquote {
+    padding-left: 30px;
+    border-left: 5px solid $ncas-60-grey;
+  }
+
   #navbar {
     background: $ncas-white;
     height: $nav-height;
     box-shadow: 0 3px 3px $ncas-90-grey;
+    white-space: nowrap;
 
     .navbar-brand {
       img {
@@ -209,10 +228,26 @@ body {
     text-align: center;
     font-size: $footer-font-size;
     padding-top: $footer-internal-padding;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     .icon-box {
       margin-top: $footer-internal-margin;
       margin-bottom: $footer-internal-margin;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .icon-set {
+        margin-right: $footer-internal-margin;
+        margin-bottom: $footer-internal-margin;
+
+        &:last-of-type {
+          margin-right: 0;
+          margin-bottom: 0;
+        }
+      }
 
       .icon-link {
         margin-right: $footer-internal-margin;
@@ -226,5 +261,6 @@ body {
     p {
       margin: 0;
     }
+
   }
 }
