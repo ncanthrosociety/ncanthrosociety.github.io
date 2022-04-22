@@ -15,5 +15,5 @@ function gtag () { window.dataLayer.push(arguments) }
 (() => {
   window.dataLayer = window.dataLayer || []
   gtag('js', new Date())
-  gtag('config', 'UA-148960561-1')
+  gtag('config', 'G-66M7KZWBGQ')
 })()
