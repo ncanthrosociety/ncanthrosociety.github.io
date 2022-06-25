@@ -38,30 +38,55 @@ block content
 
     section(id='upcoming-events')
 
-        if upcomingEvents.length
-
-            h1 Upcoming Events
-
-            div(class='row row-cols-1 row-cols-xl-2')
-
-                for e in upcomingEvents
-                    +event-card(e)
-        else
-
-            h1 More Events Coming Soon
-
-            p.
-                Have you ever wanted to rent out an entire movie theater for a bad horror movie marathon, or spend a
-                night around a campfire telling stories with your fellow furries? How about strutting your stuff to
-                show your pride in fursuit, or volunteering to bring a smile to someone's day? Well, you're in the
-                right place!
-            p.
-                We're currently hard at work at organizing a variety of exciting events and activities in the
-                North Carolina area. Whether you're looking for something indoors or outdoors, a thrilling outing
-                or a relaxing weekend, we'll have you covered!
-            p.
-                Stay tuned, we look forward to seeing you at our future events!
-
+        h1 More Events Coming Soon
+    p
+      | Have you ever wanted to rent out an entire movie theater for a bad horror movie marathon, or spend a
+      | night around a campfire telling stories with your fellow furries? How about strutting your stuff to
+      | show your pride in fursuit, or volunteering to bring a smile to someone's day? Well, you're in the
+      | right place!
+    p
+      | We're currently hard at work at organizing a variety of exciting events and activities in the
+      | North Carolina area. Whether you&apos;re looking for something indoors or outdoors, a thrilling outing
+      | or a relaxing weekend, we'll have you covered!
+    p
+      | Stay tuned, we look forward to seeing you at our future events!
+    .row.row-cols-1.row-cols-xl-2
+      .col.mb-4
+        .card.h-100
+          .card-header Bewhiskered 2022: A Furry Murder Mystery!
+          picture
+            img.card-img-top(src='/img/events/bewhiskered-2022/theme0.png', alt='Bewhiskered Logo')
+          ul.list-group.list-group-flush
+            li.list-group-item
+              | Oct 21, 2022
+              | -
+              | Oct 23, 2022
+          .card-body
+            .container-fluid
+              .row.event-btn-row.row-cols-1.row-cols-md-1
+                .col.text-center.mb-4
+                  a.btn.btn-lg.btn-outline-primary(href='https://2022.bewhiskeredcon.org') More Info
+            .card-text
+              p
+                | Run by the NC Anthro Society in Durham, North Carolina. We will be located in the lovely Marriott at Research Triangle Park, just a short drive away from Raleigh and RDU Airport.
+              p
+                | The game is afoot! There has been a murder in Victorian London, and Whisky has literally crashed far too close for comfort! They have made him Scotland Yard&rsquo;s prime suspect for the murder of Pawscott McLaughlan Esquire III!
+              p
+                | Cassie is sending you, yes you, on a voyage to take on the case and save him. Can you help get Whisky off the hook and uncover the real fur behind the murders before it&rsquo;s too late?
+      .card.h-100
+        .card-header Blue Ridge Furfare: Medieval in the Mountains
+        picture
+          img.card-img-top(src='/img/events/brff/2023/BRFF-2023-promo.png', alt='Blue Ridge Furfare Logo')
+        ul.list-group.list-group-flush
+          li.list-group-item To Be Announced
+        .card-body
+          .container-fluid
+            .row.event-btn-row.row-cols-1.row-cols-md-1
+              .col.text-center.mb-4
+                a.btn.btn-lg.btn-outline-primary(href='https://www.blueridgefurfare.com/') More Info
+          .card-text
+            p
+              | Hear ye! Hear ye! Prince Aster and Commander Petal would love to invite you to Blue Ridge Furfare 2023: Medieval in the Mountains.
     if pastEvents.length
 
         section(id='past-events')
