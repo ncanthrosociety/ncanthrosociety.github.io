@@ -99,7 +99,7 @@ const ENV_SERVE_PORT = 'NCAS_SERVE_PORT'
 const SERVE_TASK = 'serve'
 const SERVE_ROOT = __dirname
 const SERVE_PORT = 3000
-const SERVE_HOST = 'localhost'
+const SERVE_HOST = '0.0.0.0'
 
 // Default
 const DEFAULT_TASK = 'default'
