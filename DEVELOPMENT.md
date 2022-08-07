@@ -8,8 +8,8 @@ basic http server.
 The following technologies are used to build this website and must be installed on the build system.
 
 | Dependency | Link                   | Version |
-| ---------- | ---------------------- | ------- |
-| Node.js    | https://nodejs.org/en/ | v12     |
+| ---------- | ---------------------- |---------|
+| Node.js    | https://nodejs.org/en/ | v18     |
 
 This website additionally makes use of the following tools. They are managed by the main build system and do not need
 to be installed manually, but are listed for informational purposes.
