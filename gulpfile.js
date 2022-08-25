@@ -19,7 +19,7 @@ const pug = require('gulp-pug')
 const pugjs = require('./pug-js')
 const pugLinter = require('gulp-pug-linter')
 const rename = require('gulp-rename')
-const sass = require('gulp-sass')
+const sass = require('gulp-sass')(require('sass'))
 const uglifyes = require('uglify-es')
 
 // Local Modules
