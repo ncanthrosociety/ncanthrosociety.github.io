@@ -1,0 +1,73 @@
+extends /base
+
+block navbar-page-links
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#description") Description
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#details") Details
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#schedule") Schedule
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#registration") Registration
+
+    //li(class="nav-item")
+    //    a(class="nav-link js-scroll-trigger" href="#faq") FAQ
+
+block content
+
+    section(id='description' title='Event Description')
+
+        h1 2022 Thanksgiving Feast
+
+        p.
+            It's back! The Thanksgiving feast is back again, and it's going to be more awesome than ever.
+
+        p.
+            This is a potluck style event. We will be providing turkeys and some other essentials. Please bring sides
+            and other dishes to share!
+
+    section(id='details' title='Details')
+
+        h2 Details
+
+        ul
+            li Date: Saturday, November 19th, 2022.
+            li Time: 7:00 AM - 5:00 PM EST.
+            //li
+            //    | Location: Address link.
+            //li
+            //    | Website: link.
+
+    section(id='schedule' title='Schedule')
+
+        h2 Schedule
+
+        ul
+            li
+                | 7:00 - 9:00 AM EST - Setup.
+            li
+                | 9:00 AM - 4:00 PM EST - Thanksgiving feast.
+                ul
+                    li Food will be served around noon.
+            li
+                | 4:00 PM - 5:00 PM - Teardown.
+
+    section(id='registration' title='Registration')
+
+        h2 Registration
+
+        p.
+            Registration is not required, but we do ask that you add whatever you are bringing to the food list. The
+            link will be posted here once it's available!
+
+    //section(id='faq' title='FAQ')
+    //
+    //    h2 FAQ
+    //
+    //    h3 Question?
+    //    p
+    //        | Answer!
