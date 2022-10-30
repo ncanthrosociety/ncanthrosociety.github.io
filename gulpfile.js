@@ -6,6 +6,7 @@
 
 // NPM Modules
 const _ = require('lodash')
+const clean = require('gulp-clean')
 const cleanCSS = require('gulp-clean-css')
 const composer = require('gulp-uglify/composer')
 const eslint = require('gulp-eslint')
@@ -39,40 +40,49 @@ const BANNER_JS = `/*\n * ${BANNER_TEXT.join('\n * ')}\n */\n`
 
 // Gulp task constants
 
+// Clean.
+const CLEAN_TASK = 'clean'
+
+// Build.
+const BUILD_DIR = path.join(__dirname, 'build')
+
 // Pug
+const HTML_DEST = BUILD_DIR
 const PUG_SRC = ['**/*.pug', '!mixins/**/*.pug', '!node_modules/**/*.pug']
 const PUG_TASK = 'pug'
 const PUG_WATCH_SRC = ['**/*.pug', '!node_modules/**/*.pug']
 
 // CSS
+const CSS_DEST = path.join(BUILD_DIR, 'css')
 const CSS_TASK = 'css'
 const SCSS_SRC = ['css/main.scss']
 const SCSS_WATCH_SRC = ['css/**/*.scss']
 
 // JS
+const JS_DEST = path.join(BUILD_DIR, 'js')
 const JS_SRC = ['js/**/*.js', '!js/**/*.min.js']
 const JS_TASK = 'js'
 
 // Vendor
-const BOOTSTRAP_DEST = './vendor/bootstrap'
+const BOOTSTRAP_DEST = path.join(BUILD_DIR, 'vendor/bootstrap')
 const BOOTSTRAP_SRC = [
   './node_modules/bootstrap/dist/**/*',
   '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
   '!./node_modules/bootstrap/dist/css/bootstrap-reboot*'
 ]
-const EASING_DEST = './vendor/jquery-easing'
+const EASING_DEST = path.join(BUILD_DIR, 'vendor/jquery-easing')
 const EASING_SRC = ['./node_modules/jquery.easing/*.js']
-const FA_DEST = './vendor'
+const FA_DEST = path.join(BUILD_DIR, 'vendor')
 const FA_SRC = [
   './node_modules/@fortawesome/**/*',
   '!./node_modules/@fortawesome/**/package.json' // Contains metadata we don't care about that messes with diffs.
 ]
-const JQUERY_DEST = './vendor/jquery'
+const JQUERY_DEST = path.join(BUILD_DIR, 'vendor/jquery')
 const JQUERY_SRC = [
   './node_modules/jquery/dist/*',
   '!./node_modules/jquery/dist/core.js'
 ]
-const LODASH_DEST = './vendor/lodash'
+const LODASH_DEST = path.join(BUILD_DIR, 'vendor/lodash')
 const LODASH_SRC = [
   './node_modules/lodash/lodash.min.js'
 ]
@@ -83,6 +93,16 @@ const VENDOR_FA_TASK = 'vendor-fa'
 const VENDOR_JQUERY_TASK = 'vendor-jquery'
 const VENDOR_LODASH_TASK = 'vendor-lodash'
 const VENDOR_TASK = 'vendor'
+
+// Images.
+const IMG_DEST = path.join(BUILD_DIR, 'img')
+const IMG_SRC = ['img/**/*']
+const IMG_TASK = 'images'
+
+// Favicons.
+const FAVICON_DEST = path.join(BUILD_DIR, 'favicons')
+const FAVICON_SRC = ['favicons/**/*']
+const FAVICON_TASK = 'favicons'
 
 // Lint
 const LINT_JS_TASK = 'lint-js'
@@ -97,7 +117,7 @@ const SCSS_LINT_SRC = SCSS_SRC
 const ENV_SERVE_HOST = 'NCAS_SERVE_HOST'
 const ENV_SERVE_PORT = 'NCAS_SERVE_PORT'
 const SERVE_TASK = 'serve'
-const SERVE_ROOT = __dirname
+const SERVE_ROOT = BUILD_DIR
 const SERVE_PORT = 3000
 const SERVE_HOST = 'localhost'
 
@@ -107,21 +127,14 @@ const DEFAULT_TASK = 'default'
 // Watch
 const WATCH_TASK = 'watch'
 
-// Helper functions
-
-/**
- * Return the base of a Gulp Vinyl object.
- *
- * This is useful as a parameter to .dest() if you want the output file to be in the same directory as the input file
- * for an arbitrary set of files.
- *
- * @param   file     Gulp file object
- * @returns {string} File base path.
- * @private
- */
-const _base = file => file.base
-
 // Gulp task definitions
+
+// Clean tasks.
+gulp.task(CLEAN_TASK, () => {
+  return gulp
+    .src(BUILD_DIR, { read: false, allowEmpty: true })
+    .pipe(clean())
+})
 
 // Linter tasks
 gulp.task(LINT_SCSS_TASK, () => {
@@ -152,7 +165,7 @@ gulp.task(PUG_TASK, () => {
       locals: pugjs
     }))
     .pipe(header(BANNER_HTML, { pkg }))
-    .pipe(gulp.dest(_base))
+    .pipe(gulp.dest(HTML_DEST))
 })
 
 // Compile SCSS
@@ -164,7 +177,7 @@ gulp.task(CSS_TASK, () => {
     .pipe(cleanCSS())
     .pipe(header(BANNER_CSS, { pkg }))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(_base))
+    .pipe(gulp.dest(CSS_DEST))
 })
 
 // Javascript
@@ -174,7 +187,7 @@ gulp.task(JS_TASK, () => {
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
     .pipe(header(BANNER_JS, { pkg }))
-    .pipe(gulp.dest(_base))
+    .pipe(gulp.dest(JS_DEST))
 })
 
 // Copy third party libraries from /node_modules into /vendor
@@ -192,6 +205,12 @@ gulp.task(
   VENDOR_TASK,
   gulp.parallel(VENDOR_BOOTSTRAP_TASK, VENDOR_LODASH_TASK, VENDOR_FA_TASK, VENDOR_JQUERY_TASK, VENDOR_EASING_TASK)
 )
+
+// Copy images into the build dir.
+gulp.task(IMG_TASK, () => gulp.src(IMG_SRC).pipe(gulp.dest(IMG_DEST)))
+
+// Copy favicons into the build dir.
+gulp.task(FAVICON_TASK, () => gulp.src(FAVICON_SRC).pipe(gulp.dest(FAVICON_DEST)))
 
 // Serve files over a local http server
 gulp.task(SERVE_TASK, () => {
@@ -223,7 +242,10 @@ gulp.task(SERVE_TASK, () => {
 })
 
 // Default task
-gulp.task(DEFAULT_TASK, gulp.parallel(LINT_TASK, PUG_TASK, CSS_TASK, JS_TASK, VENDOR_TASK))
+gulp.task(DEFAULT_TASK, gulp.series(
+  CLEAN_TASK,
+  gulp.parallel(LINT_TASK, PUG_TASK, CSS_TASK, JS_TASK, VENDOR_TASK, IMG_TASK, FAVICON_TASK)
+))
 
 // Gulp watch
 gulp.task(WATCH_TASK, gulp.series(
@@ -237,6 +259,8 @@ gulp.task(WATCH_TASK, gulp.series(
       gulp.watch(SCSS_WATCH_SRC, gulp.series(CSS_TASK))
       gulp.watch(JS_SRC, gulp.series(JS_TASK))
       gulp.watch(VENDOR_SRC, gulp.series(VENDOR_TASK))
+      gulp.watch(IMG_SRC, gulp.series(IMG_TASK))
+      gulp.watch(FAVICON_SRC, gulp.series(FAVICON_TASK))
     },
     SERVE_TASK
   )
