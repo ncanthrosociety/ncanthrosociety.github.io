@@ -213,29 +213,42 @@ gulp.task(IMG_TASK, () => gulp.src(IMG_SRC).pipe(gulp.dest(IMG_DEST)))
 gulp.task(FAVICON_TASK, () => gulp.src(FAVICON_SRC).pipe(gulp.dest(FAVICON_DEST)))
 
 // Serve files over a local http server
+// If a static file is not found, the server is configured to search for files with the `.html` extension. This allows
+// urls to be specified without an extension, which mirrors GitHub's default behavior. Other servers, such as nginx,
+// support similar functionality.
+//
+// https://expressjs.com/en/api.html.
+// https://stackoverflow.com/a/38238001
 gulp.task(SERVE_TASK, () => {
   const host = process.env[ENV_SERVE_HOST] || SERVE_HOST
   const port = process.env[ENV_SERVE_PORT] || SERVE_PORT
   const app = express()
   app.use(express.static(SERVE_ROOT, { extensions: ['html'], redirect: false }))
   app.use((req, res, next) => {
-    const dirPath = path.relative(__dirname, path.resolve(path.join(__dirname, req.path)))
+    const dirPath = path.join(SERVE_ROOT, req.path)
     const filePath = `${dirPath}.html`
     const indexPath = path.join(dirPath, 'index.html')
 
     // Static content serving automatically adds the .html extension if needed. However, express does not handle the
     // situation where a file and directory have the same name (excluding the .html file extension). In this case,
     // prefer the file over the directory. Send the 404 page as a last resort.
+    let status
+    let resultPath
     if (fs.existsSync(dirPath) &&
         fs.statSync(dirPath).isDirectory() &&
         fs.existsSync(filePath) &&
         fs.statSync(filePath).isFile()) {
-      res.status(200).sendFile(path.join('/', filePath), { root: SERVE_ROOT })
+      status = 200
+      resultPath = filePath
     } else if (fs.existsSync(indexPath) && fs.statSync(indexPath).isFile()) {
-      res.status(200).sendFile(path.join('/', indexPath), { root: SERVE_ROOT })
+      status = 200
+      resultPath = indexPath
     } else {
-      res.status(404).sendFile('404.html', { root: SERVE_ROOT })
+      status = 404
+      resultPath = path.join(SERVE_ROOT, '404.html')
     }
+
+    res.status(status).sendFile(path.relative(SERVE_ROOT, resultPath), { root: SERVE_ROOT })
   })
   app.listen(port, host)
   console.log(`Serving website on http://${host}:${port}`)
