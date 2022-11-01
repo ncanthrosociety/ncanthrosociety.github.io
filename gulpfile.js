@@ -48,7 +48,7 @@ const BUILD_DIR = path.join(__dirname, 'build')
 
 // Pug
 const HTML_DEST = BUILD_DIR
-const PUG_SRC = ['**/*.pug', '!mixins/**/*.pug', '!node_modules/**/*.pug']
+const PUG_SRC = ['**/*.pug', '!base.pug', '!mixins/**/*.pug', '!node_modules/**/*.pug']
 const PUG_TASK = 'pug'
 const PUG_WATCH_SRC = ['**/*.pug', '!node_modules/**/*.pug']
 
