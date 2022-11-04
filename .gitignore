@@ -3,13 +3,21 @@
 *.iml
 
 
+# macOS files
+.DS_Store
+
 # Node files
 node_modules/
+
 
 # editor temp files
 \#*\#
 *~
-.*
+
+
+# Build directory.
+build/
+
 
 !.gitignore
 !.gitattributes
