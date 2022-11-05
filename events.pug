@@ -4,9 +4,6 @@ include mixins/event-card
 
 block navbar-page-links
 
-    //- Will be defined in later blocks.
-    include mixins/events-list
-
     if recurringEvents.length
 
         li(class="nav-item")
@@ -15,13 +12,15 @@ block navbar-page-links
     li(class="nav-item")
             a(class="nav-link js-scroll-trigger" href="#upcoming-events") Upcoming Events
 
-    li(class="nav-item")
-        a(class="nav-link js-scroll-trigger" href="#past-events") Past Events
-
     if pastEvents.length
-
         li(class="nav-item")
-            a(class="nav-link" href="https://calendar.google.com/calendar/embed?src=mvf6oq58d0v265k89sdc815r2s%40group.calendar.google.com&ctz=America%2FNew_York") Calendar
+            a(class="nav-link js-scroll-trigger" href="#past-events") Past Events
+
+    li(class='nav-item')
+        a(class="nav-link js-scroll-trigger" href="#archive") Archive
+
+    li(class="nav-item")
+        a(class="nav-link" href="https://calendar.google.com/calendar/embed?src=mvf6oq58d0v265k89sdc815r2s%40group.calendar.google.com&ctz=America%2FNew_York") Calendar
 
 block content
 
@@ -72,3 +71,11 @@ block content
 
                 for e in pastEvents
                     +event-card(e)
+
+    section(id='archive')
+
+        h1 Archive
+
+        div(class='list-group')
+            for year in eventYears
+              a(class='list-group-item list-group-item-action' href=`/events/${year}`)=year

@@ -11,6 +11,7 @@ const cleanCSS = require('gulp-clean-css')
 const composer = require('gulp-uglify/composer')
 const eslint = require('gulp-eslint')
 const express = require('express')
+const { finished } = require('node:stream/promises')
 const fs = require('fs')
 const gulp = require('gulp')
 const gulpStylelint = require('gulp-stylelint')
@@ -22,6 +23,7 @@ const pugLinter = require('gulp-pug-linter')
 const rename = require('gulp-rename')
 const sass = require('gulp-sass')(require('sass'))
 const uglifyes = require('uglify-es')
+const yaml = require('yaml')
 
 // Local Modules
 const pkg = require('./package.json')
@@ -47,8 +49,18 @@ const CLEAN_TASK = 'clean'
 const BUILD_DIR = path.join(__dirname, 'build')
 
 // Pug
+const EVENTS_DATA = 'data/events.yaml'
 const HTML_DEST = BUILD_DIR
-const PUG_SRC = ['**/*.pug', '!base.pug', '!mixins/**/*.pug', '!node_modules/**/*.pug']
+const PUG_SRC = [
+  '**/*.pug',
+  '!node_modules/**/*.pug',
+  '!mixins/**/*.pug',
+  '!base.pug',
+  '!events.pug',
+  '!events/events-archive.pug'
+]
+const PUG_SRC_EVENTS = ['events.pug']
+const PUG_SRC_EVENTS_ARCHIVE = ['events/events-archive.pug']
 const PUG_TASK = 'pug'
 const PUG_WATCH_SRC = ['**/*.pug', '!node_modules/**/*.pug']
 
@@ -157,16 +169,101 @@ gulp.task(LINT_PUG_TASK, () => {
 gulp.task(LINT_TASK, gulp.parallel(LINT_SCSS_TASK, LINT_JS_TASK, LINT_PUG_TASK))
 
 // Pug compile to html
-gulp.task(PUG_TASK, () => {
-  return gulp
-    .src(PUG_SRC)
-    .pipe(pug({
-      basedir: __dirname,
-      locals: pugjs
-    }))
-    .pipe(header(BANNER_HTML, { pkg }))
-    .pipe(gulp.dest(HTML_DEST))
-})
+gulp.task(
+  PUG_TASK,
+  gulp.parallel(
+    () => {
+      return gulp
+        .src(PUG_SRC)
+        .pipe(pug({
+          basedir: __dirname
+        }))
+        .pipe(header(BANNER_HTML, { pkg }))
+        .pipe(gulp.dest(HTML_DEST))
+    },
+    async () => {
+      // Load all events data.
+      const events = yaml.parse(fs.readFileSync(EVENTS_DATA).toString('utf-8'))
+
+      // Bucket each event by the years that it starts in.
+      const eventsByYear = {}
+      for (const event of events) {
+        for (const time of event.times) {
+          const year = time.start.getFullYear()
+          eventsByYear[year] = eventsByYear[year] || []
+          eventsByYear[year].push(event)
+        }
+      }
+
+      // Feature the last two years of events on the /events page.
+      const thisYear = new Date().getFullYear()
+      const lastYear = thisYear - 1
+      const featuredEvents = [
+        ...(eventsByYear[thisYear] || []),
+        ...(eventsByYear[lastYear] || [])
+      ]
+
+      // Further bucket the featured events into recurring, upcoming, or past. Sort them by date.
+      const recurringEvents = []
+      const upcomingEvents = []
+      const pastEvents = []
+      for (const event of featuredEvents) {
+        if (event.recurring) recurringEvents.push(event)
+        else if (!pugjs.isPastEvent(event)) upcomingEvents.push(event)
+        else pastEvents.push(event)
+      }
+      upcomingEvents.sort(pugjs.compareEventTimes) // Sort ascending.
+      pastEvents.sort((a, b) => pugjs.compareEventTimes(b, a)) // Sort descending.
+
+      // Container for all gulp streams.
+      const streams = []
+
+      // Push a stream for the featured /events page.
+      streams.push(
+        gulp
+          .src(PUG_SRC_EVENTS)
+          .pipe(pug({
+            basedir: __dirname,
+            locals: {
+              recurringEvents,
+              upcomingEvents,
+              pastEvents,
+              eventYears: Object.keys(eventsByYear).sort((a, b) => {
+                return parseInt(b) - parseInt(a)
+              }),
+              ...pugjs
+            }
+          }))
+          .pipe(header(BANNER_HTML, { pkg }))
+          .pipe(gulp.dest(HTML_DEST))
+      )
+
+      // Push a stream for each /events/yyyy archive page.
+      for (const year of Object.keys(eventsByYear)) {
+        streams.push(finished(
+          gulp
+            .src(PUG_SRC_EVENTS_ARCHIVE)
+            .pipe(pug({
+              basedir: __dirname,
+              locals: {
+                year: year,
+                events: eventsByYear[year],
+                ...pugjs
+              }
+            }))
+            .pipe(header(BANNER_HTML, { pkg }))
+            .pipe(rename({
+              basename: year
+            }))
+            .pipe(gulp.dest(path.join(HTML_DEST, 'events')))
+        ))
+      }
+
+      // Combine all streams and return.
+      return Promise.all(streams)
+    }
+  )
+)
 
 // Compile SCSS
 gulp.task(CSS_TASK, () => {
