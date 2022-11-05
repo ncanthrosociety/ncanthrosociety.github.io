@@ -4,6 +4,10 @@
  * @module gulpfile
  */
 
+// Set the process timezone. This ensures that all dates are rendered relative to eastern time, which is the official
+// timezone for NCAS.
+process.env.TZ = 'America/New_York'
+
 // NPM Modules
 const _ = require('lodash')
 const clean = require('gulp-clean')
