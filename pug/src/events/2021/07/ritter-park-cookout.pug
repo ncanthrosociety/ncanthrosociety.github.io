@@ -1,0 +1,53 @@
+extends /pug/templates/base
+
+block navbar-page-links
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#description") Description
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#details") Details
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#registration") Registration
+
+block content
+
+    section(id='description' title='Event Description')
+
+        h1 Cookout at Ritter Park
+
+        p.
+            Let’s enjoy the summer together! Join NCAS for an afternoon of food and activities at Ritter Park starting
+            at 3:30pm. Food, fun, and fursuits!
+
+    section(id='details' title='Details')
+
+        h2 Details
+
+        ul
+            li Date: July 25th, 2021.
+            li Time: 3:30 - 8:00 PM EDT.
+            li.
+                The cookout will be held at the Rotary Shelter in
+                #[a(href='https://goo.gl/maps/jQqFxAQ3bdvKji2R7') Ritter Park]
+            li Registration: Free.
+
+    section(id='registration' title='Registration')
+
+        h2 Registration
+
+        P.
+            Registration for this cookout is free! However, you must register to attend. Due to park rules, attendance
+            will be capped at 99 attendees.
+
+        h3 General Registration
+        ul
+            li.
+                Registration is available
+                #[a(href="https://forms.gle/mQNWTmRugbDfKUjZ9", title="Registration Page") here].
+            li.
+                Deadline to register: 11:59 PM on July 20th.
+            li.
+                If your plans change, please email us at
+                #[a(href='mailto:contact@ncanthrosociety.org') contact@ncanthrosociety.org]

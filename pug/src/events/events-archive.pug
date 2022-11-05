@@ -1,0 +1,14 @@
+extends /pug/templates/base
+
+include /pug/mixins/event-card
+
+block content
+
+    section(id='past-events')
+
+        h1 #{year} Events
+
+        div(class='row row-cols-1 row-cols-xl-2')
+
+          for e in events
+              +event-card(e)

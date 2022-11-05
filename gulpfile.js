@@ -56,17 +56,14 @@ const BUILD_DIR = path.join(__dirname, 'build')
 const EVENTS_DATA = 'data/events.yaml'
 const HTML_DEST = BUILD_DIR
 const PUG_SRC = [
-  '**/*.pug',
-  '!node_modules/**/*.pug',
-  '!mixins/**/*.pug',
-  '!base.pug',
-  '!events.pug',
-  '!events/events-archive.pug'
+  'pug/src/**/*.pug',
+  '!pug/src/events.pug',
+  '!pug/src/events/events-archive.pug'
 ]
-const PUG_SRC_EVENTS = ['events.pug']
-const PUG_SRC_EVENTS_ARCHIVE = ['events/events-archive.pug']
+const PUG_SRC_EVENTS = ['pug/src/events.pug']
+const PUG_SRC_EVENTS_ARCHIVE = ['pug/src/events/events-archive.pug']
 const PUG_TASK = 'pug'
-const PUG_WATCH_SRC = ['**/*.pug', '!node_modules/**/*.pug', 'data/events.yaml']
+const PUG_WATCH_SRC = ['pug/**/*.pug', EVENTS_DATA]
 
 // CSS
 const CSS_DEST = path.join(BUILD_DIR, 'css')
