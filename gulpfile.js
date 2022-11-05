@@ -65,11 +65,11 @@ const PUG_SRC_EVENTS_ARCHIVE = ['pug/src/events/events-archive.pug']
 const PUG_TASK = 'pug'
 const PUG_WATCH_SRC = ['pug/**/*.pug', EVENTS_DATA]
 
-// CSS
-const CSS_DEST = path.join(BUILD_DIR, 'css')
-const CSS_TASK = 'css'
-const SCSS_SRC = ['css/main.scss']
-const SCSS_WATCH_SRC = ['css/**/*.scss']
+// SCSS
+const SCSS_DEST = path.join(BUILD_DIR, 'css')
+const SCSS_TASK = 'scss'
+const SCSS_SRC = ['scss/main.scss']
+const SCSS_WATCH_SRC = ['scss/**/*.scss']
 
 // JS
 const JS_DEST = path.join(BUILD_DIR, 'js')
@@ -267,7 +267,7 @@ gulp.task(
 )
 
 // Compile SCSS
-gulp.task(CSS_TASK, () => {
+gulp.task(SCSS_TASK, () => {
   return gulp
     .src(SCSS_SRC)
     .pipe(sass.sync({ outputStyle: 'expanded' })
@@ -275,7 +275,7 @@ gulp.task(CSS_TASK, () => {
     .pipe(cleanCSS())
     .pipe(header(BANNER_CSS, { pkg }))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(CSS_DEST))
+    .pipe(gulp.dest(SCSS_DEST))
 })
 
 // Javascript
@@ -355,7 +355,7 @@ gulp.task(SERVE_TASK, () => {
 // Default task
 gulp.task(DEFAULT_TASK, gulp.series(
   CLEAN_TASK,
-  gulp.parallel(LINT_TASK, PUG_TASK, CSS_TASK, JS_TASK, VENDOR_TASK, IMG_TASK, FAVICON_TASK)
+  gulp.parallel(LINT_TASK, PUG_TASK, SCSS_TASK, JS_TASK, VENDOR_TASK, IMG_TASK, FAVICON_TASK)
 ))
 
 // Gulp watch
@@ -367,7 +367,7 @@ gulp.task(WATCH_TASK, gulp.series(
       gulp.watch(JS_LINT_SRC, gulp.series(LINT_JS_TASK))
       gulp.watch(PUG_LINT_SRC, gulp.series(LINT_PUG_TASK))
       gulp.watch(PUG_WATCH_SRC, gulp.series(PUG_TASK))
-      gulp.watch(SCSS_WATCH_SRC, gulp.series(CSS_TASK))
+      gulp.watch(SCSS_WATCH_SRC, gulp.series(SCSS_TASK))
       gulp.watch(JS_SRC, gulp.series(JS_TASK))
       gulp.watch(VENDOR_SRC, gulp.series(VENDOR_TASK))
       gulp.watch(IMG_SRC, gulp.series(IMG_TASK))
