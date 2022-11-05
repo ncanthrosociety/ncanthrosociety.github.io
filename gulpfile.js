@@ -22,7 +22,7 @@ const gulpStylelint = require('gulp-stylelint')
 const header = require('gulp-header')
 const path = require('path')
 const pug = require('gulp-pug')
-const pugjs = require('./pug-js')
+const events = require('./lib/events')
 const pugLinter = require('gulp-pug-linter')
 const rename = require('gulp-rename')
 const sass = require('gulp-sass')(require('sass'))
@@ -184,11 +184,11 @@ gulp.task(
     },
     async () => {
       // Load all events data.
-      const events = yaml.parse(fs.readFileSync(EVENTS_DATA).toString('utf-8'))
+      const eventsList = yaml.parse(fs.readFileSync(EVENTS_DATA).toString('utf-8'))
 
       // Bucket each event by the years that it starts in.
       const eventsByYear = {}
-      for (const event of events) {
+      for (const event of eventsList) {
         for (const time of event.times) {
           const year = time.start.getFullYear()
           eventsByYear[year] = eventsByYear[year] || []
@@ -210,11 +210,11 @@ gulp.task(
       const recentEvents = []
       for (const event of featuredEvents) {
         if (event.recurring) recurringEvents.push(event)
-        else if (!pugjs.isPastEvent(event)) upcomingEvents.push(event)
+        else if (!events.isPastEvent(event)) upcomingEvents.push(event)
         else recentEvents.push(event)
       }
-      upcomingEvents.sort(pugjs.compareEventTimes) // Sort ascending.
-      recentEvents.sort((a, b) => pugjs.compareEventTimes(b, a)) // Sort descending.
+      upcomingEvents.sort(events.compareEventTimes) // Sort ascending.
+      recentEvents.sort((a, b) => events.compareEventTimes(b, a)) // Sort descending.
 
       // Container for all gulp streams.
       const streams = []
@@ -232,7 +232,7 @@ gulp.task(
               eventYears: Object.keys(eventsByYear).sort((a, b) => {
                 return parseInt(b) - parseInt(a)
               }),
-              ...pugjs
+              ...events
             }
           }))
           .pipe(header(BANNER_HTML, { pkg }))
@@ -249,7 +249,7 @@ gulp.task(
               locals: {
                 year: year,
                 events: eventsByYear[year],
-                ...pugjs
+                ...events
               }
             }))
             .pipe(header(BANNER_HTML, { pkg }))
