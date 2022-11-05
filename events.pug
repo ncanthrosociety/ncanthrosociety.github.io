@@ -12,9 +12,9 @@ block navbar-page-links
     li(class="nav-item")
             a(class="nav-link js-scroll-trigger" href="#upcoming-events") Upcoming Events
 
-    if pastEvents.length
+    if recentEvents.length
         li(class="nav-item")
-            a(class="nav-link js-scroll-trigger" href="#past-events") Past Events
+            a(class="nav-link js-scroll-trigger" href="#recent-events") Recent Events
 
     li(class='nav-item')
         a(class="nav-link js-scroll-trigger" href="#archive") Archive
@@ -61,15 +61,15 @@ block content
             p.
                 Stay tuned, we look forward to seeing you at our future events!
 
-    if pastEvents.length
+    if recentEvents.length
 
-        section(id='past-events')
+        section(id='recent-events')
 
-            h1 Past Events
+            h1 Recent Events
 
             div(class='row row-cols-1 row-cols-xl-2')
 
-                for e in pastEvents
+                for e in recentEvents
                     +event-card(e)
 
     section(id='archive')

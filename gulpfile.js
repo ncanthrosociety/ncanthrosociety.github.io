@@ -210,14 +210,14 @@ gulp.task(
       // Further bucket the featured events into recurring, upcoming, or past. Sort them by date.
       const recurringEvents = []
       const upcomingEvents = []
-      const pastEvents = []
+      const recentEvents = []
       for (const event of featuredEvents) {
         if (event.recurring) recurringEvents.push(event)
         else if (!pugjs.isPastEvent(event)) upcomingEvents.push(event)
-        else pastEvents.push(event)
+        else recentEvents.push(event)
       }
       upcomingEvents.sort(pugjs.compareEventTimes) // Sort ascending.
-      pastEvents.sort((a, b) => pugjs.compareEventTimes(b, a)) // Sort descending.
+      recentEvents.sort((a, b) => pugjs.compareEventTimes(b, a)) // Sort descending.
 
       // Container for all gulp streams.
       const streams = []
@@ -231,7 +231,7 @@ gulp.task(
             locals: {
               recurringEvents,
               upcomingEvents,
-              pastEvents,
+              recentEvents,
               eventYears: Object.keys(eventsByYear).sort((a, b) => {
                 return parseInt(b) - parseInt(a)
               }),
