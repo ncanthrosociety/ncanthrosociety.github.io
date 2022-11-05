@@ -122,7 +122,7 @@ const LINT_PUG_TASK = 'lint-pug'
 const LINT_SCSS_TASK = 'lint-scss'
 const LINT_TASK = 'lint'
 const JS_LINT_SRC = _.concat('*.js', JS_SRC)
-const PUG_LINT_SRC = PUG_SRC
+const PUG_LINT_SRC = [...PUG_SRC, ...PUG_SRC_EVENTS, ...PUG_SRC_EVENTS_ARCHIVE]
 const SCSS_LINT_SRC = SCSS_SRC
 
 // Serve task
