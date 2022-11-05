@@ -11,6 +11,7 @@ $main-element-padding: 30px;
 $nav-height: 70px;
 $footer-height: 170px;
 $content-min-height: calc(100vh - (#{$nav-height} + (2 * #{$main-element-padding}) + #{$footer-height}));
+$content-max-width: 2000px;
 
 body {
   .icon-link {
@@ -133,6 +134,7 @@ body {
     padding-left: $content-padding;
     padding-right: $content-padding;
     min-height: $content-min-height;
+    max-width: $content-max-width;
 
     @include media-breakpoint-down(md) {
       padding-left: 0.5 * $content-padding;
