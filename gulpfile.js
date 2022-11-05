@@ -62,7 +62,7 @@ const PUG_SRC = [
 const PUG_SRC_EVENTS = ['events.pug']
 const PUG_SRC_EVENTS_ARCHIVE = ['events/events-archive.pug']
 const PUG_TASK = 'pug'
-const PUG_WATCH_SRC = ['**/*.pug', '!node_modules/**/*.pug']
+const PUG_WATCH_SRC = ['**/*.pug', '!node_modules/**/*.pug', 'data/events.yaml']
 
 // CSS
 const CSS_DEST = path.join(BUILD_DIR, 'css')
