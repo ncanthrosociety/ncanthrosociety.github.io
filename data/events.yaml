@@ -2,13 +2,17 @@
 #
 # Events are automatically rendered sorted, but please add to the
 # list in descending order by end date for organization.
+#
 # Daylight savings and time zones:
 # - First Sunday of November - Second Sunday of March: EST (UTC -5)
 # - Second Sunday of March - First Sunday of November: EDT (UTC -4)
 #
+# See https://yaml.org/type/timestamp.html for YAML timestamp formatting.
+# We use the space-separated format. Hours are in 24-hour format.
+#
 # For the full event typedef, see /pug-js/index.js.
 #
-# Object Template:
+# Event Template:
 # ---
 #- recurring: false
 #  title:
@@ -16,35 +20,35 @@
 #    src:
 #    alt:
 #    sources:
-#      - srcset:
-#        type:
+#    - srcset:
+#      type:
 #  reg:
 #    link:
 #    options:
-#      - type:
-#        price:
+#    - type:
+#      price:
 #  times:
-#    - start: !!timestamp
-#      end: !!timestamp
-#      allDay: false
+#  - start: !!timestamp
+#    end: !!timestamp
+#    allDay: false
 #  timeTBD: false
 #  address:
 #    link:
 #    text:
 #  highlights:
-#    -
+#  -
 #  info:
 #  buttons:
-#    - link:
-#      text:
+#  - link:
+#    text:
 #  description: |
 #    ...
 
 
 - title: Annual Thanksgiving Feast
   times:
-  - start: !!timestamp 2022-11-20T12:00:00.000Z
-    end: !!timestamp 2022-11-20T22:00:00.000Z
+  - start: !!timestamp 2022-11-20 07:00:00 -5
+    end: !!timestamp 2022-11-20 17:00:00 -5
   address:
     link: https://goo.gl/maps/4GEyYgeNhMy9TZ1j7
     text: 'Umstead State Park Reedy Creek Shelter #1'
@@ -60,18 +64,20 @@
 
     We will be located in the Umstead State Park Reedy Creek Shelter #1, just off of the entrance to the Company Mill
     Trail. Parking may be tight, so carpooling is recommended.
+
 - title: 'Bewhiskered 2022: A Furry Murder Mystery'
   img:
     src: /img/events/2022/bewhiskered/banner.png
     alt: Bewhiskered Logo 22
   times:
-  - start: !!timestamp 2022-10-21T05:00:00.000Z
-    end: !!timestamp 2022-10-24T03:59:00.000Z
+  - start: !!timestamp 2022-10-21 00:00:00 -4
+    end: !!timestamp 2022-10-23 23:59:59 -4
     allDay: true
   info: https://www.2022.bewhiskeredcon.org/
   description: |
     Cassie is sending you, yes you, on a voyage to take on the case and save him. Can you help get Whisky off the hook 
     and uncover the real fur behind the murders before it's too late?
+
 - title: NCAS DJ Night
   img:
     src: /img/events/2022/09/dj-night.jpg
@@ -80,8 +86,8 @@
     - type: image/jpg
       srcset: /img/events/2022/09/dj-night.jpg
   times:
-  - start: !!timestamp 2022-09-24T23:00:00.000Z
-    end: !!timestamp 2022-09-25T04:00:00.000Z
+  - start: !!timestamp 2022-09-24 19:00:00 -4
+    end: !!timestamp 2022-09-24 23:59:59 -4
   buttons:
   - link: https://www.mixcloud.com/NCAnthroSociety
     text: NCAS Mixcloud
@@ -92,18 +98,20 @@
     and come join us for this special evening!
     
     This is a free event, and a Mixcloud account is not necessary (but great for following your favorite DJs!).
+
 - title: 'Blue Ridge Furfare: The Great Outdoors!'
   img:
     src: /img/events/brff/2022/brff-great-outdoors.jpg
     alt: Blue Ridge Furfare Logo
   times:
-  - start: !!timestamp 2022-03-11T05:00:00.000Z
-    end: !!timestamp 2022-03-14T03:59:00.000Z
+  - start: !!timestamp 2022-03-11 00:00:00 -5
+    end: !!timestamp 2022-03-13 23:59:00 -4  # Timezone changes on 2021-03-13.
     allDay: true
   info: https://www.blueridgefurfare.com/
   description: |
     Ready for a convention in Asheville, North Carolina? Pounce into a weekend of dance competitions, fursuit
     photography, and chill Asheville vibes.
+
 - title: Animal Park at the Conservators Center
   img:
     src: /img/events/2021/12/animal-park.png
@@ -117,8 +125,8 @@
     - type: Standard
       price: '20.00'
   times:
-  - start: !!timestamp 2021-12-18T18:30:00.000Z
-    end: !!timestamp 2021-12-18T21:30:00.000Z
+  - start: !!timestamp 2021-12-18 13:30:00 -5
+    end: !!timestamp 2021-12-18 16:30:00 -5
   address:
     link: https://g.page/AnimalParkNC
     text: 676 E. Hughes Mill Road Burlington, NC 27217
@@ -142,13 +150,14 @@
     headcount to Animal Park 2 weeks in advance! This means no at the door registration unfortunately.
 
     Be sure to fill out the Animal Park waiver in advance (link in the header).
+
 - title: 'Bewhiskered 2021: Prepare for Blast Off!'
   img:
     src: /img/events/bewhiskered-2020/bewhiskered-logo.png
     alt: Bewhiskered Logo
   times:
-  - start: !!timestamp 2021-11-12T05:00:00.000Z
-    end: !!timestamp 2021-11-15T04:59:00.000Z
+  - start: !!timestamp 2021-11-12 00:00:00 -5
+    end: !!timestamp 2021-11-14 23:59:59 -5
     allDay: true
   info: https://2020.bewhiskeredcon.org
   description: |
@@ -160,6 +169,7 @@
     anniversary of Apollo 13. Come be whisked away by our mascots, Commander Whisky and Flight Engineer Cassie, as
     they prepare to take you on the launch of a lifetime in the only way they know how: a three day weekend full of
     friends, entertainment, and much much more.
+
 - title: NCAS Minecraft Night
   img:
     src: /img/events/2021/10/minecraft.png
@@ -168,8 +178,8 @@
     - type: image/png
       srcset: /img/events/2021/10/minecraft.png
   times:
-  - start: !!timestamp 2021-10-23T23:00:00.000Z
-    end: !!timestamp 2021-10-24T02:00:00.000Z
+  - start: !!timestamp 2021-10-23 19:00:00 -4
+    end: !!timestamp 2021-10-23 22:00:00 -4
   buttons:
   - link: https://discord.ncanthrosociety.org
     text: 'Discord '
@@ -179,13 +189,14 @@
 
     We will be hosting our Minecraft server once again. Keep progressing from last time! Don't feel like playing
     Minecraft? No worries, we can arrange other games too! Bring a game and make some friends!
+
 - title: Carolina Renaissance Festival
   img:
     src: /img/events/2021/10/renaissance-faire.jpg
     alt: Jousters
   times:
-  - start: !!timestamp 2021-10-16T14:00:00.000Z
-    end: !!timestamp 2021-10-16T21:30:00.000Z
+  - start: !!timestamp 2021-10-16 10:00:00 -4
+    end: !!timestamp 2021-10-16 17:30:00 -5
   address:
     text: 16445 Poplar Tent Rd, Huntersville, NC 28078
     link: https://goo.gl/maps/fVxEAAFbiLUnyJkd9
@@ -193,6 +204,7 @@
   description: |
     October 16th at 10am, join your fellow furs from the Triad and Triangle as we spend a day at the Renaissance Faire!
     Meet up at the front at 10am if you want to explore as a group. There will be a group photo at 11:15 near the joust!
+
 - title: NCAS DJ Night
   img:
     src: /img/events/2021/09/dj-night.jpg
@@ -201,8 +213,8 @@
     - type: image/webp
       srcset: /img/events/2021/09/dj-night.webp
   times:
-  - start: !!timestamp 2021-09-19T00:00:00.000Z
-    end: !!timestamp 2021-09-19T04:00:00.000Z
+  - start: !!timestamp 2021-09-18 20:00:00 -4
+    end: !!timestamp 2021-09-18 23:59:59 -4
   buttons:
   - link: https://www.mixcloud.com/NCAnthroSociety/favorites/
     text: NCAS Mixcloud
@@ -214,6 +226,7 @@
 
     This is a free event, and a Mixcloud account is not necessary (but great for following your favorite DJs!). Stay
     tuned for the event link!
+
 - title: Wet n' Wild
   reg:
     link: https://ncanthrosociety.regfox.com/ncas-wet-n-wild-visit-2021
@@ -223,8 +236,8 @@
     - type: Child
       price: '25.00'
   times:
-  - start: !!timestamp 2021-08-28T16:00:00.000Z
-    end: !!timestamp 2021-08-28T22:00:00.000Z
+  - start: !!timestamp 2021-08-28 12:00:00 -4
+    end: !!timestamp 2021-08-28 18:00:00 -4
   address:
     link: https://g.page/wwepgreensboro?share
     text: 3910 S Holden Rd, Greensboro, NC 27406
@@ -235,12 +248,13 @@
 
     Please note, we must have at least 15 members to qualify for the group rate with Wet n' Wild. If there is not enough
     interest, we will postpone the trip to a later date. If there is, members will be charged after registration closes.
+
 - title: Cookout at Ritter Park
   reg:
     link: https://forms.gle/mQNWTmRugbDfKUjZ9
   times:
-  - start: !!timestamp 2021-07-25T19:30:00.000Z
-    end: !!timestamp 2021-07-26T00:00:00.000Z
+  - start: !!timestamp 2021-07-25 15:30:00 -4
+    end: !!timestamp 2021-07-25 20:00:00 -4
   address:
     link: https://goo.gl/maps/jQqFxAQ3bdvKji2R7
     text: 301 W Lochmere Dr, Cary, NC 27518. Rotary Shelter.
@@ -248,6 +262,7 @@
   description: |
     Let's enjoy the summer together! Join NCAS for an afternoon of food and activities at Ritter Park starting at
     3:30pm. Food, fun, and fursuits! Registration must be completed by 11:59 PM on July 20th.
+
 - title: NCAS Arts -n- Crafts Night
   img:
     sources:
@@ -255,8 +270,8 @@
     src: /img/events/2021/07/arts-n-crafts-event.png
     alt: Square with Text
   times:
-  - start: !!timestamp 2021-07-09T23:30:00.000Z
-    end: !!timestamp 2021-07-10T01:00:00.000Z
+  - start: !!timestamp 2021-07-09 19:30:00 -4
+    end: !!timestamp 2021-07-09 21:00:00 -4
   buttons:
   - link: https://discord.ncanthrosociety.org
     text: 'Discord '
@@ -266,13 +281,14 @@
     Join NCAS on July 9th at 7:30pm for a night of crafting fun, drawing games, and casual art! We will all be chatting 
     over [Discord](https://discord.ncanthrosociety.org) and drawing on [Aggie.io](https://aggie.io/) if you want to get 
     used to the tools before hand!
+
 - title: Pub Trivia Night
   img:
     src: /img/events/2021/06/pub-trivia-night.jpg
     alt: Pub Trivia Night
   times:
-  - start: !!timestamp 2021-06-11T23:00:00.000Z
-    end: !!timestamp 2021-06-12T01:00:00.000Z
+  - start: !!timestamp 2021-06-11 19:00:00 -4
+    end: !!timestamp 2021-06-11 21:00:00 -4
   buttons:
   - link: https://discord.ncanthrosociety.org
     text: NCAS Discord
@@ -280,6 +296,7 @@
     Think you're knowledgeable on a variety of topics?  Ready for a trivia night that reminds you of the local pub?
     NCAS has you covered!  Grab your friends and come join your fellow furs on the
     [NCAS Discord](https://discord.ncanthrosociety.org) on June 11th starting at 7pm for a night of fun and trivia.
+
 - title: Minecraft Game Night
   img:
     src: /img/events/2021/04/minecraft-game-night.jpg
@@ -288,8 +305,8 @@
     - srcset: /img/events/2021/04/minecraft-game-night.webp
       type: image/webp
   times:
-  - start: !!timestamp 2021-04-16T23:00:00.000Z
-    end: !!timestamp 2021-04-17T02:00:00.000Z
+  - start: !!timestamp 2021-04-16 19:00:00 -4
+    end: !!timestamp 2021-04-16 22:00:00 -4
   buttons:
   - link: https://discord.ncanthrosociety.org
     text: NCAS Discord
@@ -297,13 +314,14 @@
     Join us on April 16th at 7pm for an evening of gaming on the [NCAS Discord](https://discord.ncanthrosociety.org).
     We will be hosting our own Minecraft server, but you can also break out and play your own games, or just hang out
     and chat.
+
 - title: NCAS LIVE - Questionable Choices
   img:
     src: /img/events/streams/ncas-stream.jpg
     alt: Cassie Streaming
   times:
-  - start: !!timestamp 2021-03-24T23:00:00.000Z
-    end: !!timestamp 2021-03-25T01:30:00.000Z
+  - start: !!timestamp 2021-03-24 19:00:00 -4
+    end: !!timestamp 2021-03-24 21:30:00 -4
   buttons:
   - link: https://www.twitch.tv/ncanthrosociety
     text: Twitch
@@ -318,10 +336,11 @@
     We'll be throwing some presenters under the bus with Keynote Karaoke, we'll give YOU control of your own remote
     control fursuiter, and to finish it off, we've found three crazy artists willing to take on the Commissioner from
     Hell!
+
 - title: Irish Pub Karaoke
   times:
-  - start: !!timestamp 2021-03-17T23:00:00.000Z
-    end: !!timestamp 2021-03-18T02:00:00.000Z
+  - start: !!timestamp 2021-03-17 19:00:00 -4
+    end: !!timestamp 2021-03-17 22:00:00 -4
   buttons:
   - link: https://discord.ncanthrosociety.org
     text: NCAS Discord
@@ -329,22 +348,24 @@
     Join us on St. Patrick's day for a night of singing and good times! Come participate in our karaoke night on the
     [NCAS Discord server](https://discord.ncanthrosociety.org) on March 17th at 7 pm! Whether you want to perform or
     just watch it will be a great time!
-- title: 'Blue Ridge Furfare (BRFF): The Great Outdoors'
+
+- title: 'Blue Ridge Furfare (BRFF)'
   img:
     src: /img/events/brff/brff-logo.png
     alt: Blue Ridge Furfare Logo
   times:
-  - start: !!timestamp 2021-03-12T05:00:00.000Z
-    end: !!timestamp 2021-03-15T03:59:00.000Z
+  - start: !!timestamp 2021-03-12 00:00:00 -5
+    end: !!timestamp 2021-03-14 23:59:59 -4  # Timezone changes on 2021-03-13.
     allDay: true
   info: https://www.blueridgefurfare.com/
   description: |
     Ready for a convention in Asheville, North Carolina? Pounce into a weekend of dance competitions, fursuit
     photography, and chill Asheville vibes.
+
 - title: Discord Dinner Meet
   times:
-  - start: !!timestamp 2021-02-25T00:00:00.000Z
-    end: !!timestamp 2021-02-25T02:00:00.000Z
+  - start: !!timestamp 2021-02-24 19:00:00 -5
+    end: !!timestamp 2021-02-24 21:00:00 -5
   address:
     link: https://discord.com/invite/bCRXhFR
     text: NCAS Discord
@@ -354,10 +375,11 @@
 
     So let's take a break for a night, use our technology to help us stay sane, and enjoy a nice meal together over
     Discord! We can share gossip, swap recipes, and maybe even play some party games!
+
 - title: Improv Night
   times:
-  - start: !!timestamp 2021-02-10T00:00:00.000Z
-    end: !!timestamp 2021-02-10T02:00:00.000Z
+  - start: !!timestamp 2021-02-09 19:00:00 -5
+    end: !!timestamp 2021-02-09 21:00:00 -5
   address:
     link: https://discord.com/invite/bCRXhFR
     text: NCAS Discord
@@ -365,10 +387,11 @@
     Miss having your funny bone tickled? Or maybe you're the jokester riling up your friends? Come join the NCAS Improv
     Night on Feb 9th at 7pm on the [NCAS Discord](https://discord.com/invite/bCRXhFR). There will be some fun comedy
     games to play or you can sit back and laugh!
+
 - title: Virtual New Years Eve Party
   times:
-  - start: !!timestamp 2021-01-01T02:00:00.000Z
-    end: !!timestamp 2021-01-01T05:30:00.000Z
+  - start: !!timestamp 2020-12-31 21:00:00 -5
+    end: !!timestamp 2021-01-01 00:30:00 -5
   address:
     link: https://discord.com/invite/bCRXhFR
     text: NCAS Discord
@@ -376,10 +399,11 @@
     Ready to put 2020 behind you and welcome 2021? Stay home with NCAS and celebrate the holiday! Join us on the
     [NCAS Discord](https://discord.com/invite/bCRXhFR) to host an array of activities and different streams. Come
     celebrate the countdown with cute critters.
+
 - title: NC Furs Discord Game Night
   times:
-  - start: !!timestamp 2020-12-16T23:00:00.000Z
-    end: !!timestamp 2020-12-17T02:00:00.000Z
+  - start: !!timestamp 2020-12-16 18:00:00 -5
+    end: !!timestamp 2020-12-16 21:00:00 -5
   address:
     link: https://discord.gg/cDcr4AM2kv
     text: NC Furs Discord
@@ -387,22 +411,24 @@
     Join us for an evening of fun gaming with NCAS Staff members hosted on the
     [NC Furs Discord](https://discord.gg/cDcr4AM2kv) We will be playing a variety of games and hanging out
     virtually - either join us for a game we are hosting or find some friends to play something of your choosing!
+
 - title: Virtual Art Meet
   times:
-  - start: !!timestamp 2020-11-18T23:00:00.000Z
-    end: !!timestamp 2020-11-19T02:00:00.000Z
+  - start: !!timestamp 2020-11-18 18:00:00 -5
+    end: !!timestamp 2020-11-18 21:00:00 -5
   address:
     link: https://aggie.io
     text: Aggio.io
   info: /events/2020/11/virtual-art-meet
   description: |
     Missing your local artists or itching to draw? Come join NCAS's art night for some virtual fun!
+
 - title: Fuzzy Logic Escape Room
   times:
-  - start: !!timestamp 2020-10-29T01:00:00.000Z
-    end: !!timestamp 2020-10-29T02:00:00.000Z
-  - start: !!timestamp 2020-10-31T01:00:00.000Z
-    end: !!timestamp 2020-10-31T02:00:00.000Z
+  - start: !!timestamp 2020-10-28 20:00:00 -4
+    end: !!timestamp 2020-10-28 21:00:00 -4
+  - start: !!timestamp 2020-10-30 20:00:00 -4
+    end: !!timestamp 2020-10-30 21:00:00 -4
   highlights:
   - Hosted virtually via Zoom.
   info: /events/2020/10/fuzzy-logic
@@ -412,18 +438,20 @@
     has been the staple of Furry Conventions across the US makes its way to your living room! Join up to 8 friends
     as you all work together to solve fun, mind-bending puzzles in the allotted time! If you think you got what it
     takes, then join us as NCAS presents: Fuzzy Logic Escape Room... Quarantine Edition!
+
 - title: Virtual Art Meet
   times:
-  - start: !!timestamp 2020-08-26T22:00:00.000Z
-    end: !!timestamp 2020-08-27T01:00:00.000Z
+  - start: !!timestamp 2020-08-26 18:00:00 -4
+    end: !!timestamp 2020-08-26 21:00:00 -4
   description: |
     Join us for an evening of digital drawing and more! We will start off with a free draw period to let everyone get
     used to [Draw.chat](https://draw.chat/). Then we will play Pictionary and Commissioner from Hell. We will talk over
     [Discord](https://discord.gg/bCRXhFR) during the meet so feel free to join even if you don't want to draw.
+
 - title: Raleigh ALS Walk
   times:
-  - start: !!timestamp 2020-04-18T12:30:00.000Z
-    end: !!timestamp 2020-04-18T18:00:00.000Z
+  - start: !!timestamp 2020-04-18 08:30:30 -4
+    end: !!timestamp 2020-04-18 14:00:00 -4
   address:
     link: https://goo.gl/maps/cgiZwsQiUvLWYrAw8
     text: Halifax Mall, 300 N Salisbury St, Raleigh, NC 27601
@@ -449,13 +477,14 @@
     Join the Friends of Tony as they walk in memory of Dobgomb on April 18, 2020 at the Raleigh ALS Walk hosted by
     the ALS Association. Check-in is at 08:30 AM, and the walk starts at 10:00 AM. The walk length is 2 miles.
     Fursuits are very much welcome!
+
 - title: Blue Ridge Furfare (BRFF)
   img:
     src: /img/events/brff/brff-logo.png
     alt: Blue Ridge Furfare Logo
   times:
-  - start: !!timestamp 2020-03-12T05:00:00.000Z
-    end: !!timestamp 2020-03-15T03:59:00.000Z
+  - start: !!timestamp 2020-03-12 00:00:00 -5
+    end: !!timestamp 2020-03-14 23:59:59 -4  # Timezone changes on 2020-03-14.
     allDay: true
   address:
     link: https://goo.gl/maps/3VgbyaoCkDyy399M9
@@ -471,6 +500,7 @@
     * [afoxdraws.com](http://afoxdraws.com/index.html)
     * [Twitter @Orlando_Fox](https://twitter.com/Orlando_Fox)
     * [Fur Affinity](https://www.furaffinity.net/user/thedoggygal)
+
 - title: Wheels Fun Park
   reg:
     link: https://ncanthrosociety.regfox.com/something-moving
@@ -480,8 +510,8 @@
     - type: On-Site Registration
       price: '25.00'
   times:
-  - start: !!timestamp 2020-03-08T03:00:00.000Z
-    end: !!timestamp 2020-03-08T04:59:00.000Z
+  - start: !!timestamp 2020-03-07 22:00:00 -5
+    end: !!timestamp 2020-03-07 23:59:59 -5
   address:
     link: https://goo.gl/maps/16wFFN8XHktbqgys5
     text: 715 N. Hoover Road, Durham, NC 27703
@@ -490,6 +520,7 @@
     Who doesn't like skating?! NCAS is proud to host our first (and hopefully one of many) skating meets! Join your
     fellow furs on the roller skating rink at Wheels Fun Park, where we will have the entire skating rink AND arcade to
     ourselves. Fursuits are more than welcome on the skating rink, and we will even be playing some fursuit games.
+
 - title: Greensboro Science Center and SkyWild
   reg:
     link: https://ncanthrosociety.regfox.com/something-science
@@ -498,8 +529,8 @@
     - type: SKYWILD
       price: '42.00'
   times:
-  - start: !!timestamp 2020-02-08T18:00:00.000Z
-    end: !!timestamp 2020-02-08T22:00:00.000Z
+  - start: !!timestamp 2020-02-08 13:00:00 -5
+    end: !!timestamp 2020-02-08 17:00:00 -5
   address:
     link: https://goo.gl/maps/U6jkkdVopNKeFZwz6
     text: 4301 Lawndale Drive, Greensboro, NC 27455
@@ -511,14 +542,15 @@
 
     Please note that SKYWILD registration includes general registration. SKYWILD registration is only available during
     pre-registration.
+
 - title: A Trip to the Conservators Center
   reg:
     link: https://ncanthrosociety.regfox.com/something-wild
     options:
     - price: '20.00'
   times:
-  - start: !!timestamp 2019-12-21T18:00:00.000Z
-    end: !!timestamp 2019-12-21T21:00:00.000Z
+  - start: !!timestamp 2019-12-21 13:00:00 -5
+    end: !!timestamp 2019-12-21 16:00:00 -5
   address:
     link: https://g.page/AnimalParkNC
     text: 676 E. Hughes Mill Road Burlington, NC 27217
