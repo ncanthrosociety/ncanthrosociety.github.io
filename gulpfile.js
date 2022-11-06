@@ -38,7 +38,7 @@ module.exports = {
 // Export the default and watch tasks.
 const defaultTask = series(
   clean.clean,
-  parallel(lint.lint, pug['compile-pug'], scss.scss, javascript.js, vendor.vendor, img.img, favicons.favicons)
+  parallel(pug.pug, scss.scss, javascript.js, img.img, favicons.favicons, vendor.vendor)
 )
 module.exports.default = defaultTask
 
@@ -46,9 +46,9 @@ const watchTask = series(
   defaultTask,
   parallel(
     () => {
-      watch(javascript.JS_WATCH_SRC, javascript.js)
       watch(pug.PUG_WATCH_SRC, pug.pug)
       watch(scss.SCSS_WATCH_SRC, scss.scss)
+      watch(javascript.JS_WATCH_SRC, javascript.js)
       watch(img.IMG_WATCH_SRC, img.img)
       watch(favicons.FAVICONS_WATCH_SRC, favicons.favicons)
       watch(vendor.VENDOR_WATCH_SRC, vendor.vendor)
