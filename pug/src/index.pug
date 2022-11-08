@@ -1,0 +1,158 @@
+extends /pug/templates/base
+
+block navbar-page-links
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#greetings") NCAS
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#social") Social Media
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#contact") Contact
+
+block content
+
+    section(id='greetings' title="Greetings")
+        h1 North Carolina Anthropomorphic Society
+        p
+            | Hello and greetings from the North Carolina Anthropomorphic Society, Inc. (NCAS). We are a nonprofit
+            | organization operating out of Raleigh, North Carolina. Our goal is to organize events that enrich the
+            | lives of our members and give back to the anthropomorphic community throughout the state and
+            | surrounding region.
+        p
+            | We aim to host a variety of events taking place throughout the year, and are always actively exploring
+            | additional ways we can contribute to the anthropomorphic community. Check back here, or follow us on
+            | social media, to stay up to date on all the latest events. Our founders, staff, and volunteers hope to
+            | see you soon!
+        p
+            | If you are interested in becoming a part of #[abbr(title='North Carolina Anthropomorphic Society') NCAS],
+            | see our #[a(href='/staff/application') staff and volunteer] information.
+
+    section(id='social' title='Social Media')
+        h1 Social Media
+        p
+            | Stay in touch and be informed of our most current news and happenings by liking or following our
+            | official social media channels.
+        ul
+            li Twitter: #[a(href='https://twitter.com/NCAnthroSociety') @NCAnthroSociety]
+            li Facebook: #[a(href='https://www.facebook.com/North-Carolina-Anthropomorphic-Society-112975086789463/') North Carolina Anthropomorphic Society]
+            li Telegram chat: #[a(href='http://telegram.ncanthrosociety.org') NCAS General]
+            li Telegram announcement channel: #[a(href='https://t.me/NCAnthroS') NC Anthropomorphic Society]
+
+    section(id='contact' title="Contact us")
+        h1 Contact Us
+        p.
+            You can reach us by email at:
+            #[a(href='mailto:contact@ncanthrosociety.org') contact@ncanthrosociety.org].
+        p.
+            If you are an organizer or a representative:
+            #[a(href='mailto:community@ncanthrosociety.org') community@ncanthrosociety.org].
+        div(class='row row-cols-1 row-cols-xl-3')
+            div(class='col')
+                h2 NCAS Contacts
+                ul
+                    li
+                        | NCAS Charity Relations
+                        a(href='mailto:charity-relations@ncanthrosociety.org')
+                            br
+                            | charity-relations@ncanthrosociety.org
+                    li
+                        | NCAS Dealer Relations
+                        a(href='mailto:dealer-relations@ncanthrosociety.org')
+                            br
+                            | dealer-relations@ncanthrosociety.org
+                    li
+                        | NCAS Event Planning
+                        a(href='mailto:event-planning@ncanthrosociety.org')
+                            br
+                            | event-planning@ncanthrosociety.org
+                    li
+                        | NCAS Guest Relations
+                        a(href='mailto:guest-relations@ncanthrosociety.org')
+                            br
+                            | guest-relations@ncanthrosociety.org
+                    li
+                        | NCAS HR
+                        a(href='mailto:hr@ncanthrosociety.org')
+                            br
+                            | hr@ncanthrosociety.org
+                    li
+                        | NCAS Registration
+                        a(href='mailto:registration@ncanthrosociety.org')
+                            br
+                            | registration@ncanthrosociety.org
+                    li
+                        | NCAS Volunteering
+                        a(href='mailto:volunteering@ncanthrosociety.org')
+                            br
+                            | volunteering@ncanthrosociety.org
+                    li
+                        | NCAS Venue Relations
+                        a(href='mailto:venue-relations@ncanthrosociety.org')
+                            br
+                            | venue-relations@ncanthrosociety.org
+                    li
+                        | NCAS Vendor Relations
+                        a(href='mailto:vendor-relations@ncanthrosociety.org')
+                            br
+                            | vendor-relations@ncanthrosociety.org
+            div(class='col')
+                h2 Bewhiskered (BWS) Contacts
+                ul
+                    li
+                        | BWS Contact
+                        a(href='mailto:contact@bewhiskeredcon.org')
+                            br
+                            | contact@bewhiskeredcon.org
+                    li
+                        | BWS Dealer Relations
+                        a(href='mailto:dealer-relations@bewhiskeredcon.org')
+                            br
+                            | dealer-relations@bewhiskeredcon.org
+                    li
+                        | BWS DJ Coordinator
+                        a(href='mailto:dj-coordinator@bewhiskeredcon.org')
+                            br
+                            | dj-coordinator@bewhiskeredcon.org
+                    li
+                        | BWS Programming
+                        a(href='mailto:programming@bewhiskeredcon.org')
+                            br
+                            | programming@bewhiskeredcon.org
+                    li
+                        | BWS Vendor Relations
+                        a(href='mailto:vendor-relations@bewhiskeredcon.org')
+                            br
+                            | vendor-relations@bewhiskeredcon.org
+                    li
+                        | BWS Volunteering
+                        a(href='mailto:volunteering@bewhiskeredcon.org')
+                            br
+                            | volunteering@bewhiskeredcon.org
+            div(class='col')
+                h2 Blue Ridge Furfare (BRFF) Contacts
+                ul
+                    li
+                        | BRFF Contact
+                        a(href='mailto:contact@blueridgefurfare.org')
+                            br
+                            | contact@blueridgefurfare.org
+                    li
+                        | BRFF Dealer Relations
+                        a(href='mailto:dealer-relations@blueridgefurfare.org')
+                            br
+                            | dealer-relations@blueridgefurfare.org
+                    li
+                        | BRFF Volunteering
+                        a(href='mailto:volunteering@blueridgefurfare.org')
+                            br
+                            | volunteering@blueridgefurfare.org
+    section(id='onlyoffice' title='ONLYOFFICE')
+        h1 ONLYOFFICE
+        div(class='d-flex flex-column')
+            p.
+                Hey, nonprofits. Need an office solution that's budget-friendly? We've been using ONLYOFFICE. You
+                should go check them out.
+            a(href="https://onlyoffice.com?campaign=nonprofit" target="_blank" style="cursor: pointer;" rel="me nofollow")
+                img(class='img-fluid' alt="ONLYOFFICE on-premises" title="ONLYOFFICE on-premises" src='https://www.onlyoffice.com/images/banners/en-us/enterprise-edition-468-x-60-1.jpg')

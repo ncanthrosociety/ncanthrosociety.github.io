@@ -10,7 +10,7 @@
 # See https://yaml.org/type/timestamp.html for YAML timestamp formatting.
 # We use the space-separated format. Hours are in 24-hour format.
 #
-# For the full event typedef, see /pug-js/index.js.
+# For the full event typedef, see /lib/events.js.
 #
 # Event Template:
 # ---

@@ -1,0 +1,74 @@
+extends /pug/templates/base
+
+block navbar-page-links
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#description") Description
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#details") Details
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#schedule") Schedule
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#registration") Registration
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#faq") FAQ
+
+block content
+
+    section(id='description' title='Event Description')
+
+        h1 2022 Thanksgiving Feast
+
+        p.
+            It's back! The Thanksgiving feast is back again, and it's going to be more awesome than ever.
+
+        p.
+            This is a potluck style event. We will be providing turkeys and some other essentials. Please bring sides
+            and other dishes to share!
+
+    section(id='details' title='Details')
+
+        h2 Details
+
+        ul
+            li Date: Sunday, November 20th, 2022.
+            li Time: 7:00 AM - 5:00 PM EST.
+            li.
+                Location: Umstead State Park Reedy Creek Shelter #1. This shelter is located at the start of the Company
+                Mill Trail in Umstead's Reedy Creek entrance just off of I-40 and Harrison Ave.
+            li.
+                Address: #[a(href='https://goo.gl/maps/4GEyYgeNhMy9TZ1j7') Company Mill Trail, Cary, NC 27513].
+
+    section(id='schedule' title='Schedule')
+
+        h2 Schedule
+
+        ul
+            li
+                | 7:00 - 9:00 AM EST - Setup.
+            li
+                | 9:00 AM - 4:00 PM EST - Thanksgiving feast.
+                ul
+                    li Food will be served around noon.
+            li
+                | 4:00 PM - 5:00 PM - Teardown.
+
+    section(id='registration' title='Registration')
+
+        h2 Registration
+
+        p.
+            Registration is not required, but we do ask that you add whatever you are bringing to the
+            #[a(href='https://docs.google.com/document/d/1Lbrqun8TXfQo3OCIydurBVdExq2ERxuykKVjfrP8SJo/edit?usp=sharing') food list].
+
+    section(id='faq' title='FAQ')
+
+        h2 FAQ
+
+        h3 What's the parking situation like?
+        p.
+            Umstead is usually pretty busy. We recommend carpooling if possible.

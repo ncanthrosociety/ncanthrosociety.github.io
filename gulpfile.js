@@ -22,7 +22,7 @@ const gulpStylelint = require('gulp-stylelint')
 const header = require('gulp-header')
 const path = require('path')
 const pug = require('gulp-pug')
-const pugjs = require('./pug-js')
+const events = require('./lib/events')
 const pugLinter = require('gulp-pug-linter')
 const rename = require('gulp-rename')
 const sass = require('gulp-sass')(require('sass'))
@@ -56,23 +56,20 @@ const BUILD_DIR = path.join(__dirname, 'build')
 const EVENTS_DATA = 'data/events.yaml'
 const HTML_DEST = BUILD_DIR
 const PUG_SRC = [
-  '**/*.pug',
-  '!node_modules/**/*.pug',
-  '!mixins/**/*.pug',
-  '!base.pug',
-  '!events.pug',
-  '!events/events-archive.pug'
+  'pug/src/**/*.pug',
+  '!pug/src/events.pug',
+  '!pug/src/events/events-archive.pug'
 ]
-const PUG_SRC_EVENTS = ['events.pug']
-const PUG_SRC_EVENTS_ARCHIVE = ['events/events-archive.pug']
+const PUG_SRC_EVENTS = ['pug/src/events.pug']
+const PUG_SRC_EVENTS_ARCHIVE = ['pug/src/events/events-archive.pug']
 const PUG_TASK = 'pug'
-const PUG_WATCH_SRC = ['**/*.pug', '!node_modules/**/*.pug', 'data/events.yaml']
+const PUG_WATCH_SRC = ['pug/**/*.pug', EVENTS_DATA]
 
-// CSS
-const CSS_DEST = path.join(BUILD_DIR, 'css')
-const CSS_TASK = 'css'
-const SCSS_SRC = ['css/main.scss']
-const SCSS_WATCH_SRC = ['css/**/*.scss']
+// SCSS
+const SCSS_DEST = path.join(BUILD_DIR, 'css')
+const SCSS_TASK = 'scss'
+const SCSS_SRC = ['scss/main.scss']
+const SCSS_WATCH_SRC = ['scss/**/*.scss']
 
 // JS
 const JS_DEST = path.join(BUILD_DIR, 'js')
@@ -187,11 +184,11 @@ gulp.task(
     },
     async () => {
       // Load all events data.
-      const events = yaml.parse(fs.readFileSync(EVENTS_DATA).toString('utf-8'))
+      const eventsList = yaml.parse(fs.readFileSync(EVENTS_DATA).toString('utf-8'))
 
       // Bucket each event by the years that it starts in.
       const eventsByYear = {}
-      for (const event of events) {
+      for (const event of eventsList) {
         for (const time of event.times) {
           const year = time.start.getFullYear()
           eventsByYear[year] = eventsByYear[year] || []
@@ -213,11 +210,11 @@ gulp.task(
       const recentEvents = []
       for (const event of featuredEvents) {
         if (event.recurring) recurringEvents.push(event)
-        else if (!pugjs.isPastEvent(event)) upcomingEvents.push(event)
+        else if (!events.isPastEvent(event)) upcomingEvents.push(event)
         else recentEvents.push(event)
       }
-      upcomingEvents.sort(pugjs.compareEventTimes) // Sort ascending.
-      recentEvents.sort((a, b) => pugjs.compareEventTimes(b, a)) // Sort descending.
+      upcomingEvents.sort(events.compareEventTimes) // Sort ascending.
+      recentEvents.sort((a, b) => events.compareEventTimes(b, a)) // Sort descending.
 
       // Container for all gulp streams.
       const streams = []
@@ -235,7 +232,7 @@ gulp.task(
               eventYears: Object.keys(eventsByYear).sort((a, b) => {
                 return parseInt(b) - parseInt(a)
               }),
-              ...pugjs
+              ...events
             }
           }))
           .pipe(header(BANNER_HTML, { pkg }))
@@ -252,7 +249,7 @@ gulp.task(
               locals: {
                 year: year,
                 events: eventsByYear[year],
-                ...pugjs
+                ...events
               }
             }))
             .pipe(header(BANNER_HTML, { pkg }))
@@ -270,7 +267,7 @@ gulp.task(
 )
 
 // Compile SCSS
-gulp.task(CSS_TASK, () => {
+gulp.task(SCSS_TASK, () => {
   return gulp
     .src(SCSS_SRC)
     .pipe(sass.sync({ outputStyle: 'expanded' })
@@ -278,7 +275,7 @@ gulp.task(CSS_TASK, () => {
     .pipe(cleanCSS())
     .pipe(header(BANNER_CSS, { pkg }))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(CSS_DEST))
+    .pipe(gulp.dest(SCSS_DEST))
 })
 
 // Javascript
@@ -358,7 +355,7 @@ gulp.task(SERVE_TASK, () => {
 // Default task
 gulp.task(DEFAULT_TASK, gulp.series(
   CLEAN_TASK,
-  gulp.parallel(LINT_TASK, PUG_TASK, CSS_TASK, JS_TASK, VENDOR_TASK, IMG_TASK, FAVICON_TASK)
+  gulp.parallel(LINT_TASK, PUG_TASK, SCSS_TASK, JS_TASK, VENDOR_TASK, IMG_TASK, FAVICON_TASK)
 ))
 
 // Gulp watch
@@ -370,7 +367,7 @@ gulp.task(WATCH_TASK, gulp.series(
       gulp.watch(JS_LINT_SRC, gulp.series(LINT_JS_TASK))
       gulp.watch(PUG_LINT_SRC, gulp.series(LINT_PUG_TASK))
       gulp.watch(PUG_WATCH_SRC, gulp.series(PUG_TASK))
-      gulp.watch(SCSS_WATCH_SRC, gulp.series(CSS_TASK))
+      gulp.watch(SCSS_WATCH_SRC, gulp.series(SCSS_TASK))
       gulp.watch(JS_SRC, gulp.series(JS_TASK))
       gulp.watch(VENDOR_SRC, gulp.series(VENDOR_TASK))
       gulp.watch(IMG_SRC, gulp.series(IMG_TASK))
