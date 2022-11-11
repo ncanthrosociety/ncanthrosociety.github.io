@@ -28,6 +28,8 @@ to be installed manually, but are listed for informational purposes.
 
 ## Setting up for Development
 
+### Local Dev
+
 1. Install all required dependencies from [Dependencies and Technologies](#dependencies-and-technologies)
 2. Clone the NC Anthro Society website repository using git. 
    ```
@@ -35,7 +37,7 @@ to be installed manually, but are listed for informational purposes.
    ```
 3. Run npm install.
    ```
-   npm i
+   npm ci
    ```
 4. Run gulp default build task using npx.
    ```
@@ -46,6 +48,25 @@ to be installed manually, but are listed for informational purposes.
    npx gulp serve
    ```
 5. Open `http://localhost:3000`!
+
+Alternately, you can run `npx gulp watch` or `npm gulp-watch`. This will run
+the default build, set gulp to watch and rebuild files when the are edited,
+then serve the website, all in one step!
+
+### Codespaces
+
+We also support development on GitHub Codespaces using the [javascript-node](https://github.com/microsoft/vscode-dev-containers/tree/main/containers/javascript-node)
+dev container. Just launch the codespace and wait for it to start. Dependencies will be installed on creation. Then, run
+
+1. Run gulp default build task using npx.
+   ```
+   npx gulp
+   ```
+2. Run
+   ```
+   npx gulp serve
+
+Codespaces will will automatically set up port forwarding and prompt you to open in a browser.
 
 Alternately, you can run `npx gulp watch` or `npm gulp-watch`. This will run
 the default build, set gulp to watch and rebuild files when the are edited,
