@@ -1,0 +1,7 @@
+{
+  "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:18",
+  "postCreateCommand": "npm ci --include=dev",
+  "remoteEnv": {
+    "NCAS_SERVE_HOST": "0.0.0.0"
+  }
+}
