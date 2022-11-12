@@ -9,7 +9,7 @@ The following technologies are used to build this website and must be installed 
 
 | Dependency | Link                   | Version |
 | ---------- | ---------------------- |---------|
-| Node.js    | https://nodejs.org/en/ | v18     |
+| Node.js    | https://nodejs.org/en/ | v19     |
 
 This website additionally makes use of the following tools. They are managed by the main build system and do not need
 to be installed manually, but are listed for informational purposes.
@@ -35,7 +35,7 @@ to be installed manually, but are listed for informational purposes.
    ```
 3. Run npm install.
    ```
-   npm i
+   npm ci
    ```
 4. Run gulp default build task using npx.
    ```
