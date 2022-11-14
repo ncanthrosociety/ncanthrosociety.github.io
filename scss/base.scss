@@ -146,19 +146,27 @@ body {
       padding-right: 0.25 * $content-padding;
     }
 
+    // Thank you, stack overflow: https://stackoverflow.com/a/33057806
     &::before {
       $background-image: url('/img/NCAS_Logo_Website-Background.png');
       $background-opacity: 0.07;
-      $background-size: 90%;
+      $background-size: contain;
 
-      background: $primary-background-color $background-image no-repeat center fixed;
       content: '';
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      position: absolute;
+      display: block;
+      position: fixed;
       left: 0;
+      top: $nav-height;
+      width: 100vw;
+      height: 100vh;
+      z-index: -10;
+      background: $primary-background-color $background-image no-repeat center center;
+
       background-size: $background-size;
+      -webkit-background-size: $background-size;
+      -moz-background-size: $background-size;
+      -o-background-size: $background-size;
+
       opacity: $background-opacity;
     }
 
