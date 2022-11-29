@@ -45,6 +45,30 @@
 #    ...
 
 
+- title: Animal Park at the Conservators Center
+  img:
+    src: /img/events/animal-park/animal-park.png
+    alt: Join us at the Animal Park!
+    sources:
+    - srcset: /img/events/animal-park/animal-park.webp
+      type: image/webp
+  reg:
+    link: https://ncanthrosociety.regfox.com/ncas-animal-park-2023
+    options:
+    - type: Pre-Reg
+      price: 20.00
+  times:
+  - start: !!timestamp 2023-01-28 12:30:00 -5
+    end: !!timestamp 2023-01-28 16:00:00 -5
+  address:
+    link: https://g.page/AnimalParkNC?share
+    text: 676 E. Hughes Mill Road Burlington, NC 27217
+  info: /events/2023/01/animal-park
+  description: |
+    Join us for a tour of the Animal Park at the Conservators Center followed by a group hangout on Saturday, 
+    January 28th! We’ll gather at 12:30 PM for a guided tour to see the lions, tigers, wolves, and rest of the residents 
+    of the Animal Park. Afterwards, we’ll spend time together at their picnic shelter with some snacks and games. 
+
 - title: Annual Thanksgiving Feast
   times:
   - start: !!timestamp 2022-11-20 07:00:00 -5
@@ -114,10 +138,10 @@
 
 - title: Animal Park at the Conservators Center
   img:
-    src: /img/events/2021/12/animal-park.png
+    src: /img/events/animal-park/animal-park.png
     alt: Join us at the Animal Park!
     sources:
-    - srcset: /img/events/2021/12/animal-park.png
+    - srcset: /img/events/animal-park/animal-park.webp
       type: image/webp
   reg:
     link: https://ncanthrosociety.regfox.com/ncas-animal-park-2021
