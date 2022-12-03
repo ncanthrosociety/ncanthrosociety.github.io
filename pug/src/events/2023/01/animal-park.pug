@@ -1,0 +1,82 @@
+extends /pug/templates/base
+
+block navbar-page-links
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#description") Description
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#details") Details
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#schedule") Schedule
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#registration") Registration
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#faq") FAQ
+
+block content
+
+    section(id='description' title='Event Description')
+
+        h1 Title
+
+        p.
+            Join us for a tour of the Animal Park at the Conservators Center followed by a group hangout on Saturday,
+            January 28th! We’ll gather at 12:30 PM for a guided tour to see the lions, tigers, wolves, and rest of the
+            residents of the Animal Park. Afterwards, we’ll spend time together at their picnic shelter with some snacks and games.
+
+    section(id='details' title='Details')
+
+        h2 Details
+
+        ul
+            li Date: January 28th, 2023.
+            li Time: 12:30 - 4:00 PM.
+            li
+                | Location: #[a(href='https://g.page/AnimalParkNC?share') 676 E. Hughes Mill Road Burlington, NC 27217].
+            li
+                | Website: #[a(href='https://animalparknc.org') https://animalparknc.org].
+            li Registration: $20.00/person.
+
+    section(id='schedule' title='Schedule')
+
+        h2 Schedule
+
+        ul
+            li
+                | 12:30 PM EST - Arrival and check-in.
+            li
+                | 1:00 - 2:00 PM EST - Tour.
+            li
+                | 2:00 - 4:00 PM EST - Hangout.
+
+    section(id='registration' title='Registration')
+
+        h2 Registration
+
+        h3 General Registration
+        ul
+            li
+                | Registration is available on
+                |
+                a(href='https://ncanthrosociety.regfox.com/ncas-animal-park-2023', title="Registration Page") RegFox.
+            li
+                | Deadline to register: 11:59 PM on January 14th, 2023.
+            li Refunds are not available after the registration deadline.
+
+        h3 Voting Member Registration
+        p
+            | If you are a voting member, please check the voting member
+            | Telegram chat for additional details.
+
+    section(id='faq' title='FAQ')
+
+        h2 FAQ
+
+        h3 Is there cell reception at the Animal Park?
+        p.
+            Cell reception is always pretty spotty at the animal park. Plan on being disconnected for the day. If you
+            rely on GPS to get to/from the location, we recommend downloading offline maps beforehand!

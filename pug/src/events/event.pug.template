@@ -1,4 +1,4 @@
-extends /base
+extends /pug/templates/base
 
 block navbar-page-links
 
