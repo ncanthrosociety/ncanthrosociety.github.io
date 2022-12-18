@@ -46,13 +46,12 @@
 
 
 - title: Triangle ALS Walk
-# TODO
-#  img:
-#    src:
-#    alt:
-#    sources:
-#    - srcset:
-#      type:
+  img:
+    src: img/events/2023/04/triangle-als-walk.jpg
+    alt: Attendees at the Triangle ALS Walk.
+    sources:
+    - srcset: img/events/2023/04/triangle-als-walk.webp
+      type: image/webp
   times:
   - start: !!timestamp 2023-04-15 08:00:00 -4
     end: !!timestamp 2023-04-15 14:00:00 -4
