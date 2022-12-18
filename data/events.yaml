@@ -46,6 +46,7 @@
 
 
 - title: Triangle ALS Walk
+# TODO
 #  img:
 #    src:
 #    alt:
@@ -59,8 +60,11 @@
   timeTBD: false
   address:
     link: https://goo.gl/maps/ohTqW4MJtnXcAQ4F9
-    text: Government Complex, 300 N Salisbury St, Raleigh, NC 27603
+    text: Halifax Mall (Government Complex, 300 N Salisbury St, Raleigh, NC 27603)
   info: /events/2023/04/als-walk
+  buttons:
+  - link: https://p2p.onecause.com/ncas
+    text: Donate Now
   description: |
     The North Carolina Anthro Society is partnering with the North Carolina chapter of the ALS association in their 
     fight to defeat ALS. Our goal is to raise $2,500 in support of their mission to serve, advocate for, and empower 
