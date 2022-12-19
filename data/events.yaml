@@ -45,6 +45,33 @@
 #    ...
 
 
+- title: Triangle ALS Walk
+  img:
+    src: img/events/2023/04/triangle-als-walk.jpg
+    alt: Attendees at the Triangle ALS Walk.
+    sources:
+    - srcset: img/events/2023/04/triangle-als-walk.webp
+      type: image/webp
+  times:
+  - start: !!timestamp 2023-04-15 08:00:00 -4
+    end: !!timestamp 2023-04-15 14:00:00 -4
+    allDay: true
+  timeTBD: false
+  address:
+    link: https://goo.gl/maps/ohTqW4MJtnXcAQ4F9
+    text: Halifax Mall (Government Complex, 300 N Salisbury St, Raleigh, NC 27603)
+  info: /events/2023/04/als-walk
+  buttons:
+  - link: https://p2p.onecause.com/ncas
+    text: Donate Now
+  description: |
+    The North Carolina Anthro Society is partnering with the North Carolina chapter of the ALS association in their 
+    fight to defeat ALS. Our goal is to raise $2,500 in support of their mission to serve, advocate for, and empower 
+    people affected by ALS to live their lives to the fullest. 
+
+    Join us for the Triangle ALS walk on Saturday, April 15, 2023. Fursuits are welcome before, after, and during the 
+    walk.
+
 - title: Animal Park at the Conservators Center
   img:
     src: /img/events/animal-park/animal-park.png
