@@ -1,0 +1,76 @@
+extends /pug/templates/base
+
+block navbar-page-links
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#shirts") Shirts
+
+    li(class="nav-item")
+        a(class="nav-link js-scroll-trigger" href="#participation") Participation
+
+block content
+
+    section(id='preamble' title='Preamble')
+
+        p.
+            For years, Furry fans throughout North Carolina have helped in the effort to defeat ALS. Many were inspired by
+            the indomitable spirit and courage of Tony "Dogbomb" Barrett, who faced the disease with defiance to the very
+            end. This year, we are hoping to bring our support to the next level. Spearheaded by the NC Anthro Society,
+            Furry groups throughout the state have banded together not only to support this year's walk in Raleigh, but to
+            sponsor it as a united community. The aim is not only to demonstrate the caring and generosity that are the
+            hallmarks of Furry Fandom, but most importantly to raise more money than ever for ALS research, and perhaps
+            even inspire some other corporate sponsors to step up their game.
+
+        p.
+            If you haven’t seen it yet, you can find all the details about our fundraiser and donate on the Team DogBomb
+            page: #[a(href='http://web.alsa.org/goto/TeamDogBomb2023' target='_blank') http://web.alsa.org/goto/TeamDogBomb2023].
+
+    section(id='shirts' title='Event Description')
+
+        h1 DogBomb T-Shirts
+
+        p.
+            The fine art team over at the NC Anthro Society has designed a lovely DogBomb t-shirt. At the end of
+            February we will be giving shirts to two lucky donors as a thank-you for donating to the ALS association
+            fundraiser.
+
+        div(class='row row-cols-2')
+            picture
+                source(srcset='/img/events/2020-als-walk-shirt-art.webp' type='image/webp')
+                source(srcset='/img/events/2020-als-walk-shirt-art.jpg' type='image/jpg')
+                img(class='img-fluid col' src='/img/events/2020-als-walk-shirt=art.jpg', alt='DogBomb t-shirt artwork')
+            picture
+                source(srcset='/img/events/als-walk-shirt-design-render.webp' type='image/webp')
+                source(srcset='/img/events/als-walk-shirt-design-render.png' type='image/jpg')
+                img(class='img-fluid col' src='/img/events/2020-als-walk-shirt.jgp' alt='DogBomb t-shirt model')
+
+    section(id='participation')
+
+        h1 How to Participate
+
+        p.
+            Want a chance to receive one of the two dog-bomb t-shirts? Here’s how!
+
+        ol
+            li.
+                Go to the NC Anthro Society fundraiser page at
+                #[a(href='http://web.alsa.org/goto/ncanthrosociety' target='_blank') http://web.alsa.org/goto/ncanthrosociety].
+                You can also find us through the team roster on the
+                #[a(href='http://web.alsa.org/goto/TeamDogBomb2023' target='_blank') Team DogBomb page].
+            li.
+                Donate at least $20 before March 1st, 2023.
+            ol
+                li.
+                    Each multiple of $20 will give you another entry to potentially be chosen.
+                li.
+                    When you donate, enter the best method to contact you into the notes field. Preferred methods are
+                    email or Telegram. If you are selected, we will use the contact method to confirm your t-shirt size
+                    and shipping details. Important! If you do not provide any contact information you will not be
+                    eligible to receive a shirt.
+            li.
+                Spread the word on social media! At the end of the day this is for an amazing charity, and we want to help them as much as
+                possible.
+
+        p.
+            You can still donate to anyone on the team on or after March 1st, but after that we’ll already have picked
+            the lucky recipients of the shirts.
