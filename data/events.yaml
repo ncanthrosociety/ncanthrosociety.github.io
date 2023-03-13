@@ -72,6 +72,26 @@
     Join us for the Triangle ALS walk on Saturday, April 15, 2023. Fursuits are welcome before, after, and during the 
     walk.
 
+- title: 'Blue Ridge Furfare: Mainfurame Meltdown'
+  img:
+    src: /img/events/2023/03/brff-mainfurame-meltdown.jpg
+    alt: Blue Ridge Furfare logo
+    sources:
+    - srcset: /img/events/2023/03/brff-mainfurame-meltdown.webp
+      type: image/webp
+  times:
+  - start: !!timestamp 2023-03-17 00:00:00 -4
+    end: !!timestamp 2023-03-19 11:59:00 -4
+    allDay: true
+  info: https://blueridgefurfare.org/
+  description: |
+    Get ready to dive into a melting main-furr-ame of digital furry mayhem. The Good News: Beloved forest ranger Aster 
+    has invented a brand new, top secret, virtual reality system! The Bad News: Aster and his team of technical experts 
+    have been transported into a crumbling virtual reality main-furr-ame. Join your possum friend Petal as she dives in 
+    to save her beloved squirrel companion. But the journey will not be easy. The Main-furr-ame is a world of diabolical 
+    competitions, presentations, and even dance competitions to prove your technical prowess. Time is short, with each 
+    passing moment, this computer generated reality is falling to pieces. Can you make it out on time?
+
 - title: Animal Park at the Conservators Center
   img:
     src: /img/events/animal-park/animal-park.png
