@@ -53,10 +53,8 @@
     - srcset: img/events/2023/04/triangle-als-walk.webp
       type: image/webp
   times:
-  - start: !!timestamp 2023-04-15 08:00:00 -4
-    end: !!timestamp 2023-04-15 14:00:00 -4
-    allDay: true
-  timeTBD: false
+  - start: !!timestamp 2023-04-15 08:30:00 -4
+    end: !!timestamp 2023-04-15 12:00:00 -4
   address:
     link: https://goo.gl/maps/ohTqW4MJtnXcAQ4F9
     text: Halifax Mall (Government Complex, 300 N Salisbury St, Raleigh, NC 27603)
