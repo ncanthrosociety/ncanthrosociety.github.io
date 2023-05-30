@@ -1,0 +1,4 @@
+//-
+    A mixin for rendering emails as a link using the email as the link text.
+mixin email-link(email)
+    a(href=`mailto:${email}` target='_blank')=email
