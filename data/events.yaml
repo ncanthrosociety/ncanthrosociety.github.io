@@ -59,12 +59,35 @@
     the middle of the ocean! Join us as we set sails for the island of Furtolla, the pirate capital of the world, in 
     search of adventure and dare I say… Treasure?!
 
+- title: Laser Tag With the Triad Furs
+  img:
+    src: /img/events/2023/10/triad-furs-laser-tag.jpg
+    alt: Zombie laser tag.
+  reg:
+    link: https://ncanthrosociety.regfox.com/triad-furs-ncas-laser-tag
+    options:
+    - type: General Registration
+      price: '30.00'
+  times:
+  - start: !!timestamp 2023-10-21 19:00:00 -4
+    end: !!timestamp 2023-10-21 21:00:00 -4
+  address:
+    link: https://maps.app.goo.gl/ed5Eb6FyBuTucovu9
+    text: 2419 W Webb Ave, Burlington, NC 27217
+  info: /events/2023/10/triad-furs-laser-tag
+  description: |
+    Zombie Invasion! Just in time for Halloween, join the Triad Furs at Ground Zero Tactical Laser Tag on Saturday, 
+    October 21st for a fun-filled private session at this unique tactical experience! Ground Zero brings another level 
+    of realism and fun to the time-honored sport, incorporating aspects from first-person shooter games, such as 
+    different game modes, killstreaks, multiple weapons, mystery boxes, and more. Will you survive this Halloween? We 
+    hope to see you there!
+
 - title: Triangle ALS Walk
   img:
-    src: img/events/2023/04/triangle-als-walk.jpg
+    src: /img/events/2023/04/triangle-als-walk.jpg
     alt: Attendees at the Triangle ALS Walk.
     sources:
-    - srcset: img/events/2023/04/triangle-als-walk.webp
+    - srcset: /img/events/2023/04/triangle-als-walk.webp
       type: image/webp
   times:
   - start: !!timestamp 2023-04-15 08:30:00 -4
