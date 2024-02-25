@@ -44,6 +44,30 @@
 #  description: |
 #    ...
 
+- title: Triangle ALS Walk
+  img:
+    src: /img/events/2024/04/triangle-als-walk.jpg
+    alt: Attendees at the Triangle ALS Walk.
+    sources:
+      - srcset: /img/events/2024/04/triangle-als-walk.webp
+        type: image/webp
+  times:
+  - start: !!timestamp 2024-04-20 08:30:00 -4
+    end: !!timestamp 2024-04-20 12:00:00 -4
+  address:
+    link: https://goo.gl/maps/ohTqW4MJtnXcAQ4F9
+    text: Halifax Mall (Government Complex, 300 N Salisbury St, Raleigh, NC 27603)
+  info: /events/2024/04/als-walk
+  buttons:
+  - link: https://secure.alsnc.org/site/TR?team_id=2343&fr_id=1120&pg=team
+    text: Donate Now
+  description: |
+    The North Carolina Anthro Society is partnering with the ALS United in their fight to defeat ALS. Our goal is to 
+    raise $10,000 in support of their mission to serve, advocate for, and empower people affected by ALS to live their 
+    lives to the fullest. 
+
+    Join us for the Triangle ALS walk on Saturday, April 20th, 2024. Fursuits are welcome before, after, and during the 
+    walk.
 
 - title: 'Bewhiskered 2023: Furries On The High Seas'
   img:
