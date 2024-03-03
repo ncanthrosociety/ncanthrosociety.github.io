@@ -44,6 +44,33 @@
 #  description: |
 #    ...
 
+- title: 'Carolina Furfare: Medieval in the Mountains'
+  img:
+    src: /img/events/2024/10/carolina-furfare.jpg
+    alt: Carolina Furfare Logo
+    sources:
+    - srcset: /img/events/2024/10/carolina-furfare.webp
+      type: image/webp
+  times:
+  - start: !!timestamp 2024-10-04 00:00:00 -4
+    end: !!timestamp 2024-10-06 11:59:59 -4
+    allDay: true
+  info: https://carolinafurfare.org
+  description: |
+    Trapped in Time.
+  
+    Surrounded by Fuzzies.
+  
+    Low on Hair Dye.
+
+    The Furfare is back! Join Petal and Aster as they celebrate a new name, a new city, and a magical new theme with 
+    Carolina Furfare: Medieval in the Mountains! After a close call with some nefarious networking (and some 
+    well-deserved time to rest), our intrepid Possum and Squirrel duo are going old school—way back to the Bark Ages! 
+    Dust off your armor, grab your best cloak, stock up on just a ridiculous amount of eye-liner, and quest for a 
+    weekend of furry fun and outraaaaageous accents at the Hickory Metro Convention Center, October 4-6!
+  
+    See you at the Furfare! Huzzah!
+
 - title: Triangle ALS Walk
   img:
     src: /img/events/2024/04/triangle-als-walk.jpg
