@@ -83,6 +83,52 @@
   
     See you at the Furfare! Huzzah!
 
+- title: CFF Court DJ Stream
+  img:
+    src: /img/events/2024/10/carolina-furfare.jpg
+    alt: Carolina Furfare Logo
+    sources:
+      - srcset: /img/events/2024/10/carolina-furfare.webp
+        type: image/webp
+  reg:
+    link: https://ncanthrosociety.regfox.com/cff-dj-night
+    options:
+    - type: General
+      price: 5
+  times:
+  - start: !!timestamp 2024-12-28 17:00:00 -5
+    end: !!timestamp 2024-12-29 02:00:00 -5
+    allDay: false
+  highlights:
+    - All proceeds from registration and royal merch sales will be donated to Rescue Tails Animal Sanctuary!
+    - This will be the best opportunity for you to take home a piece of our mythic ‘Con That Didn’t Happen’ and support a noble cause at the same time!
+  buttons:
+  - link: https://www.mixcloud.com/NCAnthroSociety
+    text: Watch Stream
+  description: |
+    ## Hear Ye, Hear Ye! A Special Event Notice
+    
+    The tempest may have delayed our Medieval in the Mountains gathering, but CFF shall return! While our bards work to 
+    bring the Furfare back, Prince Aster and Captain Petal cordially invite you to join them on Saturday December 28, 2024 
+    for a night of music and merriment as court DJs stream directly to your Magic Mirrors (we hear they are sometimes 
+    called ‘computers,’ but that sounds like a silly name).
+    
+    While the mystical music will be free for all to enjoy, Prince Aster has decreed that – in order to support our CFF 
+    charity partner Rescue Tails Animal Sanctuary – the CFF 2024 Royal Merch Booth shall also be opened for this night 
+    only to all who register as a member of the court! Registration for this event will cost $5; all proceeds from 
+    registration and Royal Merch sales will be donated to Rescue Tails Animal Sanctuary! This will be the best opportunity 
+    for you to take home a piece of our mythic ‘Con That Didn’t Happen’ and support a noble cause at the same time! 
+    
+    Participating Artists: 
+    
+    - Mockingbird (Multigenre EDM)
+    - Malkontent (80s, 90s, Psytrance, Drum & Bass)
+    - Nullstrukt (Hard Dance & Rawstyle)
+    - FETUSGRINDER (Heavy Dubstep)
+    - ALASKY (Drum & Bass)
+    - Genki (Hardcore & DnB)
+    - Axl (Acid Techno)
+
 - title: Triangle ALS Walk
   img:
     src: /img/events/2024/04/triangle-als-walk.jpg
