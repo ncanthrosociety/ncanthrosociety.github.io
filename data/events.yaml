@@ -44,12 +44,23 @@
 #  description: |
 #    ...
 - title: Carowinds Meet
+  img:
+    src: /img/events/2025/06/carowinds.jpg
+    alt: Carowinds banner.
+    sources:
+      - srcset: /img/events/2025/06/carowinds.webp
+        type: image/webp
   times:
   - start: !!timestamp 2025-06-07 10:00:00 -4
     end: !!timestamp 2025-06-07 22:00:00 -4
+  address:
+    link: https://maps.app.goo.gl/oeYF4AQ1hYAPLmJv7
+    text: Carowinds Amusement Park
   buttons:
   - link: https://cf-ca.store.cffunca.com/embed/login.php?emerchant_id=110&merchant_id=10000687
     text: Get Tickets
+  - link: https://t.me/+H7JTLar_RmBiOGUx
+    text: Telegram Chat
   description: |
     Do you have your ticket yet for the NCAS Carowinds Meet on June 7th? The ticket covers lunch from 2-3pm and parking.
 
