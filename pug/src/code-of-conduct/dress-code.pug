@@ -1,0 +1,430 @@
+extends /pug/templates/base
+
+
+block navbar-page-links
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-title').
+            NCAS Visual Dress Code
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-watch-the-profanity').
+            Watch the Profanity
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-religious-symbols').
+            Religious Symbols
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-political-statements').
+            Political Statements
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-violent-depictions').
+            Violent Depictions
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-no-shoes-no-entry').
+            No Shoes, No Entry
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-belly-and-sheer-shirts').
+            Belly and Sheer Shirts
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-mind-your-rear').
+            Mind Your Rear
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-nipples-and-chest-exposure').
+            Nipples and Chest Exposure
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-leave-something-to-the-imagination').
+            Leave Something to the Imagination
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-poodling-and-going-headless').
+            Poodling & Going Headless
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-pupmasks').
+            Pupmasks
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-leatherwear-and-latex').
+            Leatherwear and Latex
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-harness-in-and-out-of-fursuit').
+            Harness In and Out of Fursuit
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-drugs-and-illicit-substances').
+            Drugs and Illicit Substances
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-military-and-uniform-cosplay').
+            Military and Uniform Cosplay
+    li(class='nav-item')
+        a(class='nav-link js-scroll-trigger' href='#dress-code-props-and-accessories').
+            Props and Accessories
+
+
+block content
+
+    // Content Warning Overlay
+    div.content-warning#content-warning
+        h1 Content Warning
+        p.
+            This page contains sensitive or graphic imagery that may not be suitable
+            for all audiences. This content is used for informational purposes to help 
+            clarify our rules. Please acknowledge before continuing.
+        button#enter-site(type='button') I Understand & Enter
+
+
+    section(id='dress-code-title')
+        h1 NCAS Visual Dress Code
+
+    section(id='dress-code-watch-the-profanity')
+        h2 Watch the Profanity
+        p.
+            Cuss words, vulgar phrases, middle fingers, or explicitly
+            sexual images on clothing or accessories are not allowed.
+        table.table.table-bordered.mt-2
+            tr
+                th Allowed
+                th Not Allowed
+            tr
+                td
+                    .d-flex.flex-wrap.gap-2
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/profanity-allowed-1.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/profanity-allowed-2.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/profanity-allowed-3.jpg' alt='Allowed example')
+                td
+                    .d-flex.flex-wrap.gap-2
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/profanity-not-allowed-1.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/profanity-not-allowed-2.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+    section(id='dress-code-religious-symbols')
+        h2 Religious Symbols
+        p.
+            All religious symbols are allowed to be worn. However, if it is
+            disruptive, profane, offensive, obscene, or unsafe it is not allowed.
+        table.table.table-bordered.mt-2
+            tr
+                th Allowed
+                th Not Allowed
+            tr
+                td
+                    .d-flex.flex-wrap.gap-2
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/religious-symbols-allowed-1.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/religious-symbols-allowed-2.jpg' alt='Allowed example')
+                td
+                    .d-flex.flex-wrap.gap-2
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/religious-symbols-not-allowed-1.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/religious-symbols-not-allowed-2.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+    section(id='dress-code-political-statements')
+        h2 Political Statements
+        p.
+            Individuals are allowed to wear basic political attire. However, if it is
+            disruptive, profane, offensive, obscene, or unsafe it is not allowed.
+        table.table.table-bordered.mt-2
+            tr
+                th Allowed
+                th Not Allowed
+            tr
+                td
+                    .d-flex.flex-wrap.gap-2
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/political-statements-allowed-1.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/political-statements-allowed-2.jpg' alt='Allowed example')
+                td
+                    .d-flex.flex-wrap.gap-2
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/political-statements-not-allowed-1.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/political-statements-not-allowed-2.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+    section(id='dress-code-violent-depictions')
+        h2 Violent Depictions
+        p.
+            Cartoon Violence and Gore is allowed. However, if it is disruptive, profane, offensive,
+            obscene, or unsafe it is not allowed. Realistic gore and weapons are not allowed.
+        table.table.table-bordered.mt-2
+            tr
+                th Allowed
+                th Not Allowed
+            tr
+                td
+                    .d-flex.flex-wrap.gap-2
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/violent-depictions-allowed-1.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/violent-depictions-allowed-2.jpg' alt='Allowed example')
+                td
+                    .d-flex.flex-wrap.gap-2
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/violent-depictions-not-allowed-1.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/violent-depictions-not-allowed-2.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+    section(id='dress-code-no-shoes-no-entry')
+        h2 No Shoes, No Entry
+        p.
+            Proper foot attire is to be worn at all times. (can be changed to fit the
+            fit event i.e. barefoot at the water park, sneakers on a hike)
+        table.table.table-bordered.mt-2
+            tr
+                th Allowed
+                th Not Allowed
+            tr
+                td
+                    .d-flex.flex-wrap.gap-2
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/no-shoes-no-entry-allowed-1.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/no-shoes-no-entry-allowed-2.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/no-shoes-no-entry-allowed-3.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/no-shoes-no-entry-allowed-4.jpg' alt='Allowed example')
+                td
+                    .d-flex.flex-wrap.gap-2
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/no-shoes-no-entry-not-allowed-1.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/no-shoes-no-entry-not-allowed-2.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+    section(id='dress-code-belly-and-sheer-shirts')
+        h2 Belly and Sheer Shirts
+        p.
+            As long as the outfit covers the nipples, no matter the gender expression, and
+            underwear line, it is allowed. The pubic hair line or V should not be seen.
+        table.table.table-bordered.mt-2
+            tr
+                th Allowed
+                th Not Allowed
+            tr
+                td
+                    .d-flex.flex-wrap.gap-2
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/belly-and-sheer-shirts-allowed-1.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/belly-and-sheer-shirts-allowed-2.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/belly-and-sheer-shirts-allowed-3.jpg' alt='Allowed example')
+                td
+                    .d-flex.flex-wrap.gap-2
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/belly-and-sheer-shirts-not-allowed-1.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/belly-and-sheer-shirts-not-allowed-2.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+    section(id='dress-code-mind-your-rear')
+        h2 Mind Your Rear
+        p.
+            No matter the gender expression all rear ends must but be
+            appropriately covered and not visible during normal activities.
+        table.table.table-bordered.mt-2
+            tr
+                th Allowed
+                th Not Allowed
+            tr
+                td
+                    .d-flex.flex-wrap.gap-2
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/mind-your-rear-allowed-1.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/mind-your-rear-allowed-2.jpg' alt='Allowed example')
+                td
+                    .d-flex.flex-wrap.gap-2
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/mind-your-rear-not-allowed-1.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/mind-your-rear-not-allowed-2.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+    section(id='dress-code-nipples-and-chest-exposure')
+        h2 Nipples and Chest Exposure
+        p.
+            No matter the gender expression, we expect chests to be covered. Fursuit nipples if
+            anatomically correct (like on the belly) are allowed, if the fursuit nipples are on the traditionally
+            human chest, this is not allowed.
+        table.table.table-bordered.mt-2
+            tr
+                th Allowed
+                th Not Allowed
+            tr
+                td
+                    .d-flex.flex-wrap.gap-2
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/nipples-and-chest-exposure-allowed-1.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/nipples-and-chest-exposure-allowed-2.jpg' alt='Allowed example')
+                td
+                    .d-flex.flex-wrap.gap-2
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/nipples-and-chest-exposure-not-allowed-1.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/nipples-and-chest-exposure-not-allowed-2.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+    section(id='dress-code-leave-something-to-the-imagination')
+        h2 Leave Something to the Imagination
+        p.
+            Genitals of any kind are not allowed to be seen through clothes. We encourage proper
+            undergarments be worn at all times under clothes and not exposed. There should also be no
+            outlines of private areas.
+        table.table.table-bordered.mt-2
+            tr
+                th Allowed
+                th Not Allowed
+            tr
+                td
+                    .d-flex.flex-wrap.gap-2
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/leave-something-to-the-imagination-allowed-1.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/leave-something-to-the-imagination-allowed-2.jpg' alt='Allowed example')
+                td
+                    .d-flex.flex-wrap.gap-2
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/leave-something-to-the-imagination-not-allowed-1.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/leave-something-to-the-imagination-not-allowed-2.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+    section(id='dress-code-poodling-and-going-headless')
+        h2 Poodling & Going Headless
+        p.
+            Showing skin while in Fursuit is allowed. There is no breaking
+            the magic at our events as we prioritize safety over aesthetic.
+        table.table.table-bordered.mt-2
+            tr
+                th Allowed
+                th Not Allowed
+            tr
+                td
+                    .d-flex.flex-wrap.gap-2
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/poodling-and-going-headless-allowed-1.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/poodling-and-going-headless-allowed-2.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/poodling-and-going-headless-allowed-3.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/poodling-and-going-headless-allowed-4.jpg' alt='Allowed example')
+                td
+                    .d-flex.flex-wrap.gap-2
+                        // no not-allowed examples available
+    section(id='dress-code-pupmasks')
+        h2 Pupmasks
+        p.
+            Pup/pony/kitten hoods and the like are allowed as long as
+            they are not paired with fetish wear.
+        table.table.table-bordered.mt-2
+            tr
+                th Allowed
+                th Not Allowed
+            tr
+                td
+                    .d-flex.flex-wrap.gap-2
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/pupmasks-allowed-1.jpg' alt='Allowed example')
+                td
+                    .d-flex.flex-wrap.gap-2
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/pupmasks-not-allowed-1.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/pupmasks-not-allowed-2.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+    section(id='dress-code-leatherwear-and-latex')
+        h2 Leatherwear and Latex
+        p.
+            Leatherwear and latex are allowed as long as they are not paired
+            with fetish wear and follow the other rules about coverage.
+        table.table.table-bordered.mt-2
+            tr
+                th Allowed
+                th Not Allowed
+            tr
+                td
+                    .d-flex.flex-wrap.gap-2
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/leatherwear-and-latex-allowed-1.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/leatherwear-and-latex-allowed-2.jpg' alt='Allowed example')
+                td
+                    .d-flex.flex-wrap.gap-2
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/leatherwear-and-latex-not-allowed-1.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/leatherwear-and-latex-not-allowed-2.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+    section(id='dress-code-harness-in-and-out-of-fursuit')
+        h2 Harness In and Out of Fursuit
+        p.
+            Harness on fursuits are allowed to be worn. If being worn out of fursuit, they must not
+            accentuate certain private areas even if clothing is worn underneath.
+        table.table.table-bordered.mt-2
+            tr
+                th Allowed
+                th Not Allowed
+            tr
+                td
+                    .d-flex.flex-wrap.gap-2
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/harness-in-and-out-of-fursuit-allowed-1.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/harness-in-and-out-of-fursuit-allowed-2.jpg' alt='Allowed example')
+                td
+                    .d-flex.flex-wrap.gap-2
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/harness-in-and-out-of-fursuit-not-allowed-1.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/harness-in-and-out-of-fursuit-not-allowed-2.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+    section(id='dress-code-drugs-and-illicit-substances')
+        h2 Drugs and Illicit Substances
+        p.
+            Promotion of illegal substance or drug abuse is not allowed. Please
+            note in NC alcohol, tobacco, and THC products are 21+.
+        table.table.table-bordered.mt-2
+            tr
+                th Allowed
+                th Not Allowed
+            tr
+                td
+                    .d-flex.flex-wrap.gap-2
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/drugs-and-illicit-substances-allowed-1.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/drugs-and-illicit-substances-allowed-2.jpg' alt='Allowed example')
+                td
+                    .d-flex.flex-wrap.gap-2
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/drugs-and-illicit-substances-not-allowed-1.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/drugs-and-illicit-substances-not-allowed-2.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+    section(id='dress-code-military-and-uniform-cosplay')
+        h2 Military and Uniform Cosplay
+        p.
+            Anything that can be confused as tactical gear or a military
+            style outfit is not allowed.
+        table.table.table-bordered.mt-2
+            tr
+                th Allowed
+                th Not Allowed
+            tr
+                td
+                    .d-flex.flex-wrap.gap-2
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/military-and-uniform-cosplay-allowed-1.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/military-and-uniform-cosplay-allowed-2.jpg' alt='Allowed example')
+                td
+                    .d-flex.flex-wrap.gap-2
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/military-and-uniform-cosplay-not-allowed-1.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/military-and-uniform-cosplay-not-allowed-2.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+    section(id='dress-code-props-and-accessories')
+        h2 Props and Accessories
+        p.
+            Most props are allowed as long as they cannot fire a projectile or be
+            used/confused as an actual weapon. Please see Conops for peacebonding.
+        table.table.table-bordered.mt-2
+            tr
+                th Allowed
+                th Not Allowed
+            tr
+                td
+                    .d-flex.flex-wrap.gap-2
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/props-and-accessories-allowed-1.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/props-and-accessories-allowed-2.jpg' alt='Allowed example')
+                        img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/props-and-accessories-allowed-3.jpg' alt='Allowed example')
+                td
+                    .d-flex.flex-wrap.gap-2
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/props-and-accessories-not-allowed-1.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/props-and-accessories-not-allowed-2.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
+                        figure.spoiler(tabindex='0' aria-label='Sensitive image. Click to reveal.')
+                            img.img-fluid.img-thumbnail.dc-thumb(src='/img/dress-code/props-and-accessories-not-allowed-3.jpg' alt='Not allowed example')
+                            button.veil(type='button' aria-pressed='false') Click to reveal
