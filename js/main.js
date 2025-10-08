@@ -108,3 +108,35 @@
   })
   $(window).on('resize', _.debounce(navbarOverflow, 50))
 })(jQuery)
+
+// === Spoiler Toggle for Sensitive Images ===
+document.addEventListener('click', e => {
+  const wrap = e.target.closest('.spoiler')
+  if (!wrap) return
+  wrap.classList.toggle('revealed')
+  const veil = wrap.querySelector('.veil')
+  if (veil) veil.setAttribute('aria-hidden', wrap.classList.contains('revealed'))
+})
+
+document.addEventListener('keydown', e => {
+  if (!['Enter', ' '].includes(e.key)) return
+  const wrap = e.target.closest('.spoiler')
+  if (!wrap) return
+  e.preventDefault()
+  wrap.click() // reuse click handler
+})
+
+// === Content Warning Gate ===
+document.addEventListener('DOMContentLoaded', () => {
+  const warning = document.getElementById('content-warning')
+  const btn = document.getElementById('enter-site')
+  if (!warning || !btn) return
+
+  // Gate the body until acknowledged
+  document.body.classList.add('gated')
+
+  btn.addEventListener('click', () => {
+    document.body.classList.remove('gated')
+    warning.remove()
+  })
+})
