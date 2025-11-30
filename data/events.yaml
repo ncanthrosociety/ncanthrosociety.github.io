@@ -43,6 +43,38 @@
 #    text:
 #  description: |
 #    ...
+- title: Wheels Durham Skating Meet
+  img:
+    src: /img/events/2026/01/wheels.png
+    alt: Wheels Durham.
+  times:
+  - start: !!timestamp 2026-01-18 18:30:00 -5
+    end: !!timestamp 2026-01-18 20:30:00 -5
+  address:
+    link: https://maps.app.goo.gl/ezGgFAYV1T9eSTUr5
+    text: Wheels Durham
+  buttons:
+  - link: https://ncanthrosociety.regfox.com/ncaswheelsdurham
+    text: Get Tickets
+  description: |
+    Who doesn't like skating?! Join your fellow furs on the roller skating rink at Wheels Durham (formally Wheels Fun Park), where we will have the entire skating rink AND arcade to ourselves.
+
+- title: Zootopia 2 Private Watch Party
+  img:
+    src: /img/events/2025/12/zootopia-2-teaser.png
+    alt: Zootopia 2.
+  times:
+  - start: !!timestamp 2025-12-14 14:00:00 -5
+    end: !!timestamp 2025-12-14 16:30:00 -5
+  buttons:
+  - link: https://ncanthrosociety.regfox.com/ncas-zootopia-2-dual-screening-event-12-14-2025
+    text: Get Tickets
+  description: |
+    Zootopia 2 has been released! However, it looks like it won’t be on any streaming service anytime soon. How are you going to awoo in peace?!
+
+    Join your fellow furries in a private, theatre buyout, viewing of Zootopia 2 at Cinemark Bistro! 
+    We have 2 viewings scheduled in Raleigh and Asheville so you can choose a location that works the best for you. Both theatres have reclining seats, concessions and a restaurant for an additional on-site cost.
+
 - title: Carowinds Meet
   img:
     src: /img/events/2025/06/carowinds.jpg
