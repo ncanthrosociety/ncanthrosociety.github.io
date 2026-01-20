@@ -43,6 +43,42 @@
 #    text:
 #  description: |
 #    ...
+- title: 'Carolina Furfare 2026: Cryptid Catastrophe'
+  img:
+    src: /img/events/2026/10/carolinafurfare.png
+    alt: Carolina Furfare 2026.
+  times:
+  - start: !!timestamp 2026-10-01 00:00:00 -4
+    end: !!timestamp 2026-10-04 23:59:59 -4
+    allDay: true
+  address:
+    link: https://maps.app.goo.gl/zFh6FaV5Y4xWA3As7
+    text: Hickory Metro Convention Center
+  buttons:
+  - link: https://www.carolinafurfare.org/
+    text: More Info
+  description: |
+    Join Petal and Aster October 1-4, 2026 at the Hickory Metro Convention Center in Hickory,
+    NC to start off your spooky season with a Cryptid Catastrophe!
+
+- title: 'Bewhiskered 2026: Whisker World Arcade'
+  img:
+    src: /img/events/2026/04/Bewhiskered/banner.png
+    alt: Bewhiskered 2026.
+  times:
+  - start: !!timestamp 2026-04-02 00:00:00 -4
+    end: !!timestamp 2026-04-05 23:59:59 -4
+    allDay: true
+  address:
+    link: https://maps.app.goo.gl/8gQ4z7bys1opp4C16
+    text: Durham Convention Center
+  buttons:
+  - link: https://2026.bewhiskeredcon.org
+    text: More Info
+  description: |
+    Join Whisky and Cassie on April 2nd - 5th, 2026 for Bewhiskered 2026: Whisker World Arcade!
+    Located at the Durham Convention Center in Durham, North Carolina!
+
 - title: Wheels Durham Skating Meet
   img:
     src: /img/events/2026/01/wheels.png
