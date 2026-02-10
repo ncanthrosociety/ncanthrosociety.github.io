@@ -79,6 +79,38 @@
     Join Whisky and Cassie on April 2nd - 5th, 2026 for Bewhiskered 2026: Whisker World Arcade!
     Located at the Durham Convention Center in Durham, North Carolina!
 
+- title: GOAT Private Watch Party - Raleigh
+  img:
+    src: /img/events/2026/02/goat.jpg
+    alt: GOAT.
+  times:
+  - start: !!timestamp 2026-02-28 15:00:00 -5
+    end: !!timestamp 2026-02-28 16:40:00 -5
+  address:
+    link: https://maps.app.goo.gl/tFdy4hUNaAfuSoxVA
+    text: Cinemark Bistro Raleigh
+  buttons:
+  - link: https://ncanthrosociety.regfox.com/ncas-goat-private-showing
+    text: Get Tickets
+  description: |
+    It’s that time again, a new animated movie is about to come out soon! Join your fellow furs in a private, theatre buyout, viewing of GOAT at Cinemark Bistro in Raleigh! The theatre has reclining seats, concessions and a restaurant.
+
+- title: GOAT Private Watch Party - Hickory
+  img:
+    src: /img/events/2026/02/goat.jpg
+    alt: GOAT.
+  times:
+  - start: !!timestamp 2026-02-28 11:15:00 -5
+    end: !!timestamp 2026-02-28 12:55:00 -5
+  address:
+    link: https://maps.app.goo.gl/fWNK8RHWyFTozYbC9
+    text: Carolina Movie Theater
+  buttons:
+  - link: https://ncanthrosociety.regfox.com/ncas-goat-private-showing
+    text: Get Tickets
+  description: |
+    It’s that time again, a new animated movie is about to come out soon! Join your fellow furs in a private, theatre buyout, viewing of GOAT at Cinemark Bistro in Raleigh! The theatre has reclining seats, concessions and a restaurant.
+
 - title: Wheels Durham Skating Meet
   img:
     src: /img/events/2026/01/wheels.png
