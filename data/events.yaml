@@ -89,11 +89,13 @@
   address:
     link: https://maps.app.goo.gl/tFdy4hUNaAfuSoxVA
     text: Cinemark Bistro Raleigh
-  buttons:
-  - link: https://ncanthrosociety.regfox.com/ncas-goat-private-showing
-    text: Get Tickets
+  reg:
+    link: https://ncanthrosociety.regfox.com/ncas-goat-private-showing
+    options:
+    - type: Raleigh Showing
+      price: 19
   description: |
-    It’s that time again, a new animated movie is about to come out soon! Join your fellow furs in a private, theatre buyout, viewing of GOAT at Cinemark Bistro in Raleigh! The theatre has reclining seats, concessions and a restaurant.
+    It’s that time again, a new animated movie is about to come out soon! Join your fellow furs in a private, theatre buyout, viewing of GOAT at Cinemark Bistro in Raleigh! 
 
 - title: GOAT Private Watch Party - Hickory
   img:
@@ -105,11 +107,13 @@
   address:
     link: https://maps.app.goo.gl/fWNK8RHWyFTozYbC9
     text: Carolina Movie Theater
-  buttons:
-  - link: https://ncanthrosociety.regfox.com/ncas-goat-private-showing
-    text: Get Tickets
+  reg:
+    link: https://ncanthrosociety.regfox.com/ncas-goat-private-showing
+    options:
+    - type: Hickory Showing
+      price: 17
   description: |
-    It’s that time again, a new animated movie is about to come out soon! Join your fellow furs in a private, theatre buyout, viewing of GOAT at Cinemark Bistro in Raleigh! The theatre has reclining seats, concessions and a restaurant.
+    It’s that time again, a new animated movie is about to come out soon! Join your fellow furs in a private, theatre buyout, viewing of GOAT at Carolina Theater in Hickory!
 
 - title: Wheels Durham Skating Meet
   img:
