@@ -79,6 +79,26 @@
     Join Whisky and Cassie on April 2nd - 5th, 2026 for Bewhiskered 2026: Whisker World Arcade!
     Located at the Durham Convention Center in Durham, North Carolina!
 
+- title: 'Game Night at the Geekery'
+  img:
+    src: /img/events/2026/03/boardgamenight.jpg
+    alt: Gamers Geekery & Tavern.
+  times:
+  - start: !!timestamp 2026-03-20 19:00:00 -4
+    end: !!timestamp 2026-03-20 23:00:00 -4
+    allDay: true
+  address:
+    link: https://maps.app.goo.gl/DhEnA42RiGdDiixC7
+    text: Gamers Geekery & Tavern
+  buttons:
+  - link: https://ncanthrosociety.regfox.com/game-night-at-the-geekery?t=Whiskey
+    text: More Info
+  description: |
+    Hello Everyone,
+
+    We're hosting a Game Night at the Gamers Geekery & Tavern on March 20th in Cary! This will be a great time to break the ice with your furs right before Bewhiskered with a tabletop game, 
+    drinks or even just a chat. We will be there from 7PM - 11PM check out the link below for more information.
+
 - title: GOAT Private Watch Party - Raleigh
   img:
     src: /img/events/2026/02/goat.jpg
