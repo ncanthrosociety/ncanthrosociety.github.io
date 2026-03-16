@@ -86,7 +86,6 @@
   times:
   - start: !!timestamp 2026-03-20 19:00:00 -4
     end: !!timestamp 2026-03-20 23:00:00 -4
-    allDay: true
   address:
     link: https://maps.app.goo.gl/DhEnA42RiGdDiixC7
     text: Gamers Geekery & Tavern
