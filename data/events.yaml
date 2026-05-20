@@ -43,6 +43,24 @@
 #    text:
 #  description: |
 #    ...
+- title: NCAS Game Night at the Geekery
+  img:
+    src: /img/events/2026/05/Geekery/Geekery.jpg
+    alt: Cassie and Whisky at the Geekery.
+  times:
+  - start: !!timestamp 2026-05-31 16:00:00 -4
+    end: !!timestamp 2026-05-31 20:00:00 -4
+  address:
+    link: https://maps.app.goo.gl/GPs6yEJcGj5QfQLf6
+    text: 'Gamers Geekery & Tavern (107 Edinburgh South Drive #213, Cary, NC 27511)'
+  buttons:
+  - link: https://docs.google.com/forms/d/e/1FAIpQLSebAB1SnwhdowExM314CwLUcLbZgnfkLja_W3al6atDHn0cvw/viewform
+    text: Sign up for free!
+  description: |
+    Join us on Sunday, May 31st, for an evening of tabletop games, food and drinks as we celebrate NCAS’ 7th birthday at the Gamers Geekery & Tavern in Cary!
+    This is a free event! We are reserving a section of the Geekery but the venue is still open to the public.
+    We will be there from 4PM - 8PM but feel free to come in late or leave early.
+
 - title: Triangle ALS Walk
   img:
     src: /img/events/2026/04/triangle-als-walk.jpg
