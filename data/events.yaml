@@ -43,6 +43,23 @@
 #    text:
 #  description: |
 #    ...
+- title: NCAS at Wheels Durham Skating Meet
+  img:
+    src: /img/events/2026/01/wheels.png
+    alt: Wheels Durham.
+  times:
+  - start: !!timestamp 2026-07-25 22:00:00 -4
+    end: !!timestamp 2026-07-26 01:00:00 -4
+  address:
+    link: https://maps.app.goo.gl/ezGgFAYV1T9eSTUr5
+    text: Wheels Durham (715 N Hoover Rd, Durham, NC 27703)
+  buttons:
+  - link: https://ncanthrosociety.regfox.com/wheels-durham-furmeet?t=Whiskey
+    text: Register
+  description: |
+    Ready for summer? Make it the best one ever by getting your ticket to the Wheels Durham Skating Meet!
+    Spend your Saturday night on July 25th with your fellow furs and enjoy a round of fursuit games and fun!
+
 - title: NCAS Game Night at the Geekery
   img:
     src: /img/events/2026/05/Geekery/Geekery.jpg
